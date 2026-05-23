@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paul Harvey — Solutions Architect, Sydney</title>
+  <meta name="description" content="Paul Harvey is a Solutions Architect in Sydney, Australia with 32+ years in technology, specialising in enterprise architecture, distributed team leadership, AI agent management, and digital transformation across financial services and government.">
+  <meta name="author" content="Paul Harvey">
+  <link rel="canonical" href="https://paulharvey.com.au">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paul Harvey — Solutions Architect, Sydney">
+  <meta property="og:description" content="32+ years architecting solutions across financial services, government, and enterprise in Sydney.">
+  <meta property="og:url" content="https://paulharvey.com.au">
+  <meta property="og:image" content="https://paulharvey.com.au/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="Paul Harvey">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paul Harvey — Solutions Architect">
+  <meta name="twitter:description" content="32+ years architecting solutions across financial services, government, and enterprise.">
+  <meta name="twitter:image" content="https://paulharvey.com.au/images/og.png">
+
+  <!-- GEO identity signals -->
+  <link rel="me" href="https://github.com/harvest316">
+  <meta name="geo.region" content="AU-NSW">
+  <meta name="geo.placename" content="Sydney">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23c45d3e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%23e8e0d8'%3EPH%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --bg-elevated: #131311;
+      --text: #e8e0d8;
+      --text-dim: #8a827a;
+      --text-muted: #5a534c;
+      --accent: #c45d3e;
+      --accent-hover: #d4724f;
+      --accent-glow: rgba(196, 93, 62, 0.1);
+      --line: rgba(232, 224, 216, 0.06);
+      --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Subtle noise grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.018;
+      background: repeating-conic-gradient(#e8e0d8 0.00001%, transparent 0.00012%) 0 0 / 200px 200px;
+      mix-blend-mode: overlay;
+    }
+
+    /* Scroll progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      z-index: 1000;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* Sections */
+    section { padding: clamp(4rem, 10vh, 8rem) 0; }
+
+    /* Section labels */
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    /* ═══════ HERO ═══════ */
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: clamp(6rem, 15vh, 10rem) 0 clamp(4rem, 8vh, 6rem);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .name-line {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .name-first { color: var(--text-dim); }
+    .name-last { color: var(--text); }
+
+    .hero-rule {
+      width: 72px;
+      height: 1px;
+      background: var(--accent);
+      margin: clamp(1.5rem, 3vh, 2.5rem) 0;
+      transform-origin: left;
+      animation: lineExtend 0.7s ease-out 0.7s both;
+    }
+
+    .hero-title {
+      font-weight: 300;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      letter-spacing: 0.04em;
+      color: var(--text);
+      animation: fadeInUp 0.7s ease 0.9s both;
+    }
+
+    .hero-location {
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+      animation: fadeInUp 0.7s ease 1.05s both;
+    }
+
+    /* Photo frame — architectural corner accents */
+    .hero-photo {
+      animation: fadeIn 1s ease 0.4s both;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: clamp(260px, 28vw, 400px);
+      aspect-ratio: 1;
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 50%;
+      height: 50%;
+      border-top: 1px solid var(--accent);
+      border-right: 1px solid var(--accent);
+      pointer-events: none;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 1.3s both;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: -14px;
+      width: 50%;
+      height: 50%;
+      border-bottom: 1px solid var(--accent);
+      border-left: 1px solid var(--accent);
+      pointer-events: none;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 1.5s both;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: clamp(1.5rem, 3vh, 2.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease 2s both, bobble 2.5s ease-in-out 3s infinite;
+      cursor: default;
+    }
+
+    /* ═══════ ABOUT ═══════ */
+    .about { border-top: 1px solid var(--line); }
+
+    .about-text { max-width: 700px; }
+
+    .about-text p {
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      margin-bottom: 1.5rem;
+      color: var(--text-dim);
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text .lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    /* ═══════ STATS ═══════ */
+    .stats {
+      border-top: 1px solid var(--line);
+      background: var(--bg-elevated);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    .stat-number {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-weight: 400;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    /* ═══════ TRACK RECORD ═══════ */
+    .track-record { border-top: 1px solid var(--line); }
+
+    .companies {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      font-weight: 400;
+      line-height: 2.1;
+      color: var(--text-dim);
+      margin-bottom: clamp(2rem, 4vh, 3rem);
+    }
+
+    .companies .sep { color: var(--text-muted); margin: 0 0.15em; }
+
+    .certifications {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .education {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    /* ═══════ FOOTER ═══════ */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: clamp(3rem, 6vh, 5rem) 0 clamp(2rem, 4vh, 3rem);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(1.2rem, 2.5vw, 2rem);
+      margin-bottom: clamp(2rem, 4vh, 3rem);
+    }
+
+    .footer-links a {
+      font-weight: 400;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+    .footer-links a:hover::after { width: 100%; }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ═══════ ANIMATIONS ═══════ */
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes lineExtend {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bobble {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-stagger-1 { transition-delay: 0s; }
+    .reveal-stagger-2 { transition-delay: 0.08s; }
+    .reveal-stagger-3 { transition-delay: 0.16s; }
+    .reveal-stagger-4 { transition-delay: 0.24s; }
+
+    /* ═══════ RESPONSIVE ═══════ */
+    @media (max-width: 768px) {
+      .hero { padding-top: clamp(4rem, 12vh, 8rem); }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: clamp(2rem, 5vh, 3rem);
+      }
+
+      .hero-photo {
+        order: -1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .photo-frame { width: clamp(200px, 55vw, 300px); }
+
+      .hero-rule {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { text-align: center; }
+
+      .footer-links { justify-content: center; }
+      .footer-copy { text-align: center; }
+    }
+
+    @media (max-width: 400px) {
+      .name-line { font-size: clamp(2.8rem, 16vw, 3.5rem); }
+      .photo-frame { width: 200px; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        animation-delay: 0ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .scroll-hint { display: none; }
+    }
+
+    /* Print */
+    @media print {
+      body { background: #fff; color: #111; }
+      body::after { display: none; }
+      .scroll-progress, .scroll-hint { display: none; }
+      .photo-frame::before, .photo-frame::after { display: none; }
+      section { padding: 2rem 0; }
+      a { color: #111; }
+      .stat-number { color: #c45d3e; }
+      .section-label { color: #c45d3e; }
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Paul Harvey",
+        "url": "https://paulharvey.com.au",
+        "description": "Personal website of Paul Harvey, Solutions Architect based in Sydney, Australia."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://paulharvey.com.au/#person",
+        "name": "Paul Harvey",
+        "url": "https://paulharvey.com.au",
+        "image": "https://paulharvey.com.au/images/paul-harvey.webp",
+        "jobTitle": "Solutions Architect",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Evitara"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sydney",
+          "addressRegion": "NSW",
+          "addressCountry": "AU"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Queensland University of Technology"
+        },
+        "sameAs": [
+          "https://github.com/harvest316",
+          "https://aiclarity.com.au",
+          "https://auditandfix.com",
+          "https://contactreplyai.com"
+        ],
+        "knowsAbout": [
+          "Solutions Architecture",
+          "Enterprise Integration",
+          "Software Engineering",
+          "Business Analysis",
+          "Distributed Team Management",
+          "Digital Transformation",
+          "Financial Technology",
+          "Pre-Sales Architecture",
+          "AI Agent Management",
+          "E-Commerce Architecture"
+        ],
+        "description": "Solutions Architect with 32+ years in technology, specialising in enterprise architecture, distributed team leadership, AI agent management, and digital transformation across financial services, government, and enterprise in Sydney, Australia. Having hired over 260 remote staff, Paul has developed a specialty in offshore developer management, which easily translated into managing teams of AI agents."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1 class="name">
+          <span class="name-line name-first" style="animation-delay:.15s">Paul</span>
+          <span class="name-line name-last" style="animation-delay:.35s">Harvey</span>
+        </h1>
+        <div class="hero-rule"></div>
+        <p class="hero-title">Solutions Architect</p>
+        <p class="hero-location">Sydney, Australia</p>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <picture>
+            <source srcset="images/paul-harvey.webp" type="image/webp">
+            <img src="images/AI-Reimagined-Me6.png" alt="Paul Harvey — Solutions Architect based in Sydney, Australia" width="600" height="600" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true" role="presentation">&#8595;</div>
+  </section>
+
+  <!-- ═══════ ABOUT ═══════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section-label reveal">About</p>
+      <div class="about-text">
+        <p class="lead reveal">An avid networker and humanitarian, he loves people almost as much as he does technology.</p>
+        <p class="reveal">With 32 years in database and software development, 24 years of business analysis, 17 years managing developers, 15 years in solutions architecture (e-commerce&thinsp;/&thinsp;integration), and 5 years as principal pre-sales consultant while running a digital marketing agency managing a portfolio of 450 websites, Paul is an accomplished technical all-rounder with a broad wingspan of technologies. Having hired over 260 remote staff, he has developed a specialty in offshore developer management, which easily translated into managing teams of AI agents.</p>
+        <p class="reveal">Microsoft, Google, ITIL and Scrum certified, he has over 10 years experience in Financial Markets, including the Reserve Bank of Australia, APRA, Rothschilds, BHP Billiton, Calyon, ABN Amro, Royal Bank of Scotland, St George Bank, NSW Corrective Services and Illawarra Credit Union, and EDS, where he managed a team of 40 developers. He has also consulted for RXP Services, CBA, Westpac, Qantas, AMP and KPMG.</p>
+        <p class="reveal">An independent thinker with keen observation skills, he easily reads people and situations, and finds solutions that others miss. Paul&rsquo;s eye for quality and long-term sustainability is balanced by the pragmatic &ldquo;get it done&rdquo; approach learned on the trading floor in London. His unflappable, upbeat personality draws out hidden talents, connects people, and inspires greater engagement from team and stakeholders alike. Company directors and C-suite value his business leadership experience, empathic honesty, and unique ability to explain complex technical concepts in concrete business terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ STATS ═══════ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal reveal-stagger-1">
+          <span class="stat-number">32+</span>
+          <span class="stat-label">Years in Technology</span>
+        </div>
+        <div class="stat reveal reveal-stagger-2">
+          <span class="stat-number">260+</span>
+          <span class="stat-label">Remote Staff Hired</span>
+        </div>
+        <div class="stat reveal reveal-stagger-3">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Years Architecture</span>
+        </div>
+        <div class="stat reveal reveal-stagger-4">
+          <span class="stat-number">450+</span>
+          <span class="stat-label">Websites Managed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TRACK RECORD ═══════ -->
+  <section class="track-record" id="track-record">
+    <div class="container">
+      <p class="section-label reveal">Track Record</p>
+      <p class="companies reveal">Reserve Bank of Australia<span class="sep"> · </span>APRA<span class="sep"> · </span>Commonwealth Bank<span class="sep"> · </span>Westpac<span class="sep"> · </span>Qantas<span class="sep"> · </span>KPMG<span class="sep"> · </span>AMP<span class="sep"> · </span>BHP Billiton<span class="sep"> · </span>Rothschilds<span class="sep"> · </span>Royal Bank of Scotland<span class="sep"> · </span>St George Bank<span class="sep"> · </span>ABN Amro<span class="sep"> · </span>Calyon<span class="sep"> · </span>Illawarra Credit Union<span class="sep"> · </span>EDS<span class="sep"> · </span>RXP Services<span class="sep"> · </span>NSW Corrective Services</p>
+      <p class="certifications reveal">Microsoft · Google · ITIL · Scrum Certified</p>
+      <p class="education reveal">Queensland University of Technology</p>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <div class="container">
+      <nav class="footer-links reveal" aria-label="External links">
+        <a href="https://github.com/harvest316" target="_blank" rel="me noopener">GitHub</a>
+        <a href="https://aiclarity.com.au" target="_blank" rel="noopener">AI Clarity</a>
+        <a href="https://auditandfix.com" target="_blank" rel="noopener">Audit &amp; Fix</a>
+        <a href="https://contactreplyai.com" target="_blank" rel="noopener">ContactReply AI</a>
+        <a href="https://harvest316.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+      </nav>
+      <p class="footer-copy reveal">&copy; 2026 Paul Harvey &middot; Sydney, Australia</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Scroll progress bar */
+    (function() {
+      var bar = document.querySelector('.scroll-progress');
+      window.addEventListener('scroll', function() {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+      }, { passive: true });
+    })();
+
+    /* IntersectionObserver scroll reveals */
+    (function() {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('revealed');
+        });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
