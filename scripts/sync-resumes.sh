@@ -115,8 +115,17 @@ Co-Authored-By: sync-resumes.sh <noreply@paulharvey.com.au>"
 fi
 
 # Deploy
-export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN:-cfut_exNOoCC5J5B2wdviAqfQYkQAqw5tUmYtkqkNTkixe2dcb6bc}"
-export CLOUDFLARE_ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:-23f1dc885a85e77e0b3969b247bbf65f}"
+# Load env from file if not already set
+ENV_FILE="${HOME}/.config/paulharvey-deploy.env"
+if [ -f "$ENV_FILE" ]; then
+  set -a; source "$ENV_FILE"; set +a
+fi
+
+if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+  echo "Error: CLOUDFLARE_API_TOKEN not set. Configure ~/.config/paulharvey-deploy.env"
+  exit 1
+fi
+
 export HOME="${WRANGLER_HOME:-/home/jason/.cache/wrangler-home}"
 npx wrangler pages deploy "$REPO_DIR" --project-name=paulharvey-com-au --branch=main --commit-dirty=true
 
