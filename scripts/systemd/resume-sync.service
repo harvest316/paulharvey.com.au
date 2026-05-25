@@ -1,0 +1,8 @@
+[Unit]
+Description=Sync resumes to paulharvey.com.au and deploy
+
+[Service]
+Type=oneshot
+ExecStart=/home/jason/code/paulharvey.com.au/scripts/sync-resumes.sh
+EnvironmentFile=/home/jason/.config/paulharvey-deploy.env
+WorkingDirectory=/home/jason/code/paulharvey.com.au

@@ -15,7 +15,7 @@ if [ ! -d "$SOURCE_DIR" ]; then
   exit 1
 fi
 
-# Find .docx files
+# Find .docx files (top-level only, ignore Old/ subfolder)
 shopt -s nullglob
 docx_files=("$SOURCE_DIR"/*.docx)
 
