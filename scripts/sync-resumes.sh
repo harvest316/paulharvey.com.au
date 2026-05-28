@@ -115,14 +115,14 @@ Co-Authored-By: sync-resumes.sh <noreply@paulharvey.com.au>"
 fi
 
 # Deploy
-# Load env from file if not already set
-ENV_FILE="${HOME}/.config/paulharvey-deploy.env"
+# Load env from repo .env
+ENV_FILE="$REPO_DIR/.env"
 if [ -f "$ENV_FILE" ]; then
   set -a; source "$ENV_FILE"; set +a
 fi
 
 if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
-  echo "Error: CLOUDFLARE_API_TOKEN not set. Configure ~/.config/paulharvey-deploy.env"
+  echo "Error: CLOUDFLARE_API_TOKEN not set. Configure .env (copy from .env.example)"
   exit 1
 fi
 
