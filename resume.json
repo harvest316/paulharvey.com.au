@@ -1,0 +1,2088 @@
+{
+  "$schema": "https://jsonresume.org/schema/1.0.0/resume.json",
+  "basics": {
+    "name": "Paul Harvey",
+    "label": "Solutions Architect · CTO · IT Manager",
+    "tagline": "A techie who actually likes people",
+    "image": "https://paulharvey.com.au/images/paul-harvey.webp",
+    "url": "https://paulharvey.com.au",
+    "_contactNote": "Email and phone deliberately omitted from this canonical JSON to prevent scraping. Recruiters: see https://paulharvey.com.au (click the email/phone icons) or download the DOCX from /#downloads.",
+    "summary": "Technical all-rounder with a broad wingspan, where engineering meets strategy.",
+    "experienceLines": [
+      {
+        "years": "32 yrs",
+        "text": "Building, leading and architecting software across financial services, government and enterprise"
+      },
+      {
+        "years": "17 yrs",
+        "text": "Managing developers — 260+ hired, including offshore teams and AI agent fleets"
+      },
+      {
+        "years": "15 yrs",
+        "text": "Solutions architecture spanning e-commerce, ERP and integration"
+      },
+      {
+        "years": "8 yrs",
+        "text": "Pre-sales and proposal architecture"
+      },
+      {
+        "years": "5 yrs",
+        "text": "Running a digital marketing agency (portfolio of 450 websites)"
+      }
+    ],
+    "certifiedSummary": "ITIL · Scrum · Microsoft · Google certified · TOGAF-aligned",
+    "subSummary": "An independent thinker with keen observation skills, who reads people and situations well and finds solutions that others miss. Pragmatic 'get-it-done' approach learned on the London trading floor, balanced by an eye for quality and long-term sustainability. Unflappable, upbeat, draws hidden talents out of teams, and explains complex technical concepts in concrete business terms.",
+    "location": {
+      "city": "Hurstville",
+      "region": "NSW",
+      "countryCode": "AU"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/harvest316",
+        "username": "harvest316"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/harvest316",
+        "username": "harvest316"
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "text": "End-to-End Solution Architect: Apps · Data · Integration · Cloud",
+      "tags": [
+        "architecture",
+        "cloud",
+        "integration",
+        "data-analytics"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Amblique"
+      }
+    },
+    {
+      "text": "AI Strategy + Enterprise LLM Integration (48-agent Claude Code fleet)",
+      "tags": [
+        "ai-llm",
+        "architecture",
+        "leadership"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Evitara"
+      }
+    },
+    {
+      "text": "32 Years in Financial Services — RBA, APRA, banks",
+      "tags": [
+        "financial-services",
+        "security-compliance"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Reserve Bank of Australia"
+      }
+    },
+    {
+      "text": "Salesforce B2C Commerce Cloud + Shopify Plus",
+      "tags": [
+        "ecommerce",
+        "architecture",
+        "crm"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Amblique"
+      }
+    },
+    {
+      "text": "CTO / IT Manager / Solutions Architect — P&L, Board, ERP transformation",
+      "tags": [
+        "leadership",
+        "erp",
+        "transformation",
+        "stakeholder"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "OneContact"
+      }
+    },
+    {
+      "text": "Distributed + Offshore Team Leadership (260+ staff hired)",
+      "tags": [
+        "offshore-teams",
+        "leadership"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Corporate SEO"
+      }
+    },
+    {
+      "text": "Pre-Sales · Bids · SOWs · RFPs",
+      "tags": [
+        "presales",
+        "stakeholder"
+      ],
+      "linkTo": {
+        "type": "role",
+        "ref": "Corporate SEO"
+      }
+    },
+    {
+      "text": "ITIL · Scrum · TOGAF-aligned · Microsoft · Google certified",
+      "tags": [
+        "security-compliance",
+        "architecture"
+      ],
+      "linkTo": {
+        "type": "section",
+        "ref": "certifications"
+      }
+    }
+  ],
+  "recruiterFAQ": {
+    "availability": "1 week notice",
+    "visa": "Australian Citizen",
+    "rates": {
+      "contract": "$1,200–$1,600 / day preferred; open to lower for the right fit",
+      "permanent": "$200k–$300k base; open to lower for less stress, closer to home, or remote"
+    },
+    "location": {
+      "based": "Hurstville",
+      "lookingIn": [
+        "Sydney CBD",
+        "Southern Sydney",
+        "Illawarra",
+        "Remote"
+      ],
+      "relocation": "Unable to relocate at this time",
+      "travel": "Up to 25% travel fine"
+    },
+    "rolesPreferred": [
+      "Solutions Architect (Enterprise / E-Commerce / AI Integration)",
+      "IT Manager / Head of IT",
+      "CTO (digital agency, 20–50 people, Sutherland Shire ideal)",
+      "Pre-Sales Solutions Architect (low-ego company, work from home)",
+      "Principal Architect / Consultant Architect (Financial Services)"
+    ],
+    "rolesShortTerm": [
+      "Microsoft BI / Data Analyst / SQL Developer",
+      "LAMP / WordPress Performance Tuning"
+    ],
+    "perfectJob": "Either CTO in a digital agency with 20–50 people in the Sutherland Shire, or a Pre-Sales Solutions Architect in a low-ego company with flexibility to work from home. Casting wider than this though.",
+    "holidays": "None planned",
+    "latestResume": "http://cv.paulharvey.com.au"
+  },
+  "stats": [
+    {
+      "value": "32+",
+      "label": "Years in Technology"
+    },
+    {
+      "value": "260+",
+      "label": "Remote Staff Hired"
+    },
+    {
+      "value": "15+",
+      "label": "Years Architecture"
+    },
+    {
+      "value": "450+",
+      "label": "Websites Managed"
+    }
+  ],
+  "work": [
+    {
+      "name": "Evitara",
+      "position": "Solutions Architect (AI Integration)",
+      "positionFlexible": true,
+      "positionDefault": "Solutions Architect (AI Integration)",
+      "positionAliases": [
+        "Chief Technology Officer",
+        "Head of AI",
+        "Principal Architect",
+        "IT Manager"
+      ],
+      "employmentType": "Contract",
+      "startDate": "2024-09",
+      "endDate": "2026-05",
+      "location": "Sydney",
+      "url": "",
+      "summary": "Architecting and maintaining a multi-project AI platform spanning marketing automation, ad operations, subscription SaaS, and internal ERP tooling. Leading a 48-agent Claude Code fleet that has shipped ~3,900 commits with 85% coverage and 269 architectural decision records across 9 projects.",
+      "tags": [
+        "architecture",
+        "ai-llm",
+        "leadership",
+        "erp",
+        "integration",
+        "cloud",
+        "security-compliance",
+        "devops"
+      ],
+      "highlights": [
+        {
+          "text": "Led an AI agent fleet building a multi-project automation platform spanning marketing strategy, design, automated ad creation, campaign management, subscription SaaS, compliance, QA, performance and security.",
+          "tags": [
+            "ai-llm",
+            "leadership",
+            "architecture",
+            "offshore-teams"
+          ],
+          "metric": "48 agents · 9 projects · 269 ADRs"
+        },
+        {
+          "text": "Cut LLM token consumption through agent scoping, caching, direct tool access, and call-stack inversion.",
+          "tags": [
+            "ai-llm",
+            "cost-optimisation",
+            "architecture"
+          ],
+          "metric": "92% token reduction"
+        },
+        {
+          "text": "Created an Autofix Agents team — monitor, triage, architect, developer, QA, security — that reliably resolves production issues across all projects.",
+          "tags": [
+            "ai-llm",
+            "devops",
+            "architecture"
+          ],
+          "metric": "48,700+ issues · 94.5% success"
+        },
+        {
+          "text": "Built a shared LLM proxy that routes calls by cost and context, automatically tests new models on release, and switches models as performance shifts. Routes Anthropic Claude, OpenAI ChatGPT, Google Gemini, DeepSeek, Perplexity, Kling, ElevenLabs via OpenRouter.",
+          "tags": [
+            "ai-llm",
+            "architecture",
+            "integration",
+            "cost-optimisation"
+          ]
+        },
+        {
+          "text": "Reviewed and tested AI products at scale. Consolidated winners into a curated stack with platform-wide cost governance.",
+          "tags": [
+            "ai-llm",
+            "leadership"
+          ],
+          "metric": "210+ products evaluated"
+        },
+        {
+          "text": "Replaced legacy corporate systems with ERPNext / Frappe. Consolidated operational data across departments and removed per-seat commercial ERP licence fees.",
+          "tags": [
+            "erp",
+            "transformation",
+            "cost-optimisation"
+          ],
+          "metric": "ERP licence fees → $0"
+        },
+        {
+          "text": "Built ContactReplyAI.com — AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval.",
+          "tags": [
+            "ai-llm",
+            "ecommerce",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Designed AdManager — multi-project ad platform connecting Google Ads, Meta, TikTok with LLM-driven creative generation, strategy, and multivariate split testing.",
+          "tags": [
+            "ai-llm",
+            "integration",
+            "ecommerce"
+          ]
+        },
+        {
+          "text": "Launched Colormora.com — AI colouring-book SaaS on Base44. React/Vite front end, Stripe subscription billing, Cloudflare Worker backend.",
+          "tags": [
+            "ai-llm",
+            "ecommerce",
+            "cloud"
+          ]
+        },
+        {
+          "text": "Built ERPChat — voice-first ERP Android client (Kotlin, Jetpack Compose). HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Open-sourced under Apache-2.0.",
+          "tags": [
+            "ai-llm",
+            "erp",
+            "mobile",
+            "security-compliance"
+          ]
+        },
+        {
+          "text": "Privacy-preserving on-device LLM proxy for ERPChat: Aho-Corasick keyword sanitiser rewrites confidential terms to codewords before requests leave the phone, reverses them on return. External LLM providers never see a real customer or supplier name.",
+          "tags": [
+            "ai-llm",
+            "security-compliance",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Designed a distributed multi-machine agent architecture leveraging unused desktop and server compute across the organisation. Hybrid PostgreSQL + Redis pub/sub + WebSocket + MCP. Cross-machine task distribution, distributed locking, heartbeat failover, Android mobile integration for remote management.",
+          "tags": [
+            "architecture",
+            "integration",
+            "devops",
+            "ai-llm"
+          ]
+        },
+        {
+          "text": "Built auditandfix.com video reviews — unique 30-second marketing videos generated cheaply enough to send to every prospect.",
+          "tags": [
+            "ai-llm",
+            "cost-optimisation",
+            "ecommerce"
+          ],
+          "metric": "$0.11 / video"
+        },
+        {
+          "text": "Autonomous SERP-to-outreach pipeline — Playwright browser automation, adaptive concurrency, GDPR/TCPA gating, country localisation.",
+          "tags": [
+            "ai-llm",
+            "integration",
+            "security-compliance",
+            "devops"
+          ],
+          "metric": "~8,900 outreaches"
+        },
+        {
+          "text": "Email deliverability: IP warming, SPF/DKIM/DMARC alignment, MTA-STS, BIMI, ReturnPath and reputation monitoring.",
+          "tags": [
+            "security-compliance",
+            "devops",
+            "integration"
+          ]
+        },
+        {
+          "text": "Idempotent IaC provisioning across AWS SES/SNS/S3/IAM, Twilio, and Cloudflare Workers. Declarative server and desktop builds using Nix.",
+          "tags": [
+            "cloud",
+            "devops",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Legal-grade communications archive on AWS S3 Object Lock (WORM). Every email and SMS the platform sends or receives routes through a shared wrapper, enforced at pre-commit and in CI.",
+          "tags": [
+            "security-compliance",
+            "cloud",
+            "architecture"
+          ],
+          "metric": "20/20 tamper-replay drill"
+        },
+        {
+          "text": "Cybersecurity hardening: shared secret-scanning pre-commit hook catches AWS, Stripe, PayPal, SMTP credential patterns + high-entropy strings. Prompt-injection hardening with Promptfoo. White-box red-team pen-testing with Shannon.",
+          "tags": [
+            "security-compliance",
+            "devops"
+          ]
+        },
+        {
+          "text": "Lift in member engagement through AI-driven marketing automation.",
+          "tags": [
+            "ai-llm",
+            "ecommerce"
+          ],
+          "metric": "+30% engagement"
+        },
+        {
+          "text": "Strategic planning to diversify income streams; established robust business continuity plan with distributed, tested, documented infrastructure.",
+          "tags": [
+            "leadership",
+            "transformation",
+            "stakeholder"
+          ]
+        }
+      ],
+      "softSkills": [
+        "Leadership (set with tooling, not memos)",
+        "Strategic thinking (cross-domain: technical, commercial, legal, compliance)",
+        "Written-first communication (269-entry ADR register as single source of truth)",
+        "First-principles problem-solving",
+        "Decision-making under uncertainty",
+        "Adaptability across 9 concurrent projects and multiple stacks",
+        "Autonomous self-direction",
+        "Evidence over opinion"
+      ],
+      "hardSkills": [
+        "AI/ML",
+        "OpenAI ChatGPT",
+        "Anthropic Claude",
+        "Google Gemini",
+        "DeepSeek R1",
+        "Perplexity Sonar",
+        "OpenRouter",
+        "Cursor",
+        "Windsurf",
+        "Replit",
+        "Claude Code",
+        "LLM agent architectures",
+        "Prompt engineering",
+        "Python",
+        "Node.js",
+        "PHP",
+        "Kotlin / Jetpack Compose",
+        "React / Vite",
+        "SQL",
+        "PostgreSQL",
+        "SQLite",
+        "ERPNext",
+        "Frappe",
+        "Stripe",
+        "PayPal Billing",
+        "AWS (SES, S3 Object Lock, SNS, IAM)",
+        "Twilio",
+        "ElevenLabs",
+        "Cloudflare (Workers, KV, R2, D1)",
+        "DevOps",
+        "NixOS",
+        "systemd",
+        "Playwright",
+        "OpenCV",
+        "Android / CameraX",
+        "MCP",
+        "Privacy-preserving architecture"
+      ]
+    },
+    {
+      "name": "Amblique",
+      "position": "Solutions Architect (eCommerce Integration)",
+      "employmentType": "Full Time",
+      "startDate": "2021-03",
+      "endDate": "2024-09",
+      "location": "Sydney",
+      "summary": "Architected e-commerce solutions on Salesforce B2C Commerce Cloud and Shopify Plus for high-street brands. One of 5 architects providing technical direction to a team of 30 Australian + 30 offshore developers. Primary technical contact for clients, balancing innovation with feasibility and compliance.",
+      "tags": [
+        "architecture",
+        "ecommerce",
+        "integration",
+        "leadership",
+        "presales",
+        "crm",
+        "ai-llm"
+      ],
+      "clients": [
+        "T2 Tea",
+        "Lorna Jane",
+        "Rodd and Gunn",
+        "Hill Smith Family Vineyards",
+        "Australian Vintage Limited",
+        "Brandbank"
+      ],
+      "highlights": [
+        {
+          "text": "Delivered e-commerce solutions for T2 Tea, Lorna Jane, Rodd and Gunn, Hill Smith Family Vineyards, Australian Vintage Limited, and Brandbank.",
+          "tags": [
+            "ecommerce",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Architected Lorna Jane's shift to headless composable SFCC, then planned migration to Shopify Plus' Hydrogen + Oxygen stack.",
+          "tags": [
+            "ecommerce",
+            "architecture",
+            "transformation"
+          ]
+        },
+        {
+          "text": "Architected integrations across payments, fraud, logistics, ERP, CDP, OMS, CRM, PIM, CMS, DAM, personalisation, UGC, reviews, split testing, merchandising, returns, analytics, BI, iPaaS, loyalty and marketing platforms.",
+          "tags": [
+            "integration",
+            "architecture",
+            "ecommerce",
+            "erp",
+            "crm"
+          ]
+        },
+        {
+          "text": "Optimised page load times across all client sites; significant Web Vitals improvements as the team's SME.",
+          "tags": [
+            "architecture",
+            "ecommerce"
+          ]
+        },
+        {
+          "text": "Introduced an AI expert system answering technical queries about the core software platform; architected a follow-on upgrade drawing on all internal Jira, Confluence and Slack content.",
+          "tags": [
+            "ai-llm",
+            "integration",
+            "knowledge-mgmt"
+          ]
+        },
+        {
+          "text": "Provided pre-sales support across multiple client pitches and workshop-facilitated requirements gathering.",
+          "tags": [
+            "presales",
+            "stakeholder"
+          ]
+        },
+        {
+          "text": "Risk management, governance, compliance oversight for regulated retail clients.",
+          "tags": [
+            "security-compliance",
+            "stakeholder"
+          ]
+        }
+      ],
+      "softSkills": [
+        "Leadership",
+        "Communication",
+        "Project scoping and estimation",
+        "Problem-solving",
+        "Team collaboration",
+        "Client relationship management",
+        "Strategic thinking",
+        "Adaptability",
+        "Time management"
+      ],
+      "hardSkills": [
+        "Salesforce B2C Commerce Cloud / SFCC / Demandware",
+        "Shopify Plus",
+        "Headless / composable commerce",
+        "Hydrogen + Oxygen",
+        "Web performance optimisation",
+        "AI/ML technologies",
+        "Agile methodology",
+        "Pre-sales",
+        "Technical documentation",
+        "Jira",
+        "Confluence"
+      ]
+    },
+    {
+      "name": "Apptimise",
+      "position": "Managing Director",
+      "positionFlexible": true,
+      "positionDefault": "Managing Director",
+      "positionAliases": [
+        "Founder",
+        "Principal Consultant",
+        "Solutions Architect"
+      ],
+      "employmentType": "Self-Employed",
+      "startDate": "2019-07",
+      "endDate": "2021-03",
+      "location": "Sydney",
+      "summary": "Lean start-up with a team of 4 building web apps, Shopify e-commerce, project management, coaching and consulting. Performance optimisation by integrating business process re-engineering, employee engagement, UX, CRO and page-load speed.",
+      "tags": [
+        "leadership",
+        "ecommerce",
+        "presales",
+        "transformation"
+      ],
+      "highlights": [
+        {
+          "text": "Founded and led a 4-person team across web apps, Shopify e-commerce, project management and consulting.",
+          "tags": [
+            "leadership",
+            "ecommerce"
+          ]
+        },
+        {
+          "text": "Integrated business process re-engineering, employee engagement, UX, CRO and page-load speed into a single performance-optimisation offering.",
+          "tags": [
+            "transformation",
+            "ecommerce",
+            "architecture"
+          ]
+        }
+      ],
+      "hardSkills": [
+        "Shopify",
+        "WordPress",
+        "Business process re-engineering",
+        "CRO",
+        "UX",
+        "Web performance"
+      ]
+    },
+    {
+      "name": "OneContact",
+      "position": "IT Manager",
+      "employmentType": "Permanent",
+      "startDate": "2017-03",
+      "endDate": "2019-07",
+      "location": "Sydney",
+      "context": "On-shore call centre with 500 agents providing outbound telemarketing and raffle management for non-profits, plus inbound helpdesk and reception. Clients: PCYC, Epilepsy Action Australia, Rural Fire Service Australia, Kids With Cancer, Red Cross, UNICEF, Yellow Brick Road, Colgate, State Emergency Services, WD-40, government initiatives.",
+      "summary": "Planned, organised, controlled and coordinated all IT operations to ensure 500 agents delivered campaigns on time. Managed up to 15 SQL/.NET/web developers, VOIP engineers and print managers across Sydney, Wellington and Jakarta. Architected the cloud migration strategy end-to-end.",
+      "tags": [
+        "leadership",
+        "erp",
+        "cloud",
+        "data-analytics",
+        "security-compliance",
+        "offshore-teams",
+        "architecture",
+        "stakeholder"
+      ],
+      "highlights": [
+        {
+          "text": "Operational efficiency lift through workflow optimisation and SQL performance tuning, driven by Analysis Services and Power BI business insights.",
+          "tags": [
+            "data-analytics",
+            "architecture",
+            "transformation"
+          ],
+          "metric": "+210% efficiency"
+        },
+        {
+          "text": "Reduction in IT expenses through cloud migration and vendor consolidation.",
+          "tags": [
+            "leadership",
+            "cost-optimisation"
+          ],
+          "metric": "-38% IT spend"
+        },
+        {
+          "text": "Architected, pitched and delivered the cloud migration strategy: onsite Exchange → Office 365; onsite Noble Systems predictive VOIP dialler → cloud; 5 BI databases migrated SQL 2008 → Azure SQL 2017.",
+          "tags": [
+            "cloud",
+            "transformation",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Built 3 hyperconverged clusters in Proxmox and Hyper-V, later migrated to AWS.",
+          "tags": [
+            "cloud",
+            "networking-infra",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Researched, pitched and architected the rebuild of all core systems in BPM and Odoo ERP with unified communications / omnichannel integrations.",
+          "tags": [
+            "erp",
+            "architecture",
+            "integration",
+            "presales"
+          ]
+        },
+        {
+          "text": "Introduced Jira workflow management, LastPass enterprise password management, digital wallboards, virtual scrum, SQL code-quality tooling, offsite backups, disaster recovery plan, emergency response strategy, and built a custom automated task-prioritisation system in Jira.",
+          "tags": [
+            "devops",
+            "security-compliance",
+            "leadership"
+          ]
+        },
+        {
+          "text": "PCI Compliance planning and security hardening across the platform.",
+          "tags": [
+            "security-compliance"
+          ]
+        },
+        {
+          "text": "Managed up to 15 developers across Sydney, Wellington and Jakarta — SQL, .NET, web, VOIP engineers, print managers.",
+          "tags": [
+            "leadership",
+            "offshore-teams"
+          ]
+        },
+        {
+          "text": "Managed telecommunications infrastructure for up to 500 phone agents on VOIP telephony.",
+          "tags": [
+            "networking-infra"
+          ]
+        }
+      ],
+      "softSkills": [
+        "Stakeholder management",
+        "Cross-cultural relationship management",
+        "Data analysis",
+        "Project management",
+        "Conflict resolution",
+        "Time management",
+        "Workflow optimisation",
+        "Solution architecture",
+        "Remote developer management",
+        "BI reporting",
+        "Mentoring and coaching"
+      ],
+      "hardSkills": [
+        "SQL Server 2008–2017",
+        "Azure",
+        "Hyper-V",
+        "SSAS",
+        "Power BI",
+        "Windows Server 2008–2016",
+        "SSIS",
+        "Microsoft Project",
+        "AWS",
+        "Active Directory Group Policies",
+        "Office 365",
+        "SSMSBoost",
+        "dbForge",
+        "Clustering",
+        "Atlassian Jira",
+        "Bash Scripting",
+        "ApexSQL",
+        "PowerShell",
+        "Chocolatey",
+        "Proxmox",
+        "Ceph",
+        "CentOS",
+        "Windows 10",
+        "BPMN 2.0",
+        "WordPress",
+        "Upwork",
+        "Altaro Backup",
+        "Odoo",
+        "Active Directory",
+        "SIP",
+        "VOIP",
+        "Noble Systems"
+      ]
+    },
+    {
+      "name": "Duxe Software Systems",
+      "position": "Lead Architect → CTO",
+      "employmentType": "Part Time",
+      "startDate": "2016-04",
+      "endDate": "2019-07",
+      "location": "Sydney",
+      "context": "High-level dashboards for CXOs and Program Offices to track enterprise project progress with drill-down to identify blockages. Includes gamification, AI and collaboration.",
+      "summary": "Began as Lead Architect, promoted to CTO. Recruited and managed 14 ReactJS and Python/Django developers, business analysts, UX designers, Scrum Masters and QA. Technical oversight and consulting.",
+      "tags": [
+        "architecture",
+        "leadership",
+        "security-compliance",
+        "ai-llm",
+        "data-analytics",
+        "devops"
+      ],
+      "highlights": [
+        {
+          "text": "Recruited and managed 14 ReactJS and Python/Django developers, BAs, UX, Scrum Masters and QA.",
+          "tags": [
+            "leadership"
+          ]
+        },
+        {
+          "text": "Ensured ISO 27001 Compliance for KPMG and Defence Force deployments.",
+          "tags": [
+            "security-compliance"
+          ]
+        },
+        {
+          "text": "Produced comprehensive Software Architecture document; introduced Jira and Slack; optimised DevOps Continuous Integration pipeline.",
+          "tags": [
+            "architecture",
+            "devops"
+          ]
+        },
+        {
+          "text": "Researched top 30 leading Business Intelligence platforms.",
+          "tags": [
+            "data-analytics"
+          ]
+        }
+      ],
+      "hardSkills": [
+        "Heroku",
+        "Slack",
+        "Atlassian Jira",
+        "Docker",
+        "AWS",
+        "CircleCI",
+        "Sentry",
+        "Python",
+        "BrowserStack",
+        "Sqreen",
+        "Zapier",
+        "PowerBI",
+        "ReactJS",
+        "Python/Django"
+      ]
+    },
+    {
+      "name": "Corporate Spend",
+      "position": "Chief Technical Officer",
+      "employmentType": "Part Time",
+      "startDate": "2014-04",
+      "endDate": "2019-07",
+      "location": "Sydney",
+      "summary": "Founding partner of a For-Profit Social Enterprise, responsible for all technology decisions and oversight; continues as a part-time side project.",
+      "tags": [
+        "leadership",
+        "architecture"
+      ],
+      "highlights": [
+        {
+          "text": "Founding partner; all technology decisions and oversight for the social enterprise.",
+          "tags": [
+            "leadership",
+            "architecture"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corporate SEO",
+      "position": "Managing Director",
+      "positionFlexible": true,
+      "positionDefault": "Managing Director",
+      "positionAliases": [
+        "Principal Architect",
+        "Founder",
+        "Principal Consultant",
+        "Pre-Sales Architect"
+      ],
+      "employmentType": "Full Time",
+      "startDate": "2012-04",
+      "endDate": "2017-02",
+      "location": "Sydney",
+      "context": "Digital marketing agency specialising in Black Hat SEO, plus web development, cybersecurity and technical consulting.",
+      "summary": "Principal Consultant across digital marketing, web performance and security. Wore all hats: digital producer, technical BA, BDM, pre-sales architect, staff manager, technical mentor.",
+      "tags": [
+        "leadership",
+        "ecommerce",
+        "presales",
+        "architecture",
+        "data-analytics",
+        "security-compliance",
+        "offshore-teams",
+        "stakeholder"
+      ],
+      "highlights": [
+        {
+          "text": "Recruited, trained and managed permanent and casual staff at scale.",
+          "tags": [
+            "leadership",
+            "offshore-teams"
+          ],
+          "metric": "10 perm + 200+ casual"
+        },
+        {
+          "text": "Architected a system delivering first-page Google rankings at scale.",
+          "tags": [
+            "architecture",
+            "ecommerce"
+          ],
+          "metric": "20,000+ rankings/yr"
+        },
+        {
+          "text": "Attracted, closed, project-managed and delivered new business.",
+          "tags": [
+            "presales",
+            "stakeholder"
+          ],
+          "metric": "$480k new biz"
+        },
+        {
+          "text": "Managed and successfully delivered over 50 software development projects.",
+          "tags": [
+            "leadership",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Oversaw development and maintenance of a large WordPress portfolio.",
+          "tags": [
+            "leadership",
+            "ecommerce"
+          ],
+          "metric": "450 sites"
+        },
+        {
+          "text": "Orchestrated analysis of websites and search keywords at internet scale.",
+          "tags": [
+            "data-analytics",
+            "architecture"
+          ],
+          "metric": "1.5B sites · 100k keywords"
+        },
+        {
+          "text": "Created new product lines and sales funnels that grew revenue.",
+          "tags": [
+            "ecommerce",
+            "leadership"
+          ],
+          "metric": "+32% revenue"
+        },
+        {
+          "text": "Architected and managed development of 5 CRM solutions.",
+          "tags": [
+            "architecture",
+            "crm"
+          ]
+        },
+        {
+          "text": "Architected the enterprise data model, cloud infrastructure and Azure LightSwitch front-end.",
+          "tags": [
+            "architecture",
+            "cloud",
+            "data-analytics"
+          ]
+        },
+        {
+          "text": "Developed a 364-point quality assurance checklist; re-engineered the website maintenance workflow and built a Jira-based payroll workflow.",
+          "tags": [
+            "devops",
+            "transformation"
+          ],
+          "metric": "+25% ops · +25% payroll"
+        },
+        {
+          "text": "Researched and evaluated over 310 software tools and SEO strategies; developed statistical analysis methodology to predict SEO competition levels.",
+          "tags": [
+            "data-analytics",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Thought leadership and speaking engagements at SME Association of Australia, Business Enterprise Centre, Rotary and Business Networking International.",
+          "tags": [
+            "stakeholder",
+            "leadership"
+          ]
+        },
+        {
+          "text": "Completed 2 migrations to Google Apps for Business, and 2 migrations to Office 365.",
+          "tags": [
+            "cloud",
+            "transformation"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Employment Portal — Corrective Services NSW (via RXP Services)",
+          "role": "Technical BA · Solution Architect · Agile Development Manager",
+          "highlights": [
+            "Designed and delivered a jobseeker training system for prison inmates.",
+            "First system to connect inmates with the outside world — strong cybersecurity focus.",
+            "Managed RXP's offshore development team with Agile best practices.",
+            "Configured 7 RHEL servers with full-stack security hardening at every OSI level."
+          ],
+          "tags": [
+            "architecture",
+            "security-compliance",
+            "offshore-teams",
+            "presales"
+          ]
+        },
+        {
+          "name": "Banking Website Architecture — Illawarra Credit Union (via New Republique)",
+          "role": "Solution Architect",
+          "highlights": [
+            "Comprehensive System Architecture covering development, deployment and ongoing management — infrastructure, workflow, functionality, data, traffic generation; performance, reliability, scalability, compliance, security.",
+            "Reduced development costs by 43% through judicious technology choices and development best practices.",
+            "Successfully debated a major platform change with CEO and key client stakeholders — cut delivery time 25%, reduced maintenance costs 20%.",
+            "Delivered a development standards document the agency re-used on future projects."
+          ],
+          "tags": [
+            "architecture",
+            "financial-services",
+            "stakeholder",
+            "presales",
+            "security-compliance"
+          ]
+        },
+        {
+          "name": "WordPress Performance Tuning — Aptus",
+          "role": "Performance Consultant",
+          "highlights": [
+            "Reduced corporate website page load time from 20–60 seconds to under 1 second.",
+            "Added mobile responsiveness and cross-browser compatibility.",
+            "30% increase in team's operational output via infrastructure / software support consulting."
+          ],
+          "tags": [
+            "architecture",
+            "ecommerce",
+            "cloud"
+          ]
+        },
+        {
+          "name": "Quoting & Timesheet System — Verser / Avelytics",
+          "role": "Scrum Master / Architect",
+          "highlights": [
+            "Created Functional Specification, BPMN Process Models, User Stories, Acceptance Criteria.",
+            "Planned Agile Sprints; developed LightSwitch .NET proof-of-concept in under 1 week."
+          ],
+          "tags": [
+            "architecture",
+            "transformation"
+          ]
+        }
+      ],
+      "softSkills": [
+        "Sales",
+        "Marketing",
+        "Data analysis",
+        "Solution architecture",
+        "Team building",
+        "Six Sigma",
+        "Project management",
+        "Recruitment",
+        "Process documentation",
+        "Business analysis",
+        "Workflow redesign",
+        "Remote developer management",
+        "BI reporting",
+        "Business networking",
+        "Contract negotiation",
+        "Process improvement",
+        "Branding",
+        "Design sense",
+        "Coaching"
+      ],
+      "hardSkills": [
+        "PHP",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "AJAX",
+        "jQuery",
+        "WordPress",
+        "SQL Server",
+        "NodeJS",
+        "Angular 2",
+        "SASS",
+        "C# .NET",
+        "Linq",
+        "SOAP",
+        "Web Services",
+        "JIRA",
+        "Responsive Web Design",
+        "React.js",
+        "Amazon Web Services (EC2, SES, RDS, S3, Elastic Beanstalk, CloudFront, CloudWatch)",
+        "CloudFlare",
+        "Incapsula",
+        "MailChimp",
+        "Zoho",
+        "Node.js",
+        "ExpressJS",
+        "Mocha",
+        "Chai",
+        "Heroku",
+        "Travis CI"
+      ]
+    },
+    {
+      "name": "Reserve Bank of Australia",
+      "position": "Development Team Lead · Architect · Best Practices Evangelist",
+      "employmentType": "Permanent",
+      "startDate": "2008-04",
+      "endDate": "2012-04",
+      "location": "Sydney",
+      "summary": "Led a distributed team of C# .NET and SQL Server developers. Project-managed a SQL 2005 to 2008 upgrade across 22 systems. Managed 2 Data Warehouse migrations. Launched 3 developer groups to standardise tools and Agile best practices across the bank.",
+      "tags": [
+        "financial-services",
+        "architecture",
+        "leadership",
+        "data-analytics",
+        "integration",
+        "security-compliance",
+        "stakeholder",
+        "transformation"
+      ],
+      "highlights": [
+        {
+          "text": "Project-managed a SQL Server platform upgrade across the bank's analytical systems.",
+          "tags": [
+            "data-analytics",
+            "transformation",
+            "architecture"
+          ],
+          "metric": "22 systems upgraded"
+        },
+        {
+          "text": "Managed 2 Data Warehouse migrations.",
+          "tags": [
+            "data-analytics",
+            "transformation"
+          ]
+        },
+        {
+          "text": "Launched 3 developer groups to standardise tools and Agile best practices bank-wide.",
+          "tags": [
+            "leadership",
+            "transformation"
+          ]
+        },
+        {
+          "text": "Re-engineered the database development lifecycle with Source Control, TDD and Continuous Integration.",
+          "tags": [
+            "devops",
+            "transformation"
+          ]
+        },
+        {
+          "text": "Facilitated bank-wide VBA training workshops.",
+          "tags": [
+            "leadership",
+            "stakeholder"
+          ]
+        },
+        {
+          "text": "Liaised with APRA to improve system integration and developed the migration plan for XBRL 2.1.",
+          "tags": [
+            "financial-services",
+            "integration",
+            "stakeholder"
+          ]
+        },
+        {
+          "text": "Acted as Product Owner in Scrum SDLC: requirements gathering, business analysis, stakeholder management.",
+          "tags": [
+            "stakeholder",
+            "architecture"
+          ]
+        },
+        {
+          "text": "Networked throughout the bank to minimise red tape and meet timelines; managed senior management expectations.",
+          "tags": [
+            "stakeholder",
+            "leadership"
+          ]
+        }
+      ],
+      "softSkills": [
+        "Project management",
+        "Mentoring",
+        "Quality control",
+        "Business process improvement",
+        "Management reporting",
+        "Conflict resolution",
+        "Stakeholder management",
+        "Solution architecture",
+        "Software design patterns",
+        "Remote developer management",
+        "Coaching"
+      ],
+      "hardSkills": [
+        "SQL Server",
+        "SSIS",
+        "T-SQL",
+        "C# .NET",
+        "MVC pattern",
+        "Winforms",
+        "ETL",
+        "BI",
+        "SSAS",
+        "MS Access/Word/Excel VBA",
+        "VSTO",
+        "NUnit",
+        "ReSharper",
+        "Visual Studio",
+        "SharePoint",
+        "Agile/Scrum",
+        "SOAP",
+        "Web Services",
+        "JIRA",
+        "Confluence",
+        "RESTful APIs",
+        "UML",
+        "XPath",
+        "Subversion",
+        "Tortoise SVN",
+        "SourceSafe",
+        "WhereScape RED",
+        "Tableau",
+        "TFS",
+        "Rally"
+      ],
+      "agilePractices": [
+        "Daily Standups",
+        "Kanban",
+        "Rally",
+        "Iterations",
+        "Backlog Grooming",
+        "Planning Poker (T-Shirt Sizes)",
+        "Given-When-Then (Cucumber)",
+        "BDD",
+        "Mocking Frameworks",
+        "Unit Testing",
+        "Usability Testing",
+        "CI",
+        "Continuous Delivery",
+        "Refactoring",
+        "Spikes",
+        "Velocity Tuning",
+        "Definition of Done",
+        "Paired Programming",
+        "User Stories",
+        "Story Splitting",
+        "Timeboxing",
+        "Heartbeat Retrospectives",
+        "Burndown Charts"
+      ]
+    },
+    {
+      "name": "Charles Marcus Management Consulting",
+      "position": "Management Consultant",
+      "positionFlexible": true,
+      "positionDefault": "Management Consultant",
+      "positionAliases": [
+        "Solutions Architect",
+        "Project Manager",
+        "Engineering Lead",
+        "Technical Business Analyst",
+        "Senior Developer"
+      ],
+      "employmentType": "Contract",
+      "startDate": "2001-06",
+      "endDate": "2007-07",
+      "location": "London",
+      "summary": "Six years contracting through Charles Marcus across financial services, law, utilities and government. Multiple concurrent client engagements spanning architecture, project management, engineering leadership and senior development.",
+      "tags": [
+        "financial-services",
+        "architecture",
+        "leadership",
+        "data-analytics",
+        "integration",
+        "stakeholder",
+        "offshore-teams"
+      ],
+      "projects": [
+        {
+          "name": "Front Office Tactical Development — Calyon Global Trading",
+          "role": "Senior Front Office Developer",
+          "highlights": [
+            "Developed a Credit Default Swaps (CDS) Pricer for Front Office Traders as an Excel add-in.",
+            "Interpolation by calendar or roll date; plotted curve for any tranche from any issuer; deal builder for booking new trades.",
+            "Basic portfolio management and iTraxx Index Pricer.",
+            "High-intensity role — every minute of downtime could cost £60,000."
+          ],
+          "tags": [
+            "financial-services",
+            "architecture",
+            "data-analytics"
+          ]
+        },
+        {
+          "name": "Data Migration — Freshfields Bruckhaus Deringer",
+          "role": "Solutions Architect",
+          "highlights": [
+            "Records Management migration for UK's 4th largest law firm.",
+            "Data migration, database design, data analysis."
+          ],
+          "tags": [
+            "data-analytics",
+            "architecture",
+            "transformation"
+          ]
+        },
+        {
+          "name": "Business Intelligence — uSwitch.com",
+          "role": "BI Architect",
+          "highlights": [
+            "Data aggregation, analysis, modelling and BI reporting for utilities comparison website in SQL Server."
+          ],
+          "tags": [
+            "data-analytics",
+            "architecture"
+          ]
+        },
+        {
+          "name": "Office Migration Project Manager — EDS / ABN Amro",
+          "role": "Project Manager",
+          "highlights": [
+            "Hired and managed a global team of 40 VBA developers.",
+            "Liaised with 50+ technical and business stakeholders.",
+            "Migrated 2 million spreadsheets for 20,000 front-office traders from Excel XP to 2003.",
+            "Designed an SOE upgrade process that delivered 4 weeks of migration work in 5 minutes of downtime — 24-hour change freeze, 90-second back-out plan.",
+            "Zero-tolerance-for-downtime environment with constant change and shifting targets."
+          ],
+          "tags": [
+            "leadership",
+            "offshore-teams",
+            "transformation",
+            "stakeholder",
+            "financial-services"
+          ]
+        },
+        {
+          "name": "Windows Migration Manager — Tubelines (London Underground)",
+          "role": "Project Manager / Engineering Lead",
+          "highlights": [
+            "Managed migration of 3,500 staff from Windows 2000 to Windows XP.",
+            "Designed and developed a desktop infrastructure scanner to inventory software across all desktops."
+          ],
+          "tags": [
+            "transformation",
+            "architecture",
+            "leadership"
+          ]
+        },
+        {
+          "name": "Senior Developer — Royal Bank of Scotland",
+          "role": "Senior Developer",
+          "highlights": [
+            "Reverse-engineered 4 back-office settlement systems and migrated them to VB6 and Microsoft SQL 7."
+          ],
+          "tags": [
+            "financial-services",
+            "transformation",
+            "architecture"
+          ]
+        }
+      ],
+      "hardSkills": [
+        "Excel VBA",
+        "C# .NET",
+        "Winforms",
+        "RAD Prototyping",
+        "Credit Derivatives",
+        "Markit RED",
+        "Bloomberg",
+        "Moody's",
+        "S&P",
+        "Rolfe & Nolan",
+        "Fitch",
+        "Markit Wire",
+        "Murex",
+        "SQL Server",
+        "SSIS",
+        "ETL",
+        "VB.NET",
+        "SOA",
+        "Automated Testing",
+        "ASP.NET",
+        "DTS",
+        "Gilts",
+        "Bonds",
+        "Swaps",
+        "Repos",
+        "Reverse Repos",
+        "Back Office Banking"
+      ]
+    },
+    {
+      "name": "N M Rothschild",
+      "position": "Senior Front Office Developer",
+      "employmentType": "Permanent",
+      "startDate": "2000-10",
+      "endDate": "2001-02",
+      "location": "London",
+      "tags": [
+        "financial-services",
+        "architecture"
+      ],
+      "earlierCareer": true
+    },
+    {
+      "name": "St George Bank",
+      "position": "Senior SQL/.NET Developer",
+      "employmentType": "Permanent",
+      "startDate": "1998-07",
+      "endDate": "2000-10",
+      "location": "Sydney",
+      "tags": [
+        "financial-services",
+        "architecture"
+      ],
+      "earlierCareer": true
+    },
+    {
+      "name": "BHP / Billiton",
+      "position": "Senior Developer",
+      "employmentType": "Permanent",
+      "startDate": "1997-07",
+      "endDate": "1998-06",
+      "location": "Sydney",
+      "tags": [
+        "architecture"
+      ],
+      "earlierCareer": true
+    },
+    {
+      "name": "OzEmail Internet",
+      "position": "Developer / DBA",
+      "employmentType": "Permanent",
+      "startDate": "1996-01",
+      "endDate": "1997-07",
+      "location": "Sydney",
+      "tags": [
+        "architecture",
+        "data-analytics"
+      ],
+      "earlierCareer": true
+    },
+    {
+      "name": "BORAL",
+      "position": "Junior Software Developer",
+      "employmentType": "Permanent",
+      "startDate": "1995-02",
+      "endDate": "1995-12",
+      "location": "Sydney",
+      "tags": [
+        "architecture"
+      ],
+      "earlierCareer": true
+    }
+  ],
+  "skillsByCategory": {
+    "softSkills": [
+      {
+        "name": "IT Industry",
+        "years": 32
+      },
+      {
+        "name": "Business Analysis",
+        "years": 24
+      },
+      {
+        "name": "Data Analysis",
+        "years": 23
+      },
+      {
+        "name": "Strategy Development",
+        "years": 19
+      },
+      {
+        "name": "Quality Control",
+        "years": 18
+      },
+      {
+        "name": "Database Design",
+        "years": 17
+      },
+      {
+        "name": "Technical Coaching",
+        "years": 17
+      },
+      {
+        "name": "Process Improvement",
+        "years": 17
+      },
+      {
+        "name": "Developer Management",
+        "years": 17
+      },
+      {
+        "name": "Workflow Automation",
+        "years": 16
+      },
+      {
+        "name": "Solutions Architecture Design",
+        "years": 15
+      },
+      {
+        "name": "Business Process Modelling (BPM)",
+        "years": 15
+      },
+      {
+        "name": "Directorship / Governance",
+        "years": 14
+      },
+      {
+        "name": "Conflict / Dispute Resolution",
+        "years": 13
+      },
+      {
+        "name": "Stakeholder Engagement",
+        "years": 13
+      },
+      {
+        "name": "Offshore Management",
+        "years": 12
+      },
+      {
+        "name": "Public Speaking",
+        "years": 12
+      },
+      {
+        "name": "Change Management",
+        "years": 12
+      },
+      {
+        "name": "Business Networking",
+        "years": 10
+      },
+      {
+        "name": "Workshop Facilitation",
+        "years": 10
+      },
+      {
+        "name": "Management Consulting",
+        "years": 8
+      },
+      {
+        "name": "BDM / Sales / Pre-Sales",
+        "years": 8
+      },
+      {
+        "name": "Financial Markets",
+        "years": 8
+      },
+      {
+        "name": "Negotiation / Persuasion",
+        "years": 8
+      },
+      {
+        "name": "Proposal Writing",
+        "years": 8
+      },
+      {
+        "name": "Scrum Master / Agile Coach",
+        "years": 7
+      }
+    ],
+    "technologies": [
+      {
+        "name": "SQL Server",
+        "years": 19
+      },
+      {
+        "name": "Data Migration (SSIS / ETL)",
+        "years": 17
+      },
+      {
+        "name": "Excel VBA / Access VBA",
+        "years": 16
+      },
+      {
+        "name": "Linux (CentOS / RHEL / Ubuntu)",
+        "years": 14
+      },
+      {
+        "name": "SQL Performance Tuning",
+        "years": 13
+      },
+      {
+        "name": "CSS3 / HTML5 / XML / JSON",
+        "years": 12
+      },
+      {
+        "name": "PHP / WordPress",
+        "years": 11
+      },
+      {
+        "name": "Atlassian JIRA",
+        "years": 10
+      },
+      {
+        "name": "Agile Methodology",
+        "years": 9
+      },
+      {
+        "name": "Cyber Security",
+        "years": 8
+      },
+      {
+        "name": "Web Performance Tuning",
+        "years": 8
+      },
+      {
+        "name": "JavaScript / jQuery",
+        "years": 8
+      },
+      {
+        "name": "C# .NET",
+        "years": 8
+      },
+      {
+        "name": "Search Engine Optimisation",
+        "years": 7
+      },
+      {
+        "name": "Azure / AWS / Google Cloud",
+        "years": 6
+      },
+      {
+        "name": "Digital Marketing",
+        "years": 6
+      },
+      {
+        "name": "Shopify / Shopify Plus",
+        "years": 5
+      },
+      {
+        "name": "DevOps",
+        "years": 4
+      },
+      {
+        "name": "AI / ML (Claude Code, LLM orchestration)",
+        "years": 4
+      },
+      {
+        "name": "Salesforce B2C Commerce Cloud",
+        "years": 3
+      },
+      {
+        "name": "Active Directory",
+        "years": 3
+      },
+      {
+        "name": "ERPNext",
+        "years": 1
+      },
+      {
+        "name": "Unified Communications / VOIP",
+        "years": 1
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Solutions Architecture",
+      "level": "Expert",
+      "yearsExperience": 15,
+      "tags": [
+        "architecture",
+        "integration"
+      ]
+    },
+    {
+      "name": "AI / LLM Integration",
+      "level": "Expert",
+      "yearsExperience": 4,
+      "tags": [
+        "ai-llm",
+        "integration"
+      ]
+    },
+    {
+      "name": "Salesforce B2C Commerce Cloud",
+      "level": "Senior",
+      "yearsExperience": 3,
+      "tags": [
+        "ecommerce",
+        "crm"
+      ]
+    },
+    {
+      "name": "Shopify Plus",
+      "level": "Senior",
+      "yearsExperience": 5,
+      "tags": [
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "Cloud (AWS / Azure / GCP)",
+      "level": "Senior",
+      "yearsExperience": 6,
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "name": "SQL Server / Data Engineering",
+      "level": "Expert",
+      "yearsExperience": 19,
+      "tags": [
+        "data-analytics"
+      ]
+    },
+    {
+      "name": "Financial Services Tech",
+      "level": "Expert",
+      "yearsExperience": 10,
+      "tags": [
+        "financial-services"
+      ]
+    },
+    {
+      "name": "Distributed / Offshore Team Leadership",
+      "level": "Expert",
+      "yearsExperience": 17,
+      "tags": [
+        "leadership",
+        "offshore-teams"
+      ]
+    },
+    {
+      "name": "Pre-Sales / Bids / Proposals",
+      "level": "Senior",
+      "yearsExperience": 8,
+      "tags": [
+        "presales",
+        "stakeholder"
+      ]
+    },
+    {
+      "name": "ERP (ERPNext / Odoo / SFCC integrations)",
+      "level": "Senior",
+      "yearsExperience": 4,
+      "tags": [
+        "erp",
+        "integration"
+      ]
+    },
+    {
+      "name": "Cybersecurity / Compliance",
+      "level": "Senior",
+      "yearsExperience": 8,
+      "tags": [
+        "security-compliance"
+      ]
+    },
+    {
+      "name": "Business Analysis",
+      "level": "Expert",
+      "yearsExperience": 24,
+      "tags": [
+        "stakeholder",
+        "architecture"
+      ]
+    }
+  ],
+  "directorships": [
+    {
+      "title": "Managing Director · Corporate SEO",
+      "startDate": "2012",
+      "endDate": "2023"
+    },
+    {
+      "title": "Director · Chief Technology Officer · Corporate Spend",
+      "startDate": "2014",
+      "endDate": "2022"
+    },
+    {
+      "title": "Board Member · Chief Technology Officer · Living Waters Australia",
+      "startDate": "2010",
+      "endDate": "2014"
+    },
+    {
+      "title": "Board Member · Special Projects · Reserve Bank Benevolent Society",
+      "startDate": "2009",
+      "endDate": "2012"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Scaled Agile Framework (SAFe)",
+      "issuer": "Udemy",
+      "date": "Studying"
+    },
+    {
+      "name": "Six Sigma Green Belt",
+      "issuer": "ExpertRating",
+      "date": "Studying"
+    },
+    {
+      "name": "Mental Health Care",
+      "issuer": "HammondCare",
+      "date": "2025"
+    },
+    {
+      "name": "Zumba Instructor",
+      "issuer": "Zumba International",
+      "date": "2024"
+    },
+    {
+      "name": "Wu-Tang Certified DJ",
+      "issuer": "Wu-Tang Clan",
+      "date": "2022"
+    },
+    {
+      "name": "CPR & First Aid",
+      "issuer": "State Emergency Services",
+      "date": "2020"
+    },
+    {
+      "name": "ITIL v3 Foundation",
+      "issuer": "PeopleCert",
+      "date": "2020"
+    },
+    {
+      "name": "Understanding Privilege, Power and Diversity",
+      "issuer": "The Mankind Project",
+      "date": "2019"
+    },
+    {
+      "name": "Outreach Facilitator",
+      "issuer": "Syzygy Dance Project",
+      "date": "2018"
+    },
+    {
+      "name": "Advanced Leadership",
+      "issuer": "Robert Kirby International",
+      "date": "2016"
+    },
+    {
+      "name": "TOGAF 9.1 Accelerated Enterprise Architect",
+      "issuer": "Udemy",
+      "date": "2016"
+    },
+    {
+      "name": "Body Psychotherapy",
+      "issuer": "Robert Kirby International",
+      "date": "2016"
+    },
+    {
+      "name": "Certified Customer Value Optimisation Specialist",
+      "issuer": "Digital Marketer",
+      "date": "2015"
+    },
+    {
+      "name": "Google Analytics Certification",
+      "issuer": "Google Partners",
+      "date": "2015"
+    },
+    {
+      "name": "Google AdWords Certification",
+      "issuer": "Google Partners",
+      "date": "2015"
+    },
+    {
+      "name": "Conversion Funnel Mastery",
+      "issuer": "Digital Marketer",
+      "date": "2015"
+    },
+    {
+      "name": "Heart Centred Leadership",
+      "issuer": "Robert Kirby International",
+      "date": "2015"
+    },
+    {
+      "name": "Inspire to Buy",
+      "issuer": "Authentic Education",
+      "date": "2015"
+    },
+    {
+      "name": "Difference-Maker Accelerator",
+      "issuer": "Authentic Education",
+      "date": "2015"
+    },
+    {
+      "name": "Certificate IV Small Business Management",
+      "issuer": "SETS",
+      "date": "2014"
+    },
+    {
+      "name": "Microsoft Certified Professional (SQL Server 2012)",
+      "issuer": "Microsoft",
+      "date": "2013"
+    },
+    {
+      "name": "Leading Events and Workshops",
+      "issuer": "Robert Kirby International",
+      "date": "2013"
+    },
+    {
+      "name": "Presenting with Passion",
+      "issuer": "Robert Kirby International",
+      "date": "2013"
+    },
+    {
+      "name": "Results Coaching",
+      "issuer": "Robert Kirby International",
+      "date": "2013"
+    },
+    {
+      "name": "LinkedIn Sales Intensive",
+      "issuer": "Rebel Entrepreneurs",
+      "date": "2012"
+    },
+    {
+      "name": "Present Like a Pro",
+      "issuer": "Authentic Education",
+      "date": "2012"
+    },
+    {
+      "name": "Selling with Integrity",
+      "issuer": "Authentic Education",
+      "date": "2012"
+    },
+    {
+      "name": "Expert Accelerator",
+      "issuer": "Authentic Education",
+      "date": "2012"
+    },
+    {
+      "name": "Certified ScrumMaster",
+      "issuer": "Scrum Alliance",
+      "date": "2011"
+    },
+    {
+      "name": "WhereScape RED Developer",
+      "issuer": "MIP",
+      "date": "2011"
+    },
+    {
+      "name": "Audio Visual (AV) Technician",
+      "issuer": "Thrive Community Church",
+      "date": "2010"
+    },
+    {
+      "name": "Think On Your Feet (Impromptu Speaking)",
+      "issuer": "TOYF International",
+      "date": "2010"
+    },
+    {
+      "name": "Microsoft Certified Professional (SSAS)",
+      "issuer": "Dimension Data",
+      "date": "2009"
+    },
+    {
+      "name": "Financial Services Authority Unit 3 Credit Derivatives",
+      "issuer": "BPP",
+      "date": "2006"
+    },
+    {
+      "name": "Microsoft Certified Application Developer (MCAD)",
+      "issuer": "Microsoft",
+      "date": "2003"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Queensland University of Technology",
+      "studyType": "Bachelor",
+      "area": "Information Technology (Information Systems & Communication)",
+      "endDate": "1995"
+    },
+    {
+      "institution": "Redcliffe State High School",
+      "studyType": "Dux of School",
+      "endDate": "1992"
+    }
+  ],
+  "memberships": [
+    "IEEE Computer Society",
+    "Scrum Alliance",
+    "International Association of Software Architects (IASA)",
+    "International Institute of Business Analysts (IIBA)"
+  ],
+  "personalAchievements": [
+    {
+      "text": "Zumba Instructor",
+      "since": "2024"
+    },
+    {
+      "text": "DJ and Dance Therapist",
+      "since": "2020",
+      "url": "https://vybe.com.au"
+    },
+    {
+      "text": "State Emergency Services Volunteer",
+      "since": "2019"
+    },
+    {
+      "text": "Volunteer Audio Engineer",
+      "since": "1990"
+    },
+    {
+      "text": "Sutherland 2 Surf and City 2 Surf",
+      "date": "2012"
+    },
+    {
+      "text": "BNI Gold Networker Award",
+      "date": "2012"
+    },
+    {
+      "text": "10,000 Push-Ups to Crush Slavery",
+      "date": "2011",
+      "url": "https://crushslavery.com"
+    },
+    {
+      "text": "Duke of Edinburgh's Gold Award",
+      "date": "1995"
+    },
+    {
+      "text": "Dux of School, Redcliffe State High School",
+      "date": "1992"
+    }
+  ],
+  "sideProjects": [
+    {
+      "name": "ContactReplyAI",
+      "url": "https://contactreplyai.com",
+      "description": "AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval."
+    },
+    {
+      "name": "Audit & Fix",
+      "url": "https://auditandfix.com",
+      "description": "Website audit and remediation service — performance, SEO, security, AI-assisted video reviews of every visit."
+    },
+    {
+      "name": "AI Clarity",
+      "url": "https://aiclarity.com.au",
+      "description": "Plain-English AI strategy and adoption advisory for Australian businesses."
+    },
+    {
+      "name": "Vybe",
+      "url": "https://vybe.com.au",
+      "description": "DJ and dance-therapy work."
+    },
+    {
+      "name": "Gumroad",
+      "url": "https://harvest316.gumroad.com",
+      "description": "Independent storefront for digital downloads, templates and tooling."
+    },
+    {
+      "name": "pageload-timer",
+      "url": "https://harvest316.github.io/pageload-timer/",
+      "description": "Sample project — NodeJS / Express.js web service that downloads a list of pages and returns pageload latencies. Demonstrates BDD unit tests in Mocha / Chai / Expect.js, continuously deployed on Heroku via Grunt + Travis CI."
+    }
+  ],
+  "references": [
+    {
+      "name": "Zamil Mohsen",
+      "title": "Head of Technical Solutions",
+      "company": "Amblique",
+      "email": "zmohsen@amblique.com",
+      "phone": "0421 967 293"
+    },
+    {
+      "name": "Paul Clarke",
+      "title": "CEO",
+      "company": "Duxe Software Systems",
+      "email": "paul@duxe.io",
+      "phone": "0418 216 416"
+    },
+    {
+      "name": "Stewart Dawes",
+      "title": "CEO",
+      "company": "Atomic Digital",
+      "email": "stewart@atomicdigital.com.au",
+      "phone": "0413 276 780"
+    },
+    {
+      "name": "Trevor Vella",
+      "title": "Development Manager",
+      "company": "Reserve Bank of Australia",
+      "email": "trevor@netplanetconsulting.com.au",
+      "phone": "0402 434 676"
+    }
+  ],
+  "meta": {
+    "canonical": "https://paulharvey.com.au",
+    "version": "20260528.1",
+    "lastModified": "2026-05-28",
+    "language": "en-AU",
+    "paul": {
+      "tagVocabulary": [
+        "architecture",
+        "cloud",
+        "ai-llm",
+        "integration",
+        "erp",
+        "microsoft",
+        "security-compliance",
+        "data-analytics",
+        "networking-infra",
+        "presales",
+        "crm",
+        "devops",
+        "financial-services",
+        "ecommerce",
+        "leadership",
+        "offshore-teams",
+        "stakeholder",
+        "transformation",
+        "cost-optimisation",
+        "knowledge-mgmt",
+        "mobile"
+      ],
+      "extensionFields": {
+        "highlights[].tags": "string[] — taxonomy match keys",
+        "highlights[].metric": "string — pull-quote numeric callout",
+        "work[].positionFlexible": "boolean — true if title can be chosen per JD",
+        "work[].positionDefault": "string — fallback when generator has no JD signal",
+        "work[].positionAliases": "string[] — alternatives generator may pick from",
+        "work[].earlierCareer": "boolean — collapse under Earlier Career section",
+        "work[].tags": "string[] — role-level taxonomy"
+      }
+    }
+  }
+}

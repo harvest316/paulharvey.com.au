@@ -2,19 +2,23 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // cv.paulharvey.com.au → /cv/ path on main domain
+    // cv.paulharvey.com.au subdomain
     if (url.hostname === 'cv.paulharvey.com.au') {
-      // Serve docs directly if requesting a file
+      // /docs/* → serve docx files from the main domain
       if (url.pathname.startsWith('/docs/')) {
         url.hostname = 'paulharvey.com.au';
         url.pathname = '/cv' + url.pathname;
         return Response.redirect(url.toString(), 301);
       }
-      // Root or any other path → redirect to /cv/
-      return Response.redirect('https://paulharvey.com.au/cv/' + url.pathname.replace(/^\/+/, ''), 301);
+      // Anything else → main site downloads anchor
+      return Response.redirect('https://paulharvey.com.au/#downloads', 301);
     }
 
-    // Pass through to static assets for main domain
+    // Main domain: /cv or /cv/ → /#downloads (page is gone, docs still served at /cv/docs/*)
+    if (url.pathname === '/cv' || url.pathname === '/cv/') {
+      return Response.redirect('https://paulharvey.com.au/#downloads', 301);
+    }
+
     return env.ASSETS.fetch(request);
   }
 };

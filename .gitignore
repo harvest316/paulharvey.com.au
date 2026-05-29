@@ -1,2 +1,5 @@
 .wrangler/
 .env
+
+# Locally-generated full-contact resume for direct ATS submissions — never commit
+cv/docs/Paul Harvey - Resume (full).docx
