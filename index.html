@@ -1857,7 +1857,10 @@
         if (p.logo) {
           var cls = 'sp-logo' + (p.logoInvert ? ' sp-logo--invert' : '');
           var badge = el('span', { class: cls });
-          badge.appendChild(el('img', { src: p.logo, alt: '', loading: 'lazy', width: '64', height: '64' }));
+          // cache-bust: /images/* is served immutable, so version the URL
+          var ver = (data.meta && data.meta.version) ? data.meta.version : '';
+          var src = ver ? p.logo + '?v=' + encodeURIComponent(ver) : p.logo;
+          badge.appendChild(el('img', { src: src, alt: '', loading: 'lazy', width: '64', height: '64' }));
           li.appendChild(badge);
         }
         li.appendChild(el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.name }));
