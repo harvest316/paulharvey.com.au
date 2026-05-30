@@ -74,6 +74,27 @@ if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
 fi
 
 export HOME="${WRANGLER_HOME:-/home/jason/.cache/wrangler-home}"
-npx wrangler pages deploy "$REPO_DIR" --project-name=paulharvey-com-au --branch=main --commit-dirty=true
+
+# Deploy from a clean staging dir — NEVER deploy the repo root directly.
+# wrangler pages deploy ignores .gitignore, so deploying $REPO_DIR would
+# publish .env (secrets), scripts/, CLAUDE.md, .vscode, etc. as static assets.
+# Explicit allowlist of publishable paths only.
+STAGE="$(mktemp -d)"
+trap 'rm -rf "$STAGE"' EXIT
+cp "$REPO_DIR"/index.html "$REPO_DIR"/resume.json "$REPO_DIR"/_worker.js \
+   "$REPO_DIR"/_headers "$REPO_DIR"/_redirects "$STAGE"/
+cp -r "$REPO_DIR"/images "$STAGE"/images
+mkdir -p "$STAGE/cv/docs"
+cp "$REPO_DIR"/cv/docs/*.docx "$STAGE/cv/docs/"
+
+# Safety net: refuse to deploy if any secret/dotfile slipped into staging.
+if command find "$STAGE" \( -name '.env' -o -name '.env.*' -o -name '*.py' \
+     -o -name 'CLAUDE.md' \) -print | grep -q .; then
+  echo "Error: secret/non-public file present in staging dir — aborting deploy."
+  command find "$STAGE" \( -name '.env' -o -name '.env.*' -o -name '*.py' -o -name 'CLAUDE.md' \) -print
+  exit 1
+fi
+
+npx wrangler pages deploy "$STAGE" --project-name=paulharvey-com-au --branch=main --commit-dirty=true
 
 echo "Done. Resumes synced and deployed."
