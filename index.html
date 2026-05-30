@@ -945,24 +945,14 @@
       border: 1px solid var(--line);
       border-radius: 6px;
       transition: border-color .25s, background .25s;
+      display: flow-root; /* contain the floated logo, let text wrap around it */
     }
     .side-projects-list li:hover { border-color: var(--accent); background: var(--bg-elevated); }
-    .sp-head {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
     .sp-logo {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 7px;
-      background: #fff;
-      padding: 5px;
-      box-shadow: 0 1px 2px rgba(0,0,0,.35);
+      float: left;
+      width: 68px;
+      height: 68px;
+      margin: 0.1rem 1rem 0.5rem 0;
     }
     .sp-logo img {
       width: 100%;
@@ -970,6 +960,7 @@
       object-fit: contain;
       display: block;
     }
+    .sp-logo--invert img { filter: invert(1) brightness(1.6); }
     .side-projects-list a {
       font-family: var(--font-display);
       font-weight: 400;
@@ -1863,14 +1854,13 @@
     function renderSideProjects(target, data) {
       data.sideProjects.forEach(function (p) {
         var li = el('li');
-        var head = el('div', { class: 'sp-head' });
         if (p.logo) {
-          var badge = el('span', { class: 'sp-logo' });
-          badge.appendChild(el('img', { src: p.logo, alt: '', loading: 'lazy', width: '24', height: '24' }));
-          head.appendChild(badge);
+          var cls = 'sp-logo' + (p.logoInvert ? ' sp-logo--invert' : '');
+          var badge = el('span', { class: cls });
+          badge.appendChild(el('img', { src: p.logo, alt: '', loading: 'lazy', width: '64', height: '64' }));
+          li.appendChild(badge);
         }
-        head.appendChild(el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.name }));
-        li.appendChild(head);
+        li.appendChild(el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.name }));
         li.appendChild(el('p', { text: p.description }));
         target.appendChild(li);
       });

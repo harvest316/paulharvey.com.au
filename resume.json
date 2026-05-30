@@ -2030,6 +2030,7 @@
       "name": "DJ Vybe",
       "url": "https://vybe.com.au",
       "logo": "images/logos/vybe.png",
+      "logoInvert": true,
       "description": "DJ and dance-therapy work."
     },
     {
@@ -2070,7 +2071,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260530.1",
+    "version": "20260530.2",
     "lastModified": "2026-05-30",
     "language": "en-AU",
     "paul": {
