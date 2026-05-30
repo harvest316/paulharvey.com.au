@@ -1994,25 +1994,25 @@
       "name": "Audit & Fix — CRO Audits",
       "url": "https://auditandfix.com",
       "logo": "images/logos/auditandfix.svg",
-      "description": "Conversion-rate-optimisation audits — performance, SEO, security and UX findings with prioritised fixes."
+      "description": "Automated Conversion Rate Optimisation audits — with cold outreach, screenshots and prioritised fixes."
     },
     {
       "name": "Audit & Fix — Video Reviews",
       "url": "https://auditandfix.com/video-reviews",
       "logo": "images/logos/auditandfix.svg",
-      "description": "AI-assisted video walkthroughs reviewing visitor sessions to surface UX and conversion issues."
+      "description": "AI-generated marketing videos from 5-star reviews."
     },
     {
       "name": "AI Clarity — Workshops",
       "url": "https://aiclarity.com.au",
       "logo": "images/logos/aiclarity.svg",
-      "description": "Plain-English AI strategy and adoption workshops for Australian businesses."
+      "description": "Plain-English AI strategy and adoption workshops for local small businesses. Finish the day having automated your first business process."
     },
     {
       "name": "AI Clarity — Tools",
       "url": "https://aiclarity.com.au/tools",
       "logo": "images/logos/aiclarity.svg",
-      "description": "Practical AI tools, templates and tooling for businesses adopting AI."
+      "description": "Practical AI prompt packs for developers, for sale on Gumroad and Lemon Squeezy."
     },
     {
       "name": "MinSpec",
@@ -2024,14 +2024,14 @@
       "name": "ScroogeLLM",
       "url": "https://scroogellm.com",
       "logo": "images/logos/scroogellm.svg",
-      "description": "VS Code extension that cuts LLM costs — local proxy, prompt compression and full savings visibility."
+      "description": "VS Code extension that cuts LLM costs while improving quality — LLM proxy, prompt compression, agent escalation, and full savings visibility. You only pay a percentage of how much we save you."
     },
     {
       "name": "DJ Vybe",
       "url": "https://vybe.com.au",
       "logo": "images/logos/vybe.png",
       "logoInvert": true,
-      "description": "DJ and dance-therapy work."
+      "description": "Dance Therapy. We were built to heal ourselves through movement."
     },
     {
       "name": "pageload-timer",
@@ -2071,7 +2071,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260530.3",
+    "version": "20260530.4",
     "lastModified": "2026-05-30",
     "language": "en-AU",
     "paul": {
