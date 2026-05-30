@@ -1,0 +1,46 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Build a clean publish dir from an explicit allowlist. Never deploy the
+      # repo root: wrangler pages deploy ignores .gitignore and would publish
+      # any untracked secret in the dir. Only these paths reach the web.
+      - name: Build publish dir
+        run: |
+          set -euo pipefail
+          STAGE="$RUNNER_TEMP/site"
+          mkdir -p "$STAGE/cv/docs"
+          cp index.html resume.json _worker.js _headers _redirects "$STAGE"/
+          cp -r images "$STAGE"/images
+          cp cv/docs/*.docx "$STAGE/cv/docs/"
+          # Safety net: abort if any secret/dotfile/source slipped into publish dir.
+          if find "$STAGE" \( -name '.env' -o -name '.env.*' -o -name '*.py' \
+               -o -name 'CLAUDE.md' \) -print | grep -q .; then
+            echo "::error::secret/non-public file present in publish dir"
+            find "$STAGE" \( -name '.env' -o -name '.env.*' -o -name '*.py' -o -name 'CLAUDE.md' \) -print
+            exit 1
+          fi
+          echo "STAGE=$STAGE" >> "$GITHUB_ENV"
+
+      - name: Deploy to Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ${{ env.STAGE }} --project-name=paulharvey-com-au --branch=main
