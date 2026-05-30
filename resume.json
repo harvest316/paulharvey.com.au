@@ -1987,27 +1987,50 @@
     {
       "name": "ContactReplyAI",
       "url": "https://contactreplyai.com",
+      "logo": "images/logos/contactreplyai.svg",
       "description": "AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval."
     },
     {
-      "name": "Audit & Fix",
+      "name": "Audit & Fix — CRO Audits",
       "url": "https://auditandfix.com",
-      "description": "Website audit and remediation service — performance, SEO, security, AI-assisted video reviews of every visit."
+      "logo": "images/logos/auditandfix.svg",
+      "description": "Conversion-rate-optimisation audits — performance, SEO, security and UX findings with prioritised fixes."
     },
     {
-      "name": "AI Clarity",
+      "name": "Audit & Fix — Video Reviews",
+      "url": "https://auditandfix.com/video-reviews",
+      "logo": "images/logos/auditandfix.svg",
+      "description": "AI-assisted video walkthroughs reviewing visitor sessions to surface UX and conversion issues."
+    },
+    {
+      "name": "AI Clarity — Workshops",
       "url": "https://aiclarity.com.au",
-      "description": "Plain-English AI strategy and adoption advisory for Australian businesses."
+      "logo": "images/logos/aiclarity.svg",
+      "description": "Plain-English AI strategy and adoption workshops for Australian businesses."
     },
     {
-      "name": "Vybe",
+      "name": "AI Clarity — Tools",
+      "url": "https://aiclarity.com.au/tools",
+      "logo": "images/logos/aiclarity.svg",
+      "description": "Practical AI tools, templates and tooling for businesses adopting AI."
+    },
+    {
+      "name": "MinSpec",
+      "url": "https://minspec.dev",
+      "logo": "images/logos/minspec.svg",
+      "description": "VS Code extension that scales spec-driven-development ceremony to change complexity — one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
+    },
+    {
+      "name": "ScroogeLLM",
+      "url": "https://scroogellm.com",
+      "logo": "images/logos/scroogellm.svg",
+      "description": "VS Code extension that cuts LLM costs — local proxy, prompt compression and full savings visibility."
+    },
+    {
+      "name": "DJ Vybe",
       "url": "https://vybe.com.au",
+      "logo": "images/logos/vybe.png",
       "description": "DJ and dance-therapy work."
-    },
-    {
-      "name": "Gumroad",
-      "url": "https://harvest316.gumroad.com",
-      "description": "Independent storefront for digital downloads, templates and tooling."
     },
     {
       "name": "pageload-timer",
@@ -2047,8 +2070,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260528.1",
-    "lastModified": "2026-05-28",
+    "version": "20260530.1",
+    "lastModified": "2026-05-30",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [

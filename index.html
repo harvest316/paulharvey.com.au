@@ -947,6 +947,29 @@
       transition: border-color .25s, background .25s;
     }
     .side-projects-list li:hover { border-color: var(--accent); background: var(--bg-elevated); }
+    .sp-head {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sp-logo {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      background: #fff;
+      padding: 5px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    }
+    .sp-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
     .side-projects-list a {
       font-family: var(--font-display);
       font-weight: 400;
@@ -1342,7 +1365,7 @@
   <!-- SIDE PROJECTS + PERSONAL -->
   <section class="extras-section" id="extras-section">
     <div class="container">
-      <details class="disclosure" id="side-projects">
+      <details class="disclosure" id="side-projects" open>
         <summary>
           <span class="disc-title">Current Side Projects</span>
           <span class="disc-meta">AI · e-commerce · independent</span>
@@ -1840,7 +1863,14 @@
     function renderSideProjects(target, data) {
       data.sideProjects.forEach(function (p) {
         var li = el('li');
-        li.appendChild(el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.name }));
+        var head = el('div', { class: 'sp-head' });
+        if (p.logo) {
+          var badge = el('span', { class: 'sp-logo' });
+          badge.appendChild(el('img', { src: p.logo, alt: '', loading: 'lazy', width: '24', height: '24' }));
+          head.appendChild(badge);
+        }
+        head.appendChild(el('a', { href: p.url, target: '_blank', rel: 'noopener', text: p.name }));
+        li.appendChild(head);
         li.appendChild(el('p', { text: p.description }));
         target.appendChild(li);
       });
