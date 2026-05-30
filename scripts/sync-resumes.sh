@@ -62,14 +62,18 @@ Co-Authored-By: sync-resumes.sh <noreply@paulharvey.com.au>"
   git push
 fi
 
-# Deploy
-ENV_FILE="$REPO_DIR/.env"
-if [ -f "$ENV_FILE" ]; then
-  set -a; source "$ENV_FILE"; set +a
+# Deploy credentials — load from environment first, then an OUT-OF-REPO secrets
+# file. Never source $REPO_DIR/.env: it lives in the deploy dir and wrangler can
+# publish it (a Cloudflare token leaked this way 2026-05-30).
+SECRETS_FILE="${PAULHARVEY_DEPLOY_ENV:-$HOME/.secrets/paulharvey-deploy.env}"
+if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] && [ -f "$SECRETS_FILE" ]; then
+  set -a; source "$SECRETS_FILE"; set +a
 fi
 
 if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
-  echo "Error: CLOUDFLARE_API_TOKEN not set. Configure .env (copy from .env.example)"
+  echo "Error: CLOUDFLARE_API_TOKEN not set."
+  echo "Set it in the environment, or create $SECRETS_FILE (chmod 600) with:"
+  echo "  CLOUDFLARE_API_TOKEN=... / CLOUDFLARE_ACCOUNT_ID=..."
   exit 1
 fi
 
