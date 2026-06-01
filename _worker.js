@@ -20,8 +20,8 @@ export default {
         url.pathname = '/cv' + url.pathname;
         return Response.redirect(url.toString(), 301);
       }
-      // Anything else → main site downloads anchor
-      return Response.redirect('https://paulharvey.com.au/#downloads', 301);
+      // Anything else → main site root
+      return Response.redirect('https://paulharvey.com.au/', 301);
     }
 
     // Main domain: /cv or /cv/ → /#downloads (page is gone, docs still served at /cv/docs/*)
