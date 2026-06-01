@@ -89,9 +89,19 @@ def para_html(blk: dict) -> str:
     return f"<p{style}>{text}</p>"
 
 
-def blocks_to_html(blocks: list[dict], footer_text: str) -> str:
+def blocks_to_html(blocks: list[dict], footer_text: str, *,
+                   author: str = "", doc_title: str = "", subject: str = "",
+                   date: str = "") -> str:
     """Convert the block list to a single ATS-clean HTML document. Consecutive
-    bullet blocks are grouped into one <ul>."""
+    bullet blocks are grouped into one <ul>.
+
+    The head carries person-authored PDF metadata. weasyprint maps <title> -> PDF
+    Title, <meta name="author"> -> Author, <meta name="description"> -> Subject,
+    and <meta name="dcterms.created"/"dcterms.modified"> -> CreationDate/ModDate.
+    Pinning the dates to the resume's lastModified (not build time) both authors
+    the file as a person and makes the PDF bytes deterministic across rebuilds.
+    (Producer stays "WeasyPrint N" — honest-neutral: many legit PDFs carry it.)
+    """
     out: list[str] = []
     list_open = False
 
@@ -129,9 +139,21 @@ def blocks_to_html(blocks: list[dict], footer_text: str) -> str:
         out.append(f'<p class="foot">{esc(footer_text)}</p>')
 
     body = "\n".join(out)
+    head = ['<meta charset="utf-8">']
+    if doc_title:
+        head.append(f"<title>{esc(doc_title)}</title>")
+    if author:
+        head.append(f'<meta name="author" content="{esc(author)}">')
+    if subject:
+        head.append(f'<meta name="description" content="{esc(subject)}">')
+    if date:
+        head.append(f'<meta name="dcterms.created" content="{esc(date)}">')
+        head.append(f'<meta name="dcterms.modified" content="{esc(date)}">')
+    head.append(f"<style>{CSS}</style>")
+    head_html = "\n".join(head)
     return (
-        '<!DOCTYPE html>\n<html lang="en-AU">\n<head>\n<meta charset="utf-8">\n'
-        f"<style>{CSS}</style>\n</head>\n<body>\n{body}\n</body>\n</html>\n"
+        '<!DOCTYPE html>\n<html lang="en-AU">\n<head>\n'
+        f"{head_html}\n</head>\n<body>\n{body}\n</body>\n</html>\n"
     )
 
 
@@ -158,7 +180,13 @@ def main():
     )
 
     blocks = build_blocks(data, real_contact=args.real_contact)
-    doc_html = blocks_to_html(blocks, footer_text)
+    doc_html = blocks_to_html(
+        blocks, footer_text,
+        author=basics["name"],
+        doc_title=f"{basics['name']} — Resume",
+        subject=basics.get("label", ""),
+        date=data["meta"]["lastModified"],
+    )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if args.keep_html:

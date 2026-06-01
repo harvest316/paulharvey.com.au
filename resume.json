@@ -77,7 +77,7 @@
       }
     },
     {
-      "text": "32 Years in Financial Services — RBA, APRA, banks",
+      "text": "10 Years in Financial Services — RBA, APRA, banks",
       "tags": [
         "financial-services",
         "security-compliance"
@@ -472,7 +472,7 @@
       "startDate": "2021-03",
       "endDate": "2024-09",
       "location": "Sydney",
-      "summary": "Architected e-commerce solutions on Salesforce B2C Commerce Cloud and Shopify Plus for high-street brands. One of 5 architects providing technical direction to a team of 30 Australian + 30 offshore developers. Primary technical contact for clients, balancing innovation with feasibility and compliance.",
+      "summary": "Architected e-commerce solutions on Salesforce B2C Commerce Cloud and Shopify Plus for high-street brands. One of 5 architects providing technical direction to a team of 30 Australian staff + 30 offshore developers. Primary technical contact for clients, balancing innovation with feasibility and compliance.",
       "tags": [
         "architecture",
         "ecommerce",
@@ -1527,7 +1527,7 @@
       },
       {
         "name": "Financial Markets",
-        "years": 8
+        "years": 10
       },
       {
         "name": "Negotiation / Persuasion",
@@ -2088,7 +2088,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260601.1",
+    "version": "20260601.2",
     "lastModified": "2026-06-01",
     "language": "en-AU",
     "paul": {
