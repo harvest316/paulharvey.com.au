@@ -305,6 +305,23 @@
           ]
         },
         {
+          "text": "Authored the fleet's AI coding standards — spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD) — enforced through agent task contracts and pre-commit checks. Productised the spec-driven workflow as MinSpec (minspec.dev), a VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
+          "tags": [
+            "ai-llm",
+            "architecture",
+            "knowledge-mgmt",
+            "devops"
+          ]
+        },
+        {
+          "text": "Built ScroogeLLM (scroogellm.com) — VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, and agent escalation, with full savings visibility. Customers pay only a percentage of measured savings.",
+          "tags": [
+            "ai-llm",
+            "cost-optimisation",
+            "ecommerce"
+          ]
+        },
+        {
           "text": "Built ERPChat — voice-first ERP Android client (Kotlin, Jetpack Compose). HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Open-sourced under Apache-2.0.",
           "tags": [
             "ai-llm",
@@ -2071,8 +2088,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260530.4",
-    "lastModified": "2026-05-30",
+    "version": "20260601.1",
+    "lastModified": "2026-06-01",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
