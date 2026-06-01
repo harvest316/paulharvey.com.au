@@ -212,13 +212,16 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
                 for ph in p.get("highlights", []):
                     blocks.append(_b(ph, level=1))
 
-        # Keyword blocks appended as plain text — ATS-friendly
+        # Keyword block — merged into one line per role (ATS keyword-friendly, compact).
+        kw = []
         if role.get("softSkills"):
-            blocks.append(_p("Soft skills: " + ", ".join(role["softSkills"]), size=10, sa=2))
+            kw.append("Soft skills: " + ", ".join(role["softSkills"]))
         if role.get("hardSkills"):
-            blocks.append(_p("Hard skills: " + ", ".join(role["hardSkills"]), size=10, sa=2))
+            kw.append("Hard skills: " + ", ".join(role["hardSkills"]))
         if role.get("agilePractices"):
-            blocks.append(_p("Agile practices: " + ", ".join(role["agilePractices"]), size=10, sa=2))
+            kw.append("Agile: " + ", ".join(role["agilePractices"]))
+        if kw:
+            blocks.append(_p("  ·  ".join(kw), size=10, sa=4))
 
     # ====== EARLIER CAREER ======
     if earlier:
@@ -246,19 +249,25 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
         blocks.append(_b(line))
 
     # ====== CERTIFICATIONS ======
+    # Compact inline list (one flowing paragraph) rather than 35 separate bullets.
     blocks.append(_h("Certifications and Qualifications"))
+    cert_entries = []
     for c in data.get("certifications", []):
-        blocks.append(_b(f"{c['name']} - {c.get('issuer','')} - {c.get('date','')}"))
+        meta = " ".join(x for x in (c.get("issuer", ""), c.get("date", "")) if x).strip()
+        cert_entries.append(f"{c['name']} ({meta})" if meta else c["name"])
+    if cert_entries:
+        blocks.append(_p(" · ".join(cert_entries), size=10, sa=4))
 
     # ====== SKILLS MATRIX ======
+    # Label folded into the list line (one paragraph each) to save vertical space.
     blocks.append(_h("Skills - Years of Experience"))
     matrix = data.get("skillsByCategory", {})
     if matrix.get("softSkills"):
-        blocks.append(_p("Soft Skills:", size=11, bold=True, sb=4, sa=2))
-        blocks.append(_p(", ".join(f"{s['name']} ({s['years']} yrs)" for s in matrix["softSkills"]), size=11, sa=4))
+        blocks.append(_p("Soft skills: " + ", ".join(f"{s['name']} ({s['years']} yrs)"
+                         for s in matrix["softSkills"]), size=10, sa=2))
     if matrix.get("technologies"):
-        blocks.append(_p("Technologies:", size=11, bold=True, sb=4, sa=2))
-        blocks.append(_p(", ".join(f"{s['name']} ({s['years']} yrs)" for s in matrix["technologies"]), size=11, sa=4))
+        blocks.append(_p("Technologies: " + ", ".join(f"{s['name']} ({s['years']} yrs)"
+                         for s in matrix["technologies"]), size=10, sa=2))
 
     # ====== DIRECTORSHIPS ======
     if data.get("directorships"):

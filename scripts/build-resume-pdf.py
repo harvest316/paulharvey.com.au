@@ -47,19 +47,22 @@ OUT_PDF = REPO / "cv" / "docs" / "Paul Harvey - Resume.pdf"
 CSS = """
 @page { size: A4; margin: 2.5cm; }
 * { box-sizing: border-box; }
-body { font-family: Calibri, Carlito, Arial, "Liberation Sans", Helvetica, sans-serif;
-       font-size: 11pt; color: #000; line-height: 1.3; margin: 0; }
-h1 { font-size: 20pt; font-weight: bold; margin: 0 0 2pt; }
-h2.section { font-size: 14pt; font-weight: bold; margin: 12pt 0 6pt;
+/* Liberation Sans (Arial-metric, compact) leads because it is actually installed;
+   leading with an absent font (Calibri/Carlito) makes fontconfig substitute the
+   bulky DejaVu Sans and never reach the fallbacks. */
+body { font-family: "Liberation Sans", Arial, Helvetica, Calibri, sans-serif;
+       font-size: 10pt; color: #000; line-height: 1.15; margin: 0; }
+h1 { font-size: 18pt; font-weight: bold; margin: 0 0 2pt; }
+h2.section { font-size: 12.5pt; font-weight: bold; margin: 9pt 0 3pt;
              border-bottom: 0.5pt solid #ccc; padding-bottom: 1pt; }
-h3.role { font-size: 12pt; font-weight: bold; margin: 8pt 0 2pt; }
-p { margin: 0 0 2pt; }
-p.title { font-size: 12pt; margin: 0 0 4pt; }
-hr { border: none; border-top: 1pt solid #999; margin: 4pt 0 8pt; }
-ul { margin: 0 0 4pt; padding-left: 16pt; }
-li { margin: 0 0 2pt; }
+h3.role { font-size: 11pt; font-weight: bold; margin: 6pt 0 1pt; }
+p { margin: 0 0 1.5pt; }
+p.title { font-size: 11pt; margin: 0 0 4pt; }
+hr { border: none; border-top: 1pt solid #999; margin: 3pt 0 6pt; }
+ul { margin: 0 0 3pt; padding-left: 15pt; }
+li { margin: 0 0 1pt; }
 li.sub { margin-left: 14pt; }
-p.foot { font-size: 9pt; font-style: italic; color: #444; margin-top: 14pt; }
+p.foot { font-size: 9pt; font-style: italic; color: #444; margin-top: 10pt; }
 """
 
 

@@ -89,12 +89,12 @@ def add_para(doc, text="", *, size=11, bold=False, italic=False, font=FONT_BODY,
 def add_heading(doc, text):
     """Section heading. Capitalised standard ATS names. Bold + larger size only."""
     return add_para(doc, text, size=14, bold=True, font=FONT_HEADING,
-                    space_before=12, space_after=6)
+                    space_before=8, space_after=3)
 
 
 def add_subheading(doc, text):
     """Role/sub-section heading."""
-    return add_para(doc, text, size=12, bold=True, space_before=8, space_after=2)
+    return add_para(doc, text, size=12, bold=True, space_before=6, space_after=1)
 
 
 def add_bullet(doc, text, indent_level=0):
@@ -102,7 +102,7 @@ def add_bullet(doc, text, indent_level=0):
     because ATS often strip Word list formatting but preserve in-paragraph text."""
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(0)
-    p.paragraph_format.space_after = Pt(2)
+    p.paragraph_format.space_after = Pt(1)
     p.paragraph_format.left_indent = Inches(0.2 + indent_level * 0.2)
     r = p.add_run(BULLET + to_ascii(text))
     set_run(r, size=11)

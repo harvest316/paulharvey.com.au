@@ -1379,14 +1379,21 @@
     <div class="container">
       <p class="section-label reveal">Downloads</p>
       <p class="reveal" style="color:var(--text-dim); font-size:0.95rem; max-width:60ch;">
-        Recruiters: Feel free to load this DOCX or JSON into your ATS to keep me in the mix for future roles&hellip;
+        Recruiters: Feel free to load this PDF, DOCX or JSON into your ATS to keep me in the mix for future roles&hellip;
       </p>
       <div class="downloads reveal">
+        <a href="cv/docs/Paul%20Harvey%20-%20Resume.pdf" id="dl-pdf" download>
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="dl-info">
+            <div class="dl-title">Paul Harvey — Resume</div>
+            <div class="dl-meta">PDF · single combined resume · ATS-friendly · A4</div>
+          </div>
+        </a>
         <a href="cv/docs/Paul%20Harvey%20-%20Resume.docx" id="dl-docx" download>
           <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <div class="dl-info">
             <div class="dl-title">Paul Harvey — Resume</div>
-            <div class="dl-meta">DOCX · single combined resume · ATS-friendly</div>
+            <div class="dl-meta">DOCX · editable Word version · use if your ATS prefers it</div>
           </div>
         </a>
         <a href="resume.json" download>
@@ -1668,7 +1675,7 @@
       // Explicit Downloads pointer for recruiters scanning the FAQ
       dl.appendChild(el('dt', { text: 'Downloads' }));
       var dlDd = el('dd');
-      dlDd.appendChild(el('a', { href: '#downloads', class: 'faq-downloads-link', text: 'DOCX + JSON (jump to Downloads section)' }));
+      dlDd.appendChild(el('a', { href: '#downloads', class: 'faq-downloads-link', text: 'PDF + DOCX + JSON (jump to Downloads section)' }));
       dl.appendChild(dlDd);
       target.appendChild(dl);
       target.appendChild(el('div', { class: 'perfect', text: 'Ideal: ' + f.perfectJob }));
