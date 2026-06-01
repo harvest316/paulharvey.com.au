@@ -137,21 +137,39 @@ source) and **faithfulness** (rephrasing adds no new claim).
 Heavy option (opt-in): run §7.3 / §7.6 as a multi-agent adversarial verify (N skeptics per
 claim) instead of a single faithfulness pass.
 
-## 8. Published-DOCX revision (apply research learnings)
+## 8. Published-master build — DONE (foundation phase)
 
-Audit of `scripts/build-resume-docx.py` vs §4. Real gaps:
+Both formats render from `scripts/resume_blocks.py::build_blocks()` (one source of truth).
 
-- [ ] **Page size A4** — python-docx defaults to US Letter; set 210×297 mm for AU.
-- [ ] **Document language en-AU** — set `w:lang` so Word spell-checks AU English.
-- [ ] **Contact labels** — add "Phone:/Email:/LinkedIn:" prefixes (currently bare, "|"-separated).
-- [ ] Acronym first-use expansion — content-level check.
-- Already OK: single-column, Calibri 10–12pt, standard headers, Month-YYYY dates, ASCII bullets,
-  1-inch≈2.5 cm margins, reverse-chron. resume.json US-spelling scan came back clean.
-- Note: the published DOCX is a kitchen-sink master (FAQ, side projects, skills matrix, etc.) →
-  likely 4–5 pp. Fine for a master download; the **JD-targeted** generator must trim to budget.
+- [x] **Page size A4** + 2.5 cm margins (DOCX was US Letter).
+- [x] **Document language en-AU** (`w:lang` on docDefaults + Normal).
+- [x] **Contact labels** — "Phone:/Email:/LinkedIn:/Web:".
+- [x] **PDF master** via weasyprint (`build-resume-pdf.py`): A4, single-column, text-selectable,
+      10pt Liberation Sans (Calibri/Carlito silently fall back to bulky DejaVu — lead the stack
+      with the installed Liberation Sans). DOCX stays 11pt Calibri.
+- [x] **Condense in place** — certs as one inline list (was 35 bullets), per-role keyword block
+      merged to one line, skills-matrix label folded inline, tighter spacing. PDF 11pp → **8pp**,
+      all content retained.
+- [x] **Site downloads** — PDF primary, DOCX secondary ("Word version if your ATS prefers it").
+- [x] **Deployed + verified** on production (apex serves `application/pdf`, 200).
+- Build env: gitignored `.venv` (python-docx, weasyprint, pypdf — PEP 668 blocks global pip).
+- Contact modes: default = obfuscated email / no phone (public, committed); `--real-contact` =
+  real email + phone → `(full).pdf`/`(full).docx`, gitignored.
+- Deploy: staging-only wrangler (allowlist + secret-net), creds from `~/.secrets/paulharvey-deploy.env`.
+  Do NOT use `sync-resumes.sh` to deploy built resumes — its SyncThing sweep removes
+  `cv/docs/*.docx` not present in SyncThing (would delete the built DOCX). PDF is safe (sweep is docx-only).
+- Acronym first-use expansion — still a content-level TODO for the JD-targeted generator.
 
 ## 9. Open build-time decisions
 
-1. PDF engine confirm: Chromium/Playwright `page.pdf()` (recommended) vs weasyprint/reportlab.
-2. CL length/tone template — 3-para vs criteria-mapped.
+1. ~~PDF engine~~ — **RESOLVED: weasyprint** (pure-Python, native @page, no browser/node).
+2. CL length/tone template — 3-para vs criteria-mapped. (Decide against the first real JD.)
 3. KSC mode — **deferred** until first formal AU posting that needs it. Resume + CL first.
+
+## 10. Next phase — the generator (build against the first real JD)
+
+Foundation (§8) is done. The generator core is unbuilt:
+JD (paste text/URL) → extract → match/score vs tags → select+order highlights → pick title from
+aliases → trim → (CL) company research → render tailored PDF + CL via the shared block model →
+accuracy gate (§7) → manifest. Build it driven by a real JD so the matching/verify logic is tested
+on real input, not invented cases.
