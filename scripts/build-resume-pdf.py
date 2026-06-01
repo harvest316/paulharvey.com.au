@@ -183,7 +183,7 @@ def main():
     doc_html = blocks_to_html(
         blocks, footer_text,
         author=basics["name"],
-        doc_title=f"{basics['name']} — Resume",
+        doc_title=f"{basics['name']} - Resume",
         subject=basics.get("label", ""),
         date=data["meta"]["lastModified"],
     )

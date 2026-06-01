@@ -15,7 +15,7 @@
       },
       {
         "years": "17 yrs",
-        "text": "Managing developers — 260+ hired, including offshore teams and AI agent fleets"
+        "text": "Managing developers: 260+ hired, including offshore teams and AI agent fleets"
       },
       {
         "years": "15 yrs",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "text": "10 Years in Financial Services — RBA, APRA, banks",
+      "text": "10 Years in Financial Services: RBA, APRA, banks",
       "tags": [
         "financial-services",
         "security-compliance"
@@ -100,7 +100,7 @@
       }
     },
     {
-      "text": "CTO / IT Manager / Solutions Architect — P&L, Board, ERP transformation",
+      "text": "CTO / IT Manager / Solutions Architect: P&L, Board, ERP transformation",
       "tags": [
         "leadership",
         "erp",
@@ -246,7 +246,7 @@
           "metric": "92% token reduction"
         },
         {
-          "text": "Created an Autofix Agents team — monitor, triage, architect, developer, QA, security — that reliably resolves production issues across all projects.",
+          "text": "Created an Autofix Agents team (monitor, triage, architect, developer, QA, security) that reliably resolves production issues across all projects.",
           "tags": [
             "ai-llm",
             "devops",
@@ -281,7 +281,7 @@
           "metric": "ERP licence fees → $0"
         },
         {
-          "text": "Built ContactReplyAI.com — AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval.",
+          "text": "Built ContactReplyAI.com, an AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval.",
           "tags": [
             "ai-llm",
             "ecommerce",
@@ -289,7 +289,7 @@
           ]
         },
         {
-          "text": "Designed AdManager — multi-project ad platform connecting Google Ads, Meta, TikTok with LLM-driven creative generation, strategy, and multivariate split testing.",
+          "text": "Designed AdManager, a multi-project ad platform connecting Google Ads, Meta, TikTok with LLM-driven creative generation, strategy, and multivariate split testing.",
           "tags": [
             "ai-llm",
             "integration",
@@ -297,7 +297,7 @@
           ]
         },
         {
-          "text": "Launched Colormora.com — AI colouring-book SaaS on Base44. React/Vite front end, Stripe subscription billing, Cloudflare Worker backend.",
+          "text": "Launched Colormora.com, an AI colouring-book SaaS on Base44. React/Vite front end, Stripe subscription billing, Cloudflare Worker backend.",
           "tags": [
             "ai-llm",
             "ecommerce",
@@ -305,7 +305,7 @@
           ]
         },
         {
-          "text": "Authored the fleet's AI coding standards — spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD) — enforced through agent task contracts and pre-commit checks. Productised the spec-driven workflow as MinSpec (minspec.dev), a VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
+          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Productised the spec-driven workflow as MinSpec (minspec.dev), a VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
           "tags": [
             "ai-llm",
             "architecture",
@@ -314,7 +314,7 @@
           ]
         },
         {
-          "text": "Built ScroogeLLM (scroogellm.com) — VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, and agent escalation, with full savings visibility. Customers pay only a percentage of measured savings.",
+          "text": "Built ScroogeLLM (scroogellm.com), a VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, and agent escalation, with full savings visibility. Customers pay only a percentage of measured savings.",
           "tags": [
             "ai-llm",
             "cost-optimisation",
@@ -322,7 +322,7 @@
           ]
         },
         {
-          "text": "Built ERPChat — voice-first ERP Android client (Kotlin, Jetpack Compose). HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Open-sourced under Apache-2.0.",
+          "text": "Built ERPChat, a voice-first ERP Android client (Kotlin, Jetpack Compose). HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Open-sourced under Apache-2.0.",
           "tags": [
             "ai-llm",
             "erp",
@@ -348,7 +348,7 @@
           ]
         },
         {
-          "text": "Built auditandfix.com video reviews — unique 30-second marketing videos generated cheaply enough to send to every prospect.",
+          "text": "Built auditandfix.com video reviews: unique 30-second marketing videos generated cheaply enough to send to every prospect.",
           "tags": [
             "ai-llm",
             "cost-optimisation",
@@ -357,7 +357,7 @@
           "metric": "$0.11 / video"
         },
         {
-          "text": "Autonomous SERP-to-outreach pipeline — Playwright browser automation, adaptive concurrency, GDPR/TCPA gating, country localisation.",
+          "text": "Autonomous SERP-to-outreach pipeline: Playwright browser automation, adaptive concurrency, GDPR/TCPA gating, country localisation.",
           "tags": [
             "ai-llm",
             "integration",
@@ -695,7 +695,7 @@
           ]
         },
         {
-          "text": "Managed up to 15 developers across Sydney, Wellington and Jakarta — SQL, .NET, web, VOIP engineers, print managers.",
+          "text": "Managed up to 15 developers across Sydney, Wellington and Jakarta: SQL, .NET, web, VOIP engineers, print managers.",
           "tags": [
             "leadership",
             "offshore-teams"
@@ -969,11 +969,11 @@
       ],
       "projects": [
         {
-          "name": "Employment Portal — Corrective Services NSW (via RXP Services)",
+          "name": "Employment Portal - Corrective Services NSW (via RXP Services)",
           "role": "Technical BA · Solution Architect · Agile Development Manager",
           "highlights": [
             "Designed and delivered a jobseeker training system for prison inmates.",
-            "First system to connect inmates with the outside world — strong cybersecurity focus.",
+            "First system to connect inmates with the outside world; strong cybersecurity focus.",
             "Managed RXP's offshore development team with Agile best practices.",
             "Configured 7 RHEL servers with full-stack security hardening at every OSI level."
           ],
@@ -985,12 +985,12 @@
           ]
         },
         {
-          "name": "Banking Website Architecture — Illawarra Credit Union (via New Republique)",
+          "name": "Banking Website Architecture - Illawarra Credit Union (via New Republique)",
           "role": "Solution Architect",
           "highlights": [
-            "Comprehensive System Architecture covering development, deployment and ongoing management — infrastructure, workflow, functionality, data, traffic generation; performance, reliability, scalability, compliance, security.",
+            "Comprehensive System Architecture covering development, deployment and ongoing management: infrastructure, workflow, functionality, data, traffic generation; performance, reliability, scalability, compliance, security.",
             "Reduced development costs by 43% through judicious technology choices and development best practices.",
-            "Successfully debated a major platform change with CEO and key client stakeholders — cut delivery time 25%, reduced maintenance costs 20%.",
+            "Successfully debated a major platform change with CEO and key client stakeholders: cut delivery time 25%, reduced maintenance costs 20%.",
             "Delivered a development standards document the agency re-used on future projects."
           ],
           "tags": [
@@ -1002,7 +1002,7 @@
           ]
         },
         {
-          "name": "WordPress Performance Tuning — Aptus",
+          "name": "WordPress Performance Tuning - Aptus",
           "role": "Performance Consultant",
           "highlights": [
             "Reduced corporate website page load time from 20–60 seconds to under 1 second.",
@@ -1016,7 +1016,7 @@
           ]
         },
         {
-          "name": "Quoting & Timesheet System — Verser / Avelytics",
+          "name": "Quoting & Timesheet System - Verser / Avelytics",
           "role": "Scrum Master / Architect",
           "highlights": [
             "Created Functional Specification, BPMN Process Models, User Stories, Acceptance Criteria.",
@@ -1259,13 +1259,13 @@
       ],
       "projects": [
         {
-          "name": "Front Office Tactical Development — Calyon Global Trading",
+          "name": "Front Office Tactical Development - Calyon Global Trading",
           "role": "Senior Front Office Developer",
           "highlights": [
             "Developed a Credit Default Swaps (CDS) Pricer for Front Office Traders as an Excel add-in.",
             "Interpolation by calendar or roll date; plotted curve for any tranche from any issuer; deal builder for booking new trades.",
             "Basic portfolio management and iTraxx Index Pricer.",
-            "High-intensity role — every minute of downtime could cost £60,000."
+            "High-intensity role: every minute of downtime could cost £60,000."
           ],
           "tags": [
             "financial-services",
@@ -1274,7 +1274,7 @@
           ]
         },
         {
-          "name": "Data Migration — Freshfields Bruckhaus Deringer",
+          "name": "Data Migration - Freshfields Bruckhaus Deringer",
           "role": "Solutions Architect",
           "highlights": [
             "Records Management migration for UK's 4th largest law firm.",
@@ -1287,7 +1287,7 @@
           ]
         },
         {
-          "name": "Business Intelligence — uSwitch.com",
+          "name": "Business Intelligence - uSwitch.com",
           "role": "BI Architect",
           "highlights": [
             "Data aggregation, analysis, modelling and BI reporting for utilities comparison website in SQL Server."
@@ -1298,13 +1298,13 @@
           ]
         },
         {
-          "name": "Office Migration Project Manager — EDS / ABN Amro",
+          "name": "Office Migration Project Manager - EDS / ABN Amro",
           "role": "Project Manager",
           "highlights": [
             "Hired and managed a global team of 40 VBA developers.",
             "Liaised with 50+ technical and business stakeholders.",
             "Migrated 2 million spreadsheets for 20,000 front-office traders from Excel XP to 2003.",
-            "Designed an SOE upgrade process that delivered 4 weeks of migration work in 5 minutes of downtime — 24-hour change freeze, 90-second back-out plan.",
+            "Designed an SOE upgrade process that delivered 4 weeks of migration work in 5 minutes of downtime: 24-hour change freeze, 90-second back-out plan.",
             "Zero-tolerance-for-downtime environment with constant change and shifting targets."
           ],
           "tags": [
@@ -1316,7 +1316,7 @@
           ]
         },
         {
-          "name": "Windows Migration Manager — Tubelines (London Underground)",
+          "name": "Windows Migration Manager - Tubelines (London Underground)",
           "role": "Project Manager / Engineering Lead",
           "highlights": [
             "Managed migration of 3,500 staff from Windows 2000 to Windows XP.",
@@ -1329,7 +1329,7 @@
           ]
         },
         {
-          "name": "Senior Developer — Royal Bank of Scotland",
+          "name": "Senior Developer - Royal Bank of Scotland",
           "role": "Senior Developer",
           "highlights": [
             "Reverse-engineered 4 back-office settlement systems and migrated them to VB6 and Microsoft SQL 7."
@@ -2008,25 +2008,25 @@
       "description": "AI virtual assistant SaaS for tradies with insurance-compliant human-in-the-loop template approval."
     },
     {
-      "name": "Audit & Fix — CRO Audits",
+      "name": "Audit & Fix - CRO Audits",
       "url": "https://auditandfix.com",
       "logo": "images/logos/auditandfix.svg",
-      "description": "Automated Conversion Rate Optimisation audits — with cold outreach, screenshots and prioritised fixes."
+      "description": "Automated Conversion Rate Optimisation audits with cold outreach, screenshots and prioritised fixes."
     },
     {
-      "name": "Audit & Fix — Video Reviews",
+      "name": "Audit & Fix - Video Reviews",
       "url": "https://auditandfix.com/video-reviews",
       "logo": "images/logos/auditandfix.svg",
       "description": "AI-generated marketing videos from 5-star reviews."
     },
     {
-      "name": "AI Clarity — Workshops",
+      "name": "AI Clarity - Workshops",
       "url": "https://aiclarity.com.au",
       "logo": "images/logos/aiclarity.svg",
       "description": "Plain-English AI strategy and adoption workshops for local small businesses. Finish the day having automated your first business process."
     },
     {
-      "name": "AI Clarity — Tools",
+      "name": "AI Clarity - Tools",
       "url": "https://aiclarity.com.au/tools",
       "logo": "images/logos/aiclarity.svg",
       "description": "Practical AI prompt packs for developers, for sale on Gumroad and Lemon Squeezy."
@@ -2035,13 +2035,13 @@
       "name": "MinSpec",
       "url": "https://minspec.dev",
       "logo": "images/logos/minspec.svg",
-      "description": "VS Code extension that scales spec-driven-development ceremony to change complexity — one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
+      "description": "VS Code extension that scales spec-driven-development ceremony to change complexity: one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
     },
     {
       "name": "ScroogeLLM",
       "url": "https://scroogellm.com",
       "logo": "images/logos/scroogellm.svg",
-      "description": "VS Code extension that cuts LLM costs while improving quality — LLM proxy, prompt compression, agent escalation, and full savings visibility. You only pay a percentage of how much we save you."
+      "description": "VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, agent escalation, and full savings visibility. You only pay a percentage of how much we save you."
     },
     {
       "name": "DJ Vybe",
@@ -2053,7 +2053,7 @@
     {
       "name": "pageload-timer",
       "url": "https://harvest316.github.io/pageload-timer/",
-      "description": "Sample project — NodeJS / Express.js web service that downloads a list of pages and returns pageload latencies. Demonstrates BDD unit tests in Mocha / Chai / Expect.js, continuously deployed on Heroku via Grunt + Travis CI."
+      "description": "Sample project: NodeJS / Express.js web service that downloads a list of pages and returns pageload latencies. Demonstrates BDD unit tests in Mocha / Chai / Expect.js, continuously deployed on Heroku via Grunt + Travis CI."
     }
   ],
   "references": [
@@ -2088,7 +2088,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260601.2",
+    "version": "20260601.3",
     "lastModified": "2026-06-01",
     "language": "en-AU",
     "paul": {
@@ -2116,13 +2116,13 @@
         "mobile"
       ],
       "extensionFields": {
-        "highlights[].tags": "string[] — taxonomy match keys",
-        "highlights[].metric": "string — pull-quote numeric callout",
-        "work[].positionFlexible": "boolean — true if title can be chosen per JD",
-        "work[].positionDefault": "string — fallback when generator has no JD signal",
-        "work[].positionAliases": "string[] — alternatives generator may pick from",
-        "work[].earlierCareer": "boolean — collapse under Earlier Career section",
-        "work[].tags": "string[] — role-level taxonomy"
+        "highlights[].tags": "string[]: taxonomy match keys",
+        "highlights[].metric": "string: pull-quote numeric callout",
+        "work[].positionFlexible": "boolean: true if title can be chosen per JD",
+        "work[].positionDefault": "string: fallback when generator has no JD signal",
+        "work[].positionAliases": "string[]: alternatives generator may pick from",
+        "work[].earlierCareer": "boolean: collapse under Earlier Career section",
+        "work[].tags": "string[]: role-level taxonomy"
       }
     }
   }
