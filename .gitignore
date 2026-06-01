@@ -4,6 +4,11 @@
 
 # Locally-generated full-contact resume for direct ATS submissions — never commit
 cv/docs/Paul Harvey - Resume (full).docx
+cv/docs/Paul Harvey - Resume (full).pdf
+
+# Python bytecode + intermediate HTML from build-resume-pdf.py --keep-html
+__pycache__/
+cv/docs/*.html
 
 # One-off per-JD tailored resumes + cover letters — personal, never commit
 out/
