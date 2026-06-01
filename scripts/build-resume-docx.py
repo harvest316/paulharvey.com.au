@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import zipfile
 from pathlib import Path
 
 from docx import Document
@@ -152,6 +153,21 @@ def set_document_language(doc, lang="en-AU"):
         langEl.set(qn("w:val"), lang)
 
 
+def normalize_docx(path, fixed=(2020, 1, 1, 0, 0, 0)):
+    """Rewrite the .docx zip with fixed entry timestamps so identical content produces
+    identical bytes. python-docx stamps each zip entry with the build time, which would
+    otherwise churn the committed artifact on every rebuild. Entry order is preserved."""
+    tmp = path.with_name(path.name + ".tmp")
+    with zipfile.ZipFile(path) as zin, \
+         zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            zi = zipfile.ZipInfo(item.filename, date_time=fixed)
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zi.external_attr = item.external_attr
+            zout.writestr(zi, zin.read(item.filename))
+    tmp.replace(path)
+
+
 def render_block(doc, blk):
     """Map one format-agnostic block to its DOCX paragraph(s)."""
     t = blk["t"]
@@ -221,6 +237,7 @@ def main():
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(out_path)
+    normalize_docx(out_path)  # deterministic bytes — no churn on rebuild
 
     work = data.get("work", [])
     recent = sum(1 for w in work if not w.get("earlierCareer"))
