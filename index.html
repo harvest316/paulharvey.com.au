@@ -978,14 +978,14 @@
     /* DOWNLOADS */
     .downloads-section { border-top: 1px solid var(--line); }
     .downloads {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-top: 1rem;
     }
     .downloads a {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 1rem 1.2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.85rem 1.3rem;
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -1002,9 +1002,7 @@
       flex-shrink: 0;
     }
     .downloads .dl-icon svg { width: 20px; height: 20px; }
-    .downloads .dl-info { flex: 1; min-width: 0; }
-    .downloads .dl-title { font-family: var(--font-display); font-size: 1.1rem; }
-    .downloads .dl-meta { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .downloads .dl-format { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; }
 
     /* FOOTER */
     footer {
@@ -1382,26 +1380,17 @@
         Recruiters: Feel free to load this PDF, DOCX or JSON into your ATS to keep me in the mix for future roles&hellip;
       </p>
       <div class="downloads reveal">
-        <a href="cv/docs/Paul%20Harvey%20-%20Resume.pdf" id="dl-pdf" download>
+        <a href="cv/docs/Paul%20Harvey%20-%20Resume.pdf" id="dl-pdf" download aria-label="Download resume as PDF">
           <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <div class="dl-info">
-            <div class="dl-title">Paul Harvey — Resume</div>
-            <div class="dl-meta">PDF · single combined resume · ATS-friendly · A4</div>
-          </div>
+          <span class="dl-format">PDF</span>
         </a>
-        <a href="cv/docs/Paul%20Harvey%20-%20Resume.docx" id="dl-docx" download>
+        <a href="cv/docs/Paul%20Harvey%20-%20Resume.docx" id="dl-docx" download aria-label="Download resume as Word DOCX">
           <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <div class="dl-info">
-            <div class="dl-title">Paul Harvey — Resume</div>
-            <div class="dl-meta">DOCX · editable Word version · use if your ATS prefers it</div>
-          </div>
+          <span class="dl-format">DOCX</span>
         </a>
-        <a href="resume.json" download>
+        <a href="resume.json" download aria-label="Download resume as JSON Resume data">
           <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div class="dl-info">
-            <div class="dl-title">resume.json</div>
-            <div class="dl-meta">JSON Resume schema · machine-readable source of truth</div>
-          </div>
+          <span class="dl-format">JSON</span>
         </a>
       </div>
     </div>
