@@ -32,7 +32,6 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
 
 from docx import Document
 from docx.shared import Pt, Inches, Cm, Mm
@@ -216,7 +215,7 @@ def main():
     # ====== FOOTER NOTE: canonical link (build timestamp lives here, not in build_blocks) ======
     add_para(doc, "", size=8)
     add_para(doc,
-             f"Live interactive resume: {basics['url']} | Generated {datetime.now():%Y-%m-%d} | "
+             f"Live interactive resume: {basics['url']} | Updated {data['meta']['lastModified']} | "
              f"Source: resume.json v{data['meta']['version']}",
              size=9, italic=True)
 

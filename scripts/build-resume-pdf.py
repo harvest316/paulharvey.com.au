@@ -29,7 +29,6 @@ import html
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from resume_blocks import build_blocks  # noqa: E402
@@ -154,7 +153,7 @@ def main():
         out_path = OUT_PDF
 
     footer_text = (
-        f"Live interactive resume: {basics['url']} | Generated {datetime.now():%Y-%m-%d} | "
+        f"Live interactive resume: {basics['url']} | Updated {data['meta']['lastModified']} | "
         f"Source: resume.json v{data['meta']['version']}"
     )
 

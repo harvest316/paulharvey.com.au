@@ -2,6 +2,16 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Hard block: the real-contact "(full)" resume variants are private (real email +
+    // phone) and must never be served publicly. Defence-in-depth in case one is ever
+    // mistakenly uploaded to a deployment. no-store so the edge never caches this.
+    if (/\(full\)/i.test(decodeURIComponent(url.pathname))) {
+      return new Response('Not found', {
+        status: 404,
+        headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
+      });
+    }
+
     // cv.paulharvey.com.au subdomain
     if (url.hostname === 'cv.paulharvey.com.au') {
       // /docs/* → serve docx files from the main domain
