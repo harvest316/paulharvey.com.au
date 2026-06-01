@@ -10,10 +10,11 @@ ATS-optimisation choices (research from Jobscan, ResumeWorded, Hays AU, Robert H
   "Education", "Certifications", "Skills".
 - Reverse-chronological work history.
 - Dates in "Month YYYY" format. Months written long form to avoid ambiguity.
-- Contact info inline at the top: name, title, location, phone, email, LinkedIn (plain text URL).
+- Contact info inline at the top with text labels (Phone:/Email:/LinkedIn:), no icons.
 - ASCII bullet `* ` for highest-compatibility (some ATS misread Unicode bullets).
 - No special characters in role names; em-dashes replaced with ASCII " - ".
-- One-inch margins (default).
+- A4 page (AU standard) with 2.5 cm margins. python-docx defaults to US Letter, so set explicitly.
+- Document proofing language set to Australian English (en-AU).
 - Filename uses only `[A-Za-z0-9 -]`.
 - Keywords from JD-frequency analysis surfaced early via Summary + Highlights + Skills sections.
 - All content from resume.json so a single source of truth produces both HTML and DOCX.
@@ -37,7 +38,7 @@ from pathlib import Path
 from datetime import datetime
 
 from docx import Document
-from docx.shared import Pt, Inches, RGBColor
+from docx.shared import Pt, Inches, Cm, Mm, RGBColor
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
@@ -207,6 +208,35 @@ def add_hr(doc):
     return p
 
 
+def set_document_language(doc, lang="en-AU"):
+    """Set proofing language so Word spell-checks Australian English.
+
+    Sets it on both docDefaults (inherited by all text) and the Normal style.
+    Without this, python-docx documents default to en-US and Word flags
+    AU spellings (organise, recognised, behaviour) as errors.
+    """
+    styles = doc.styles.element  # <w:styles>
+
+    docDefaults = styles.find(qn("w:docDefaults"))
+    if docDefaults is None:
+        docDefaults = OxmlElement("w:docDefaults")
+        styles.insert(0, docDefaults)
+    rPrDefault = docDefaults.find(qn("w:rPrDefault"))
+    if rPrDefault is None:
+        rPrDefault = OxmlElement("w:rPrDefault")
+        docDefaults.append(rPrDefault)
+    rPr = rPrDefault.find(qn("w:rPr"))
+    if rPr is None:
+        rPr = OxmlElement("w:rPr")
+        rPrDefault.append(rPr)
+    for el in (rPr, doc.styles["Normal"].element.get_or_add_rPr()):
+        langEl = el.find(qn("w:lang"))
+        if langEl is None:
+            langEl = OxmlElement("w:lang")
+            el.append(langEl)
+        langEl.set(qn("w:val"), lang)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build ATS-friendly DOCX from resume.json")
     parser.add_argument("--real-contact", action="store_true",
@@ -231,12 +261,14 @@ def main():
 
     doc = Document()
 
-    # Margins: 1 inch all round (ATS standard)
+    # A4 page (AU standard) — python-docx defaults to US Letter. Margins 2.5 cm all round.
     for section in doc.sections:
-        section.top_margin = Inches(1)
-        section.bottom_margin = Inches(1)
-        section.left_margin = Inches(1)
-        section.right_margin = Inches(1)
+        section.page_width = Mm(210)
+        section.page_height = Mm(297)
+        section.top_margin = Cm(2.5)
+        section.bottom_margin = Cm(2.5)
+        section.left_margin = Cm(2.5)
+        section.right_margin = Cm(2.5)
         # Explicitly disable headers/footers — many ATS skip them
         section.header.is_linked_to_previous = True
         section.footer.is_linked_to_previous = True
@@ -245,6 +277,9 @@ def main():
     style = doc.styles["Normal"]
     style.font.name = FONT_BODY
     style.font.size = Pt(11)
+
+    # Proofing language: Australian English
+    set_document_language(doc, "en-AU")
 
     loc = basics.get("location", {})
 
@@ -260,15 +295,16 @@ def main():
     if loc:
         country = country_map.get(loc.get("countryCode", ""), loc.get("countryCode", ""))
         contact_parts.append(f"{loc.get('city','')}, {loc.get('region','')}, {country}")
+    # Text labels (no icons) — research: ATS read icons as garbage; bare values lose context.
     if basics.get("phone"):
-        contact_parts.append(basics["phone"])
+        contact_parts.append(f"Phone: {basics['phone']}")
     if basics.get("email"):
-        contact_parts.append(basics["email"])
+        contact_parts.append(f"Email: {basics['email']}")
     li = next((p["url"] for p in basics.get("profiles", []) if p["network"].lower() == "linkedin"), None)
     if li:
-        contact_parts.append(li)
+        contact_parts.append(f"LinkedIn: {li}")
     if basics.get("url"):
-        contact_parts.append(basics["url"])
+        contact_parts.append(f"Web: {basics['url']}")
     add_para(doc, " | ".join(contact_parts), size=10, space_after=8)
     add_hr(doc)
 
