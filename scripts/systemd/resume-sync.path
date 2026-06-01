@@ -1,9 +1,0 @@
-[Unit]
-Description=Watch SyncThing/Resume for .docx changes
-
-[Path]
-PathChanged=/home/jason/SyncThing/Resume
-Unit=resume-sync.service
-
-[Install]
-WantedBy=default.target

@@ -8,8 +8,11 @@ The canonical resume lives in [`/resume.json`](../resume.json) at the repo root,
 |------|---------|
 | `/resume.json` | Single source of truth. Superset of every role-targeted variant. |
 | `/index.html` | Renders `resume.json` client-side into the public site. |
-| `/cv/docs/*.docx` | Pre-generated role-targeted Word documents (synced from `~/SyncThing/Resume/`). |
-| `/scripts/sync-resumes.sh` | Copies the latest `.docx` from SyncThing → commits → deploys. |
+| `/cv/docs/Paul Harvey - Resume.{pdf,docx}` | Master resume, **generated from `resume.json`** — not hand-edited. |
+| `/scripts/resume_blocks.py` | Shared format-agnostic block model both builders consume. |
+| `/scripts/build-resume-pdf.py` | Builds the A4 PDF (weasyprint) from `resume.json`. |
+| `/scripts/build-resume-docx.py` | Builds the ATS DOCX (python-docx) from `resume.json`. |
+| `/scripts/deploy.sh` | Builds both artifacts from `resume.json` + deploys (replaces `sync-resumes.sh`). |
 | `/scripts/generate-resume.mjs` | *(future)* Builds a role-targeted PDF/DOCX from `resume.json` + a JD. |
 
 ## Schema extensions
@@ -65,15 +68,15 @@ See [resume best practices research](#) referenced in commit history for the sou
 3. Test locally: `npx http-server .` then open `localhost:8080`. The site fetches `resume.json` and renders all sections.
 4. Commit. Deploy runs through normal Cloudflare Pages CI.
 
-## DOCX downloads
+## Resume downloads (PDF + DOCX)
 
-The pre-rendered Word docs at `/cv/docs/` are generated externally (Word/Pages) and synced from `~/SyncThing/Resume/` via:
+The master resume at `/cv/docs/` is **generated from `resume.json`** (the single source of truth) — no longer authored externally or synced from SyncThing. Build + deploy with:
 
 ```
-./scripts/sync-resumes.sh
+./scripts/deploy.sh
 ```
 
-The script copies, commits, and deploys. A `systemd` path watcher (`scripts/systemd/`) triggers this automatically on file change.
+It builds the public PDF + DOCX (deterministic — footer from `meta.lastModified`), commits them only if changed, then deploys a clean staging dir. Safety: only git-tracked `cv/docs` files are staged, and anything matching `*(full)*` / `.env` / `*.py` aborts the deploy (a real-contact `(full)` DOCX leaked once via a `*.docx` glob). Cloudflare Pages is **not** git-connected — a push does not deploy; run this script.
 
 ## Subdomain behaviour
 

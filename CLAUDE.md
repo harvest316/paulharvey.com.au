@@ -42,7 +42,7 @@ Paul's email (`cv@paulharvey.com.au`) is obfuscated client-side via layered JS /
 
 ## Deploy
 
-Cloudflare Pages auto-deploys from `main`. `scripts/sync-resumes.sh` handles the SyncThing → repo → deploy chain for the DOCX downloads.
+Cloudflare Pages is **not** git-connected — pushing to `main` does nothing. Deploy with `scripts/deploy.sh`: it builds the public PDF + DOCX from `resume.json` (the single source of truth) and publishes a clean staging dir. Only git-tracked `cv/docs` files are staged; real-contact `(full)` variants, `.env`, and `*.py` are blocked (a `(full)` DOCX with real email + phone leaked once via a `*.docx` glob). Creds load from `~/.secrets/paulharvey-deploy.env`, never repo `.env`.
 
 ## Logos
 

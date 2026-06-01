@@ -155,9 +155,10 @@ Both formats render from `scripts/resume_blocks.py::build_blocks()` (one source 
 - Build env: gitignored `.venv` (python-docx, weasyprint, pypdf — PEP 668 blocks global pip).
 - Contact modes: default = obfuscated email / no phone (public, committed); `--real-contact` =
   real email + phone → `(full).pdf`/`(full).docx`, gitignored.
-- Deploy: staging-only wrangler (allowlist + secret-net), creds from `~/.secrets/paulharvey-deploy.env`.
-  Do NOT use `sync-resumes.sh` to deploy built resumes — its SyncThing sweep removes
-  `cv/docs/*.docx` not present in SyncThing (would delete the built DOCX). PDF is safe (sweep is docx-only).
+- Deploy: `scripts/deploy.sh` builds from `resume.json` → stages git-tracked `cv/docs` only →
+  aborts on `*(full)*`/`.env`/`*.py` → wrangler. Creds from `~/.secrets/paulharvey-deploy.env`.
+  resume.json is the single source of truth (SyncThing direction dropped). `_worker.js` hard-404s
+  any `(full)` path with `no-store`. (Both guards added after a real-contact DOCX leaked 2026-06-01.)
 - Acronym first-use expansion — still a content-level TODO for the JD-targeted generator.
 
 ## 9. Open build-time decisions
