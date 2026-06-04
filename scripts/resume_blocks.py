@@ -122,6 +122,15 @@ def resolve_contact(real_contact: bool):
     return email_obfuscated(), None
 
 
+def _require(d: dict, keys: list[str], path: str) -> None:
+    """Fail fast with a path-qualified error when an all-or-nothing block is partially
+    populated. A bare ``d[key]`` deep in build_blocks would raise a leaf-only KeyError
+    (e.g. KeyError: 'contract') that never names which section of resume.json is broken."""
+    missing = [k for k in keys if k not in d]
+    if missing:
+        raise ValueError(f"{path} is missing required field(s): {', '.join(missing)}")
+
+
 def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
     """Assemble the full ordered block list for the combined ATS resume.
 
@@ -147,7 +156,8 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
         contact_parts.append(f"Phone: {phone}")
     if email:
         contact_parts.append(f"Email: {email}")
-    li = next((p["url"] for p in basics.get("profiles", []) if p["network"].lower() == "linkedin"), None)
+    li = next((p.get("url") for p in basics.get("profiles", [])
+               if p.get("network", "").lower() == "linkedin" and p.get("url")), None)
     if li:
         contact_parts.append(f"LinkedIn: {li}")
     if basics.get("url"):
@@ -291,7 +301,10 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
     if data.get("personalAchievements"):
         blocks.append(_h("Personal Achievements"))
         for a in data["personalAchievements"]:
-            date = a.get("since") and f"since {a['since']}" or a.get("date", "")
+            if a.get("since"):
+                date = f"since {a['since']}"
+            else:
+                date = a.get("date", "")
             line = a["text"]
             if date:
                 line += f" - {date}"
@@ -302,6 +315,13 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
     # ====== RECRUITER FAQ ======
     faq = data.get("recruiterFAQ")
     if faq:
+        # recruiterFAQ is all-or-nothing: validate up front so a partially-edited block
+        # fails with a path-qualified error, not a cryptic leaf-only KeyError mid-render.
+        _require(faq, ["availability", "visa", "rates", "location", "rolesPreferred",
+                       "rolesShortTerm", "holidays"], "recruiterFAQ")
+        _require(faq["rates"], ["contract", "permanent"], "recruiterFAQ.rates")
+        _require(faq["location"], ["based", "lookingIn", "relocation", "travel"],
+                 "recruiterFAQ.location")
         blocks.append(_h("Recruiter FAQ"))
         blocks.append(_b(f"Availability: {faq['availability']}"))
         blocks.append(_b(f"Visa: {faq['visa']}"))

@@ -228,6 +228,51 @@ def test_build_blocks_faq_without_perfect_job(full_data, blocks_mod):
     assert "Ideal:" not in joined
 
 
+def test_require_passes_when_complete(blocks_mod):
+    blocks_mod._require({"a": 1, "b": 2}, ["a", "b"], "obj")  # no raise
+
+
+def test_require_names_missing_path(blocks_mod):
+    with pytest.raises(ValueError, match=r"obj is missing required field\(s\): b, c"):
+        blocks_mod._require({"a": 1}, ["a", "b", "c"], "obj")
+
+
+def test_build_blocks_partial_faq_raises_named_error(full_data, blocks_mod):
+    """A partially-edited recruiterFAQ must fail fast naming the section, not a leaf KeyError."""
+    del full_data["recruiterFAQ"]["rates"]["contract"]
+    with pytest.raises(ValueError, match="recruiterFAQ.rates is missing"):
+        blocks_mod.build_blocks(full_data)
+
+
+def test_build_blocks_partial_faq_top_level(full_data, blocks_mod):
+    del full_data["recruiterFAQ"]["holidays"]
+    with pytest.raises(ValueError, match="recruiterFAQ is missing required field"):
+        blocks_mod.build_blocks(full_data)
+
+
+def test_build_blocks_malformed_profile_is_inert(full_data, blocks_mod):
+    """A profile entry with no 'network'/'url' must not crash the whole build."""
+    full_data["basics"]["profiles"].append({"username": "stray"})  # no network/url
+    blocks = blocks_mod.build_blocks(full_data)  # must not raise
+    joined = "\n".join(b.get("text", "") for b in blocks)
+    # the valid LinkedIn profile is still picked up
+    assert "LinkedIn: https://linkedin.com/in/test" in joined
+
+
+def test_build_blocks_no_linkedin_profile(full_data, blocks_mod):
+    full_data["basics"]["profiles"] = [{"network": "GitHub", "url": "https://gh"}]
+    blocks = blocks_mod.build_blocks(full_data)
+    joined = "\n".join(b.get("text", "") for b in blocks)
+    assert "LinkedIn:" not in joined
+
+
+def test_build_blocks_achievement_empty_since_falls_back_to_date(full_data, blocks_mod):
+    full_data["personalAchievements"] = [{"text": "Thing", "since": "", "date": "2021"}]
+    blocks = blocks_mod.build_blocks(full_data)
+    joined = "\n".join(b.get("text", "") for b in blocks)
+    assert "Thing - 2021" in joined  # empty since -> uses date, not "since "
+
+
 def test_build_blocks_real_resume(real_data, blocks_mod):
     """The actual resume.json must build without error in both contact modes."""
     obf = blocks_mod.build_blocks(real_data, real_contact=False)

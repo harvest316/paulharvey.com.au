@@ -39,7 +39,20 @@ else
   git commit -m "build: regenerate resume artifacts from resume.json
 
 Co-Authored-By: deploy.sh <noreply@paulharvey.com.au>"
-  git push 2>/dev/null || echo "  (push skipped — Cloudflare is not git-connected; deploy continues)"
+  # Push the artifact commit, but don't blanket-swallow the result: a benign
+  # "no upstream / already up-to-date" must not look the same as a real auth /
+  # non-fast-forward / network failure (which would leave the local commit
+  # silently diverged from origin). Cloudflare Pages is not git-connected, so a
+  # push failure does not block the deploy — but it must be surfaced, not hidden.
+  if push_out="$(git push 2>&1)"; then
+    echo "  Pushed artifact commit to origin"
+  elif printf '%s' "$push_out" | grep -qiE 'no upstream|everything up-to-date|no configured push destination|does not appear to be a git repo'; then
+    echo "  (nothing to push / no upstream configured — continuing)"
+  else
+    echo "  WARNING: git push failed — artifact commit is NOT on origin:" >&2
+    printf '  %s\n' "$push_out" >&2
+    echo "  Deploy continues (Pages is not git-connected), but resolve the push." >&2
+  fi
 fi
 
 # 3. Load deploy creds from the OUT-OF-REPO secrets file. NEVER source $REPO_DIR/.env —

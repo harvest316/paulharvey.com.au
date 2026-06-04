@@ -2,10 +2,20 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Decode the path for the "(full)" check, tolerating malformed percent-escapes.
+    // A bare decodeURIComponent throws URIError on inputs like "/%" or "/%zz", which
+    // would surface as an edge 500 instead of a clean 404; fall back to the raw path.
+    let decodedPath;
+    try {
+      decodedPath = decodeURIComponent(url.pathname);
+    } catch {
+      decodedPath = url.pathname;
+    }
+
     // Hard block: the real-contact "(full)" resume variants are private (real email +
     // phone) and must never be served publicly. Defence-in-depth in case one is ever
     // mistakenly uploaded to a deployment. no-store so the edge never caches this.
-    if (/\(full\)/i.test(decodeURIComponent(url.pathname))) {
+    if (/\(full\)/i.test(decodedPath)) {
       return new Response('Not found', {
         status: 404,
         headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
