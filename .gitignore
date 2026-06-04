@@ -12,3 +12,8 @@ cv/docs/*.html
 
 # One-off per-JD tailored resumes + cover letters — personal, never commit
 out/
+
+# Python test + coverage artifacts
+.coverage
+.pytest_cache/
+tests/__pycache__/
