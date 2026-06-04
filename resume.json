@@ -2056,40 +2056,33 @@
       "description": "Sample project: NodeJS / Express.js web service that downloads a list of pages and returns pageload latencies. Demonstrates BDD unit tests in Mocha / Chai / Expect.js, continuously deployed on Heroku via Grunt + Travis CI."
     }
   ],
+  "_referencesNote": "Referee contact details (email/phone) are intentionally NOT published here. resume.json is a public, crawlable download; third-party PII must not be exposed without consent. The site renders 'References available on request'. Full referee contacts are held privately and supplied directly on request.",
   "references": [
     {
       "name": "Zamil Mohsen",
       "title": "Head of Technical Solutions",
-      "company": "Amblique",
-      "email": "zmohsen@amblique.com",
-      "phone": "0421 967 293"
+      "company": "Amblique"
     },
     {
       "name": "Paul Clarke",
       "title": "CEO",
-      "company": "Duxe Software Systems",
-      "email": "paul@duxe.io",
-      "phone": "0418 216 416"
+      "company": "Duxe Software Systems"
     },
     {
       "name": "Stewart Dawes",
       "title": "CEO",
-      "company": "Atomic Digital",
-      "email": "stewart@atomicdigital.com.au",
-      "phone": "0413 276 780"
+      "company": "Atomic Digital"
     },
     {
       "name": "Trevor Vella",
       "title": "Development Manager",
-      "company": "Reserve Bank of Australia",
-      "email": "trevor@netplanetconsulting.com.au",
-      "phone": "0402 434 676"
+      "company": "Reserve Bank of Australia"
     }
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260602.1",
-    "lastModified": "2026-06-02",
+    "version": "20260604.1",
+    "lastModified": "2026-06-04",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
