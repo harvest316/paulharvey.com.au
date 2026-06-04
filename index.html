@@ -42,7 +42,7 @@
       --bg-card: #171715;
       --text: #e8e0d8;
       --text-dim: #8a827a;
-      --text-muted: #5a534c;
+      --text-muted: #8f877e;
       --accent: #c45d3e;
       --accent-hover: #d4724f;
       --accent-glow: rgba(196, 93, 62, 0.1);
@@ -54,6 +54,23 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
+    /* Visually-hidden but available to assistive tech */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    /* Skip link: hidden until focused, then pinned top-left */
+    .skip-link {
+      position: absolute; left: 0; top: 0; z-index: 1000;
+      transform: translateY(-120%);
+      background: var(--accent); color: #fff;
+      padding: 0.6rem 1rem; border-radius: 0 0 4px 0;
+      font-family: var(--font-body); font-size: 0.9rem; text-decoration: none;
+      transition: transform .2s;
+    }
+    .skip-link:focus { transform: translateY(0); outline: 2px solid #fff; outline-offset: 2px; }
 
     body {
       font-family: var(--font-body);
@@ -346,7 +363,8 @@
       font-family: var(--font-display);
       font-size: clamp(1.2rem, 2.2vw, 1.5rem);
       font-weight: 400;
-      color: var(--accent);
+      /* --accent-hover clears 4.5:1 on the elevated modal surface (--accent does not) */
+      color: var(--accent-hover);
       text-decoration: none;
       letter-spacing: 0.005em;
       word-break: break-all;
@@ -1083,6 +1101,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
       *, *::before, *::after {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
@@ -1121,9 +1140,18 @@
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://paulharvey.com.au/#website",
         "name": "Paul Harvey",
         "url": "https://paulharvey.com.au",
         "description": "Personal website and structured resume of Paul Harvey, Solutions Architect, CTO and IT Manager based in Sydney, Australia."
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://paulharvey.com.au/#profilepage",
+        "url": "https://paulharvey.com.au",
+        "name": "Paul Harvey, Solutions Architect, CTO and IT Manager",
+        "isPartOf": { "@id": "https://paulharvey.com.au/#website" },
+        "mainEntity": { "@id": "https://paulharvey.com.au/#person" }
       },
       {
         "@type": "Person",
@@ -1131,7 +1159,16 @@
         "name": "Paul Harvey",
         "url": "https://paulharvey.com.au",
         "image": "https://paulharvey.com.au/images/paul-harvey.webp",
-        "jobTitle": "Solutions Architect",
+        "description": "Solutions Architect, CTO and IT Manager with 32 years across financial services, government and enterprise, spanning AI / LLM integration, Salesforce B2C Commerce Cloud, ERP transformation and distributed team leadership.",
+        "jobTitle": ["Solutions Architect", "CTO", "IT Manager"],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Solutions Architect",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Sydney"
+          }
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Sydney",
@@ -1170,6 +1207,8 @@
   <script type="application/json" id="resume-data" data-source="resume.json"></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- Contact modal: real address/number assembled at click time, never present in static HTML -->
@@ -1200,6 +1239,7 @@
   </nav>
 
   <!-- HERO -->
+  <main id="main">
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div class="hero-text">
@@ -1212,10 +1252,10 @@
         <p class="hero-tagline" data-bind="basics.tagline">A techie who actually likes people</p>
         <p class="hero-location">Hurstville, NSW, Australia</p>
         <div class="hero-contact" role="group" aria-label="Contact">
-          <button type="button" class="contact-btn" data-action="email" aria-label="Email Paul">
+          <button type="button" class="contact-btn" data-action="email" aria-haspopup="dialog" aria-label="Email Paul">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           </button>
-          <button type="button" class="contact-btn" data-action="phone" aria-label="Phone Paul">
+          <button type="button" class="contact-btn" data-action="phone" aria-haspopup="dialog" aria-label="Phone Paul">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </button>
           <a class="contact-btn" href="https://www.linkedin.com/in/harvest316" rel="me noopener" target="_blank" aria-label="LinkedIn">
@@ -1234,7 +1274,7 @@
         <div class="photo-frame">
           <picture>
             <source srcset="images/paul-harvey.webp" type="image/webp">
-            <img src="images/AI-Reimagined-Me6.png" alt="Paul Harvey, Solutions Architect based in Sydney, Australia" width="600" height="600" fetchpriority="high">
+            <img src="images/paul-harvey.png" alt="Paul Harvey, Solutions Architect based in Sydney, Australia" width="600" height="600" fetchpriority="high">
           </picture>
         </div>
       </div>
@@ -1244,7 +1284,7 @@
   <!-- SUMMARY -->
   <section class="summary" id="summary">
     <div class="container">
-      <p class="section-label reveal">Summary</p>
+      <h2 class="section-label reveal">Summary</h2>
       <div class="summary-text">
         <p class="lead reveal" data-bind="basics.summary"></p>
         <div class="experience-lines reveal" data-render="experienceLines"></div>
@@ -1269,7 +1309,7 @@
     <div class="container">
       <details class="disclosure" id="faq" open>
         <summary>
-          <span class="disc-title">Recruiter FAQ</span>
+          <h2 class="disc-title">Recruiter FAQ</h2>
           <span class="disc-meta">availability · rates · location</span>
         </summary>
         <div class="faq" data-render="recruiterFAQ"></div>
@@ -1280,12 +1320,12 @@
   <!-- EXPERIENCE -->
   <section class="work-section" id="experience">
     <div class="container">
-      <p class="section-label reveal">Experience</p>
+      <h2 class="section-label reveal">Experience</h2>
       <div class="work-list" data-render="work-recent"></div>
 
       <details class="disclosure" id="earlier-career">
         <summary>
-          <span class="disc-title">Earlier Career (1995–2008)</span>
+          <h3 class="disc-title">Earlier Career (1995–2008)</h3>
           <span class="disc-meta">london trading floor · early sql / .net</span>
         </summary>
         <div data-render="work-earlier"></div>
@@ -1298,7 +1338,7 @@
     <div class="container">
       <details class="disclosure" id="skills" open>
         <summary>
-          <span class="disc-title">Skills Matrix: years of experience</span>
+          <h2 class="disc-title">Skills Matrix: years of experience</h2>
           <span class="disc-meta">soft skills · technologies</span>
         </summary>
         <div data-render="skillsMatrix"></div>
@@ -1311,7 +1351,7 @@
     <div class="container">
       <details class="disclosure" id="certifications">
         <summary>
-          <span class="disc-title">Certifications &amp; Qualifications</span>
+          <h2 class="disc-title">Certifications &amp; Qualifications</h2>
           <span class="disc-meta">35 entries · 1995–present</span>
         </summary>
         <ul class="cert-list" data-render="certifications"></ul>
@@ -1319,7 +1359,7 @@
 
       <details class="disclosure" id="education">
         <summary>
-          <span class="disc-title">Education</span>
+          <h2 class="disc-title">Education</h2>
           <span class="disc-meta">QUT · BIT</span>
         </summary>
         <ul class="edu-list" data-render="education"></ul>
@@ -1327,7 +1367,7 @@
 
       <details class="disclosure" id="directorships">
         <summary>
-          <span class="disc-title">Directorships</span>
+          <h2 class="disc-title">Directorships</h2>
           <span class="disc-meta">board / governance</span>
         </summary>
         <ul class="dir-list" data-render="directorships"></ul>
@@ -1335,7 +1375,7 @@
 
       <details class="disclosure" id="memberships">
         <summary>
-          <span class="disc-title">Professional Memberships</span>
+          <h2 class="disc-title">Professional Memberships</h2>
           <span class="disc-meta">IEEE · IASA · IIBA · Scrum Alliance</span>
         </summary>
         <ul class="mem-list" data-render="memberships"></ul>
@@ -1346,7 +1386,7 @@
   <!-- TRACK RECORD -->
   <section class="track-record" id="track-record">
     <div class="container">
-      <p class="section-label reveal">Worked With</p>
+      <h2 class="section-label reveal">Worked With</h2>
       <p class="companies reveal">Reserve Bank of Australia<span class="sep"> · </span>APRA<span class="sep"> · </span>Commonwealth Bank<span class="sep"> · </span>Westpac<span class="sep"> · </span>Qantas<span class="sep"> · </span>KPMG<span class="sep"> · </span>AMP<span class="sep"> · </span>BHP Billiton<span class="sep"> · </span>Rothschilds<span class="sep"> · </span>Royal Bank of Scotland<span class="sep"> · </span>St George Bank<span class="sep"> · </span>ABN Amro<span class="sep"> · </span>Calyon<span class="sep"> · </span>Illawarra Credit Union<span class="sep"> · </span>EDS<span class="sep"> · </span>RXP Services<span class="sep"> · </span>NSW Corrective Services<span class="sep"> · </span>T2 Tea<span class="sep"> · </span>Lorna Jane<span class="sep"> · </span>Rodd &amp; Gunn<span class="sep"> · </span>Australian Vintage Limited</p>
     </div>
   </section>
@@ -1356,7 +1396,7 @@
     <div class="container">
       <details class="disclosure" id="side-projects" open>
         <summary>
-          <span class="disc-title">Current Side Projects</span>
+          <h2 class="disc-title">Current Side Projects</h2>
           <span class="disc-meta">AI · e-commerce · independent</span>
         </summary>
         <ul class="side-projects-list" data-render="sideProjects"></ul>
@@ -1364,7 +1404,7 @@
 
       <details class="disclosure" id="personal-achievements">
         <summary>
-          <span class="disc-title">Personal Achievements</span>
+          <h2 class="disc-title">Personal Achievements</h2>
           <span class="disc-meta">DJ · SES volunteer · BNI Gold</span>
         </summary>
         <ul class="pa-list" data-render="personalAchievements"></ul>
@@ -1375,26 +1415,27 @@
   <!-- DOWNLOADS -->
   <section class="downloads-section" id="downloads">
     <div class="container">
-      <p class="section-label reveal">Downloads</p>
+      <h2 class="section-label reveal">Downloads</h2>
       <p class="reveal" style="color:var(--text-dim); font-size:0.95rem; max-width:60ch;">
         Recruiters: Feel free to load this PDF, DOCX or JSON into your ATS to keep me in the mix for future roles&hellip;
       </p>
       <div class="downloads reveal">
         <a href="cv/docs/Paul%20Harvey%20-%20Resume.pdf" id="dl-pdf" download aria-label="Download resume as PDF">
-          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <span class="dl-format">PDF</span>
         </a>
         <a href="cv/docs/Paul%20Harvey%20-%20Resume.docx" id="dl-docx" download aria-label="Download resume as Word DOCX">
-          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <span class="dl-format">DOCX</span>
         </a>
         <a href="resume.json" download aria-label="Download resume as JSON Resume data">
-          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
           <span class="dl-format">JSON</span>
         </a>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -1415,6 +1456,11 @@
   <script>
   (function () {
     'use strict';
+
+    function reducedMotion() {
+      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    function scrollBehavior() { return reducedMotion() ? 'auto' : 'smooth'; }
 
     /* Scroll progress */
     var bar = document.querySelector('.scroll-progress');
@@ -1437,6 +1483,8 @@
       if (!modal) return;
       var linkEl = document.getElementById('modal-link');
       var copyEl = document.getElementById('modal-copy');
+      var copyStatus = document.getElementById('copy-status');
+      var lastTrigger = null;
 
       var copyResetTimer = null;
       function markCopied(success) {
@@ -1447,7 +1495,7 @@
         }
       }
 
-      function openModal(action) {
+      function openModal(action, trigger) {
         var value, href;
         if (action === 'email') {
           value = email();
@@ -1458,9 +1506,13 @@
         } else {
           return;
         }
+        lastTrigger = trigger || null;
+        // Generic accessible name only — no PII, consistent with the obfuscation design.
+        modal.setAttribute('aria-label', action === 'email' ? 'Email Paul' : 'Call Paul');
         linkEl.textContent = value;
         linkEl.setAttribute('href', href);
         markCopied(false);
+        if (copyStatus) copyStatus.textContent = '';
         modal.removeAttribute('hidden');
         setTimeout(function () { linkEl.focus(); }, 50);
       }
@@ -1469,31 +1521,60 @@
         modal.setAttribute('hidden', '');
         linkEl.textContent = '···';
         linkEl.setAttribute('href', '#');
+        // Restore focus to whatever opened the dialog (keyboard/AT users land back in place).
+        if (lastTrigger && typeof lastTrigger.focus === 'function') {
+          lastTrigger.focus();
+        }
+        lastTrigger = null;
+      }
+
+      function modalFocusables() {
+        return Array.prototype.slice.call(
+          modal.querySelectorAll('a[href], button:not([disabled])')
+        ).filter(function (n) { return n.offsetParent !== null; });
       }
 
       document.querySelectorAll('[data-action="email"], [data-action="phone"]').forEach(function (btn) {
-        btn.addEventListener('click', function () { openModal(btn.getAttribute('data-action')); });
+        btn.addEventListener('click', function () { openModal(btn.getAttribute('data-action'), btn); });
       });
       document.querySelectorAll('[data-close-modal]').forEach(function (el) {
         el.addEventListener('click', closeModal);
       });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+        if (modal.hasAttribute('hidden')) return;
+        if (e.key === 'Escape') { closeModal(); return; }
+        if (e.key === 'Tab') {
+          // Trap Tab within the open dialog (WAI-ARIA APG dialog pattern).
+          var f = modalFocusables();
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault(); last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); first.focus();
+          } else if (!modal.contains(document.activeElement)) {
+            e.preventDefault(); first.focus();
+          }
+        }
       });
 
+      function announceCopy(ok) {
+        markCopied(ok);
+        if (copyStatus) copyStatus.textContent = ok ? 'Copied to clipboard' : 'Copy failed';
+      }
       copyEl.addEventListener('click', function () {
         var v = linkEl.textContent;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(v).then(
-            function () { markCopied(true); },
-            function () { markCopied(false); }
+            function () { announceCopy(true); },
+            function () { announceCopy(false); }
           );
         } else {
           var ta = document.createElement('textarea');
           ta.value = v; ta.style.position = 'fixed'; ta.style.left = '-9999px';
           document.body.appendChild(ta); ta.select();
-          try { document.execCommand('copy'); markCopied(true); }
-          catch (err) { markCopied(false); }
+          try { document.execCommand('copy'); announceCopy(true); }
+          catch (err) { announceCopy(false); }
           document.body.removeChild(ta);
         }
       });
@@ -1602,14 +1683,14 @@
           if (role) {
             role.setAttribute('open', '');
             // Also open the keywords nested inside? No — keep collapsed by default.
-            role.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            role.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
           }
         } else if (sectionId) {
           e.preventDefault();
           var section = document.getElementById(sectionId);
           if (section) {
             section.setAttribute('open', '');
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            section.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
           }
         }
       });
@@ -1695,7 +1776,7 @@
         'data-tags': (role.tags || []).join(',')
       });
       var sum = el('summary');
-      var head = el('div', { class: 'role-head' }, [
+      var head = el('h3', { class: 'role-head' }, [
         el('span', { class: 'role-employer', text: role.name }),
         el('span', { class: 'role-title', text: role.position })
       ]);
