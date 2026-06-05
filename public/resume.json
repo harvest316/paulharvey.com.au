@@ -150,8 +150,8 @@
     "availability": "1 week notice",
     "visa": "Australian Citizen",
     "rates": {
-      "contract": "$1,200–$1,600 / day preferred; open to lower for the right fit",
-      "permanent": "$200k–$300k base; open to lower for less stress, closer to home, or remote"
+      "contract": "$800–$1,200 / day preferred; open to lower for the right fit",
+      "permanent": "$150k–$200k base (excluding super); open to lower for less stress, closer to home, or remote"
     },
     "location": {
       "based": "Hurstville",
@@ -2081,8 +2081,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260604.1",
-    "lastModified": "2026-06-04",
+    "version": "20260605.1",
+    "lastModified": "2026-06-05",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
