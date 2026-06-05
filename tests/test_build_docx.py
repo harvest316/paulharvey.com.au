@@ -145,6 +145,6 @@ def test_main_real_contact(docx_mod, monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(docx_mod, "REPO", tmp_path)
     monkeypatch.setattr("sys.argv", ["build-resume-docx.py", "--real-contact"])
     docx_mod.main()
-    out = tmp_path / "cv" / "docs" / "Paul Harvey - Resume (full).docx"
+    out = tmp_path / "out" / "full-contact" / "Paul Harvey - Resume (full).docx"
     assert out.exists()
     assert "REAL" in capsys.readouterr().out

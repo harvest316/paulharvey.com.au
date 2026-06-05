@@ -17,19 +17,23 @@ This project contains personal information (resume, contact details, rates, refe
 
 ## What lives where
 
+**`public/` is the deploy root** — wrangler publishes `public/` and nothing else. Every served file lives there; source, tooling and secrets live outside it (so they can never be published).
+
 | Path | Purpose |
 |------|---------|
-| `resume.json` | Canonical JSON Resume schema + Paul-specific extensions. Single source of truth. |
-| `index.html` | Renders `resume.json` client-side. Don't hand-edit role copy here — edit JSON. |
-| `cv/docs/` | Pre-generated DOCX downloads (the combined ATS-friendly resume + recruiter FAQ). |
-| `scripts/` | Sync + build automation. |
-| `_worker.js` | Cloudflare Pages worker handling cv subdomain + redirects. |
-| `_headers` / `_redirects` | Static config for Cloudflare Pages. |
+| `public/resume.json` | Canonical JSON Resume schema + Paul-specific extensions. Single source of truth (also served at `/resume.json`). |
+| `public/index.html` | Renders `resume.json` client-side. Don't hand-edit role copy here — edit JSON. |
+| `public/cv/docs/` | Pre-generated public PDF + DOCX downloads (obfuscated contact). |
+| `public/_worker.js` | Cloudflare Pages worker handling cv subdomain + redirects. |
+| `public/_headers` / `public/_redirects` | Static config for Cloudflare Pages. |
+| `public/images/` | Served images (hero, logos, og). |
+| `scripts/` | Build automation (reads `public/resume.json`, writes `public/cv/docs/`). |
+| `out/full-contact/` | Private real-contact `(full)` PDF/DOCX (gitignored, OUTSIDE `public/` — never deployed). |
 
 ## Editing rules
 
-- All resume content lives in `resume.json`. Don't hand-edit role text in `index.html`.
-- Bump `meta.version` and `meta.lastModified` on every `resume.json` edit.
+- All resume content lives in `public/resume.json`. Don't hand-edit role text in `public/index.html`.
+- Bump `meta.version` and `meta.lastModified` on every `public/resume.json` edit. Keep the `data-version` attribute on `#resume-data` in `public/index.html` in sync with `meta.version` (deploy.sh re-stamps it, but match it manually too so committed state is correct).
 - Recruiter FAQ content lives in `resume.json` under `recruiterFAQ`. Site renders from there.
 - Side-project descriptions live in `resume.json` under `sideProjects[]`.
 - Tag every new `highlights[]` entry from the closed vocabulary in `meta.paul.tagVocabulary`.
@@ -42,7 +46,12 @@ Paul's email (`cv@paulharvey.com.au`) is obfuscated client-side via layered JS /
 
 ## Deploy
 
-Cloudflare Pages is **not** git-connected — pushing to `main` does nothing. Deploy with `scripts/deploy.sh`: it builds the public PDF + DOCX from `resume.json` (the single source of truth) and publishes a clean staging dir. Only git-tracked `cv/docs` files are staged; real-contact `(full)` variants, `.env`, and `*.py` are blocked (a `(full)` DOCX with real email + phone leaked once via a `*.docx` glob). Creds load from `~/.secrets/paulharvey-deploy.env`, never repo `.env`.
+Two paths, both `wrangler pages deploy public/` (the `public/` scope means there is no staging dir, allowlist, or secret-grep — only served files live in `public/`, so nothing private can be published):
+
+- **Push to `main`** → GitHub Actions (`.github/workflows/deploy.yml`) deploys using the repo's `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` GitHub Actions secrets. Normal path.
+- **`scripts/deploy.sh`** → builds the public PDF + DOCX into `public/cv/docs/`, stamps the version into `public/index.html`, commits, then deploys directly using `CLOUDFLARE_*` from the gitignored repo-root `.env` (immediate local deploy without waiting on CI).
+
+`.env` is safe in the repo root again: it sits OUTSIDE `public/`, so wrangler can never publish it. (History: a `(full)` DOCX and the token leaked in mid-2026 when deploys ran from the repo root via globbing; the `public/` scope is the structural fix.) Real-contact `(full)` variants build to `out/full-contact/`, outside `public/`.
 
 ## Logos
 

@@ -101,7 +101,7 @@ def test_main_keep_html_and_real_contact(pdf_mod, monkeypatch, tmp_path, capsys)
     monkeypatch.setattr(pdf_mod, "REPO", tmp_path)
     monkeypatch.setattr("sys.argv", ["build-resume-pdf.py", "--real-contact", "--keep-html"])
     pdf_mod.main()
-    out = tmp_path / "cv" / "docs" / "Paul Harvey - Resume (full).pdf"
+    out = tmp_path / "out" / "full-contact" / "Paul Harvey - Resume (full).pdf"
     assert out.exists()
     assert out.with_suffix(".html").exists()
     assert "REAL" in capsys.readouterr().out

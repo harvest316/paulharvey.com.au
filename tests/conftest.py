@@ -17,7 +17,7 @@ import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
-RESUME_JSON = REPO / "resume.json"
+RESUME_JSON = REPO / "public" / "resume.json"
 
 # Make `import resume_blocks` work, and ensure the builders' internal
 # `from resume_blocks import ...` resolves to this same module instance.

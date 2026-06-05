@@ -47,8 +47,9 @@ from resume_blocks import build_blocks, to_ascii  # noqa: E402
 
 
 REPO = Path(__file__).resolve().parent.parent
-RESUME_JSON = REPO / "resume.json"
-OUT_DOCX = REPO / "cv" / "docs" / "Paul Harvey - Resume.docx"
+PUBLIC = REPO / "public"               # wrangler deploy root — everything here is published
+RESUME_JSON = PUBLIC / "resume.json"
+OUT_DOCX = PUBLIC / "cv" / "docs" / "Paul Harvey - Resume.docx"
 
 # Fonts: Calibri is the most widely-tested font for ATS parsing.
 FONT_BODY = "Calibri"
@@ -230,7 +231,8 @@ def main():
     # Output path depends on contact mode. Contact resolution itself (email/phone, which
     # live in resume_blocks, not resume.json) happens inside build_blocks().
     if args.real_contact:
-        out_path = REPO / "cv" / "docs" / "Paul Harvey - Resume (full).docx"
+        # Private real-contact variant: write OUTSIDE public/ so wrangler never publishes it.
+        out_path = REPO / "out" / "full-contact" / "Paul Harvey - Resume (full).docx"
     else:
         out_path = OUT_DOCX
 

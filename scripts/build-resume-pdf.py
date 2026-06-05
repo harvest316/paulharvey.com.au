@@ -37,8 +37,9 @@ from weasyprint import HTML  # noqa: E402
 
 
 REPO = Path(__file__).resolve().parent.parent
-RESUME_JSON = REPO / "resume.json"
-OUT_PDF = REPO / "cv" / "docs" / "Paul Harvey - Resume.pdf"
+PUBLIC = REPO / "public"               # wrangler deploy root — everything here is published
+RESUME_JSON = PUBLIC / "resume.json"
+OUT_PDF = PUBLIC / "cv" / "docs" / "Paul Harvey - Resume.pdf"
 
 # ATS-clean print stylesheet. Single column, A4, 2.5 cm margins, system sans.
 # Carlito is the metric-compatible Calibri substitute commonly present on Linux;
@@ -170,7 +171,8 @@ def main():
     basics = data["basics"]
 
     if args.real_contact:
-        out_path = REPO / "cv" / "docs" / "Paul Harvey - Resume (full).pdf"
+        # Private real-contact variant: write OUTSIDE public/ so wrangler never publishes it.
+        out_path = REPO / "out" / "full-contact" / "Paul Harvey - Resume (full).pdf"
     else:
         out_path = OUT_PDF
 
