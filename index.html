@@ -30,7 +30,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Two-stage font load: above-fold faces loaded normally (display=swap keeps text visible);
+       the full stylesheet is otherwise the same request, just split so the critical DNS/TCP
+       warmup lands before the stylesheet response. display=swap is already present so text
+       renders in the system fallback during font load — no invisible-text flash. -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <link rel="icon" type="image/webp" href="/images/paul-harvey.webp">
   <link rel="apple-touch-icon" href="/images/paul-harvey.webp">
@@ -1204,7 +1209,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260604.1"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -1987,7 +1992,10 @@
       initReveal();
     }
 
-    fetch('resume.json', { cache: 'no-cache' })
+    var resumeSlot = document.getElementById('resume-data');
+    var resumeVer = resumeSlot && resumeSlot.getAttribute('data-version');
+    var resumeUrl = resumeVer ? 'resume.json?v=' + encodeURIComponent(resumeVer) : 'resume.json';
+    fetch(resumeUrl)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         var slot = document.getElementById('resume-data');
@@ -2001,5 +2009,48 @@
       });
   })();
   </script>
+
+  <!-- Static resume content for crawlers and no-JS clients.
+       Rendered by JS above when running; this block is the fallback.
+       No email or phone here — obfuscation design applies to all served HTML. -->
+  <noscript>
+  <style>.noscript-resume{max-width:800px;margin:3rem auto;padding:0 1.5rem;font-family:sans-serif;line-height:1.6;color:#1a1a1a}.noscript-resume h2{font-size:1.5rem;margin-bottom:0.5rem}.noscript-resume h3{font-size:1.1rem;margin:1.5rem 0 0.5rem;border-bottom:1px solid #ccc;padding-bottom:0.25rem}.noscript-resume ul{padding-left:1.5rem}.noscript-resume li{margin-bottom:0.4rem}</style>
+  <section class="noscript-resume">
+  <h2>Paul Harvey — Solutions Architect · CTO · IT Manager</h2>
+  <p>Technical all-rounder with a broad wingspan, where engineering meets strategy.</p>
+  <p>An independent thinker with keen observation skills, who reads people and situations well and finds solutions that others miss. Pragmatic &#x27;get-it-done&#x27; approach learned on the London trading floor, balanced by an eye for quality and long-term sustainability. Unflappable, upbeat, draws hidden talents out of teams, and explains complex technical concepts in concrete business terms.</p>
+  <p><strong>Skills:</strong> Solutions Architecture, AI / LLM Integration, Salesforce B2C Commerce Cloud, Shopify Plus, Cloud (AWS / Azure / GCP), SQL Server / Data Engineering, Financial Services Tech, Distributed / Offshore Team Leadership, Pre-Sales / Bids / Proposals, ERP (ERPNext / Odoo / SFCC integrations), Cybersecurity / Compliance, Business Analysis</p>
+  <h3>Work Experience</h3><ul>
+  <li>Evitara — Solutions Architect (AI Integration): Architecting and maintaining a multi-project AI platform spanning marketing automation, ad operations, subscription SaaS, and internal ERP tooling. Leading a 48-agent Claude Code fleet that has shipped ~3,900 commits with 85% coverage and 269 architectural decision records across 9 projects.</li>
+  <li>Amblique — Solutions Architect (eCommerce Integration): Architected e-commerce solutions on Salesforce B2C Commerce Cloud and Shopify Plus for high-street brands. One of 5 architects providing technical direction to a team of 30 Australian staff + 30 offshore developers. Primary technical contact for clients, balancing innovation with feasibility and compliance.</li>
+  <li>Apptimise — Managing Director: Lean start-up with a team of 4 building web apps, Shopify e-commerce, project management, coaching and consulting.</li>
+  <li>OneContact — IT Manager: Planned, organised, controlled and coordinated all IT operations to ensure 500 agents delivered campaigns on time. Managed up to 15 SQL/.NET/web developers, VOIP engineers and print managers across Sydney, Wellington and Jakarta.</li>
+  <li>Duxe Software Systems — Lead Architect → CTO: Recruited and managed 14 ReactJS and Python/Django developers. Technical oversight and consulting.</li>
+  <li>Corporate Spend — Chief Technical Officer: Founding partner responsible for all technology decisions and oversight.</li>
+  <li>Corporate SEO — Managing Director: Principal Consultant across digital marketing, web performance and security.</li>
+  <li>Reserve Bank of Australia — Development Team Lead · Architect: Led a distributed team of C# .NET and SQL Server developers. Managed 2 Data Warehouse migrations.</li>
+  <li>Charles Marcus Management Consulting — Management Consultant: Six years contracting across financial services, law, utilities and government.</li>
+  </ul>
+  <h3>Earlier Career</h3><ul>
+  <li>N M Rothschild — Senior Front Office Developer</li>
+  <li>St George Bank — Senior SQL/.NET Developer</li>
+  <li>BHP / Billiton — Senior Developer</li>
+  <li>OzEmail Internet — Developer / DBA</li>
+  <li>BORAL — Junior Software Developer</li>
+  </ul>
+  <h3>Education</h3><ul>
+  <li>Queensland University of Technology — Bachelor — Information Technology (Information Systems &amp; Communication)</li>
+  <li>Redcliffe State High School — Dux of School</li>
+  </ul>
+  <h3>Certifications (selected)</h3><ul>
+  <li>Scaled Agile Framework (SAFe)</li>
+  <li>Six Sigma Green Belt</li>
+  <li>ITIL v3 Foundation</li>
+  <li>Advanced Leadership</li>
+  <li>...and 31 more</li>
+  </ul>
+  <p>References available on request.</p>
+  </section>
+  </noscript>
 </body>
 </html>

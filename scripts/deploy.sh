@@ -76,6 +76,11 @@ STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
 cp "$REPO_DIR"/index.html "$REPO_DIR"/resume.json "$REPO_DIR"/_worker.js \
    "$REPO_DIR"/_headers "$REPO_DIR"/_redirects "$STAGE"/
+
+# Stamp the resume.json version into the staged index.html data-version attribute
+# so the fetch uses a versioned URL (resume.json?v=...) instead of no-cache.
+RESUME_VER="$(python3 -c "import json,sys; print(json.load(open('$REPO_DIR/resume.json'))['meta']['version'])")"
+sed -i "s/data-version=\"[^\"]*\"/data-version=\"$RESUME_VER\"/" "$STAGE/index.html"
 cp -r "$REPO_DIR"/images "$STAGE"/images
 # Only git-TRACKED files under cv/docs (public). Gitignored "(full)" variants are excluded.
 git ls-files -z cv/docs | while IFS= read -r -d '' f; do
