@@ -692,7 +692,7 @@
           ]
         },
         {
-          "text": "Evaluated enterprise BPM and ERP platforms for the core-systems rebuild, including Appian, weighing cost, integration fit and maintainability before recommending a direction.",
+          "text": "Evaluated enterprise BPM and ERP platforms for the core-systems rebuild, including Appian and IBM Business Process Manager (WebSphere), weighing cost, integration fit and maintainability before recommending a direction.",
           "tags": [
             "erp",
             "presales",
@@ -766,6 +766,7 @@
         "Windows 10",
         "BPMN 2.0",
         "Appian",
+        "IBM BPM (WebSphere)",
         "WordPress",
         "Upwork",
         "Altaro Backup",
@@ -2101,7 +2102,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260608.1",
+    "version": "20260608.2",
     "lastModified": "2026-06-08",
     "language": "en-AU",
     "paul": {
