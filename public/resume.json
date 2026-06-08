@@ -517,6 +517,15 @@
           ]
         },
         {
+          "text": "Integrated commerce storefronts to NetSuite ERP for three retail clients, including T2 Tea via MuleSoft, syncing orders, inventory and customer master data.",
+          "tags": [
+            "integration",
+            "ecommerce",
+            "erp"
+          ],
+          "metric": "NetSuite · 3 clients"
+        },
+        {
           "text": "Optimised page load times across all client sites; significant Web Vitals improvements as the team's SME.",
           "tags": [
             "architecture",
@@ -562,6 +571,8 @@
         "Shopify Plus",
         "Headless / composable commerce",
         "Hydrogen + Oxygen",
+        "NetSuite (ERP integration)",
+        "MuleSoft (iPaaS)",
         "Web performance optimisation",
         "AI/ML technologies",
         "Agile methodology",
@@ -681,6 +692,14 @@
           ]
         },
         {
+          "text": "Evaluated enterprise BPM and ERP platforms for the core-systems rebuild, including Appian, weighing cost, integration fit and maintainability before recommending a direction.",
+          "tags": [
+            "erp",
+            "presales",
+            "architecture"
+          ]
+        },
+        {
           "text": "Introduced Jira workflow management, LastPass enterprise password management, digital wallboards, virtual scrum, SQL code-quality tooling, offsite backups, disaster recovery plan, emergency response strategy, and built a custom automated task-prioritisation system in Jira.",
           "tags": [
             "devops",
@@ -746,6 +765,7 @@
         "CentOS",
         "Windows 10",
         "BPMN 2.0",
+        "Appian",
         "WordPress",
         "Upwork",
         "Altaro Backup",
@@ -1716,7 +1736,7 @@
       ]
     },
     {
-      "name": "ERP (ERPNext / Odoo / SFCC integrations)",
+      "name": "ERP (NetSuite / ERPNext / Odoo integrations)",
       "level": "Senior",
       "yearsExperience": 4,
       "tags": [
@@ -2081,8 +2101,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260605.2",
-    "lastModified": "2026-06-05",
+    "version": "20260608.1",
+    "lastModified": "2026-06-08",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
