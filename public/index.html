@@ -999,6 +999,13 @@
       color: var(--text-dim);
       margin-top: 0.3rem;
     }
+    .sp-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-dim);
+      max-width: 60ch;
+    }
 
     /* DOWNLOADS */
     .downloads-section { border-top: 1px solid var(--line); }
@@ -1211,7 +1218,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260622.2"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260622.3"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -1407,6 +1414,7 @@
           <span class="disc-meta">AI · e-commerce · independent</span>
         </summary>
         <ul class="side-projects-list" data-render="sideProjects"></ul>
+        <p class="sp-note" data-bind="sideProjectsNote"></p>
       </details>
 
       <details class="disclosure" id="personal-achievements">
