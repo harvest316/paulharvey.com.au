@@ -2004,7 +2004,6 @@
       "date": "1992"
     }
   ],
-  "sideProjectsNote": "These are Paul's own products, built on his own time. A need spotted during a client engagement may spark an idea, but each is an independent, from-scratch build and carries no client code, data, or domain IP. Client work stays the client's.",
   "sideProjects": [
     {
       "name": "ContactReplyAI",
@@ -2091,7 +2090,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260622.3",
+    "version": "20260622.4",
     "lastModified": "2026-06-22",
     "language": "en-AU",
     "paul": {
