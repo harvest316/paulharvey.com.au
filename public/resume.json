@@ -305,7 +305,7 @@
           ]
         },
         {
-          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Hitting the limits of these standards in practice surfaced the need for a dedicated tool, which Paul owns and is now building independently as MinSpec (minspec.dev): an open-source VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
+          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Scaling spec ceremony to change complexity surfaced a tooling gap Paul has since pursued on his own time (see Side Projects).",
           "tags": [
             "ai-llm",
             "architecture",
@@ -314,28 +314,11 @@
           ]
         },
         {
-          "text": "Built the in-house LLM cost-control tooling (LLM proxy, prompt compression, agent escalation, full savings visibility) that proved out the model. Paul owns and is now rebuilding it independently as ScroogeLLM (scroogellm.com), a VS Code extension where customers pay only a percentage of measured savings.",
+          "text": "Cut LLM spend with a cost-control layer (proxy, prompt compression, agent escalation, full savings visibility), with no client code or data exposed to external providers.",
           "tags": [
             "ai-llm",
             "cost-optimisation",
             "ecommerce"
-          ]
-        },
-        {
-          "text": "Built the voice-first ERP Android client (Kotlin, Jetpack Compose) that proved out the concept: HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Paul owns and is now rebuilding it independently as ERPChat.",
-          "tags": [
-            "ai-llm",
-            "erp",
-            "mobile",
-            "security-compliance"
-          ]
-        },
-        {
-          "text": "Privacy-preserving on-device LLM proxy for ERPChat: Aho-Corasick keyword sanitiser rewrites confidential terms to codewords before requests leave the phone, reverses them on return. External LLM providers never see a real customer or supplier name.",
-          "tags": [
-            "ai-llm",
-            "security-compliance",
-            "architecture"
           ]
         },
         {
@@ -2021,6 +2004,7 @@
       "date": "1992"
     }
   ],
+  "sideProjectsNote": "These are Paul's own products, built on his own time. A need spotted during a client engagement may spark an idea, but each is an independent, from-scratch build and carries no client code, data, or domain IP. Client work stays the client's.",
   "sideProjects": [
     {
       "name": "ContactReplyAI",
@@ -2066,6 +2050,7 @@
     },
     {
       "name": "ERPChat",
+      "logo": "images/logos/erpchat.png",
       "description": "Voice-first ERP client for Android (Kotlin, Jetpack Compose). On-device document auto-crop, streamed TTS, HITL approval gating, and a privacy-preserving on-device LLM proxy that rewrites confidential terms to codewords so external providers never see a real customer or supplier name."
     },
     {
@@ -2106,7 +2091,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260622.2",
+    "version": "20260622.3",
     "lastModified": "2026-06-22",
     "language": "en-AU",
     "paul": {
