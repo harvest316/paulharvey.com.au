@@ -2065,6 +2065,10 @@
       "description": "VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, agent escalation, and full savings visibility. You only pay a percentage of how much we save you."
     },
     {
+      "name": "ERPChat",
+      "description": "Voice-first ERP client for Android (Kotlin, Jetpack Compose). On-device document auto-crop, streamed TTS, HITL approval gating, and a privacy-preserving on-device LLM proxy that rewrites confidential terms to codewords so external providers never see a real customer or supplier name."
+    },
+    {
       "name": "DJ Vybe",
       "url": "https://vybe.com.au",
       "logo": "images/logos/vybe.png",
@@ -2102,7 +2106,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260622.1",
+    "version": "20260622.2",
     "lastModified": "2026-06-22",
     "language": "en-AU",
     "paul": {
