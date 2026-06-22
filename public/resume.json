@@ -305,7 +305,7 @@
           ]
         },
         {
-          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Productised the spec-driven workflow as MinSpec (minspec.dev), a VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
+          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Hitting the limits of these standards in practice surfaced the need for a dedicated tool, which Paul owns and is now building independently as MinSpec (minspec.dev): an open-source VS Code extension that scales engineering ceremony to change complexity, from one-line specs to full architecture docs, with no AI dependency, backend, or lock-in.",
           "tags": [
             "ai-llm",
             "architecture",
@@ -314,7 +314,7 @@
           ]
         },
         {
-          "text": "Built ScroogeLLM (scroogellm.com), a VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, and agent escalation, with full savings visibility. Customers pay only a percentage of measured savings.",
+          "text": "Built the in-house LLM cost-control tooling (LLM proxy, prompt compression, agent escalation, full savings visibility) that proved out the model. Paul owns and is now rebuilding it independently as ScroogeLLM (scroogellm.com), a VS Code extension where customers pay only a percentage of measured savings.",
           "tags": [
             "ai-llm",
             "cost-optimisation",
@@ -322,7 +322,7 @@
           ]
         },
         {
-          "text": "Built ERPChat, a voice-first ERP Android client (Kotlin, Jetpack Compose). HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Open-sourced under Apache-2.0.",
+          "text": "Built the voice-first ERP Android client (Kotlin, Jetpack Compose) that proved out the concept: HITL approval gating, OpenCV on-device document auto-crop, ElevenLabs streamed TTS, SQLCipher-encrypted storage, UnifiedPush notifications. Paul owns and is now rebuilding it independently as ERPChat.",
           "tags": [
             "ai-llm",
             "erp",
@@ -2056,7 +2056,7 @@
       "name": "MinSpec",
       "url": "https://minspec.dev",
       "logo": "images/logos/minspec.svg",
-      "description": "VS Code extension that scales spec-driven-development ceremony to change complexity: one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
+      "description": "Open-source VS Code extension that scales spec-driven-development ceremony to change complexity: one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
     },
     {
       "name": "ScroogeLLM",
@@ -2102,8 +2102,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260608.2",
-    "lastModified": "2026-06-08",
+    "version": "20260622.1",
+    "lastModified": "2026-06-22",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
