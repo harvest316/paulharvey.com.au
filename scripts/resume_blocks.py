@@ -295,7 +295,8 @@ def build_blocks(data: dict, *, real_contact: bool = False) -> list[dict]:
     if data.get("sideProjects"):
         blocks.append(_h("Side Projects"))
         for p in data["sideProjects"]:
-            blocks.append(_b(f"{p['name']} ({p['url']}) - {p['description']}"))
+            name = f"{p['name']} ({p['url']})" if p.get("url") else p["name"]
+            blocks.append(_b(f"{name} - {p['description']}"))
 
     # ====== PERSONAL ACHIEVEMENTS ======
     if data.get("personalAchievements"):
