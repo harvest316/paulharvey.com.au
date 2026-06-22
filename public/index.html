@@ -958,11 +958,15 @@
       list-style: none;
       padding: 0;
       margin-top: 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* centres the incomplete last row */
       gap: 1rem;
     }
     .side-projects-list li {
+      position: relative; /* anchor for the stretched card link */
+      flex: 0 1 300px;
+      cursor: pointer;
       padding: 1rem 1.2rem;
       background: var(--bg-card);
       border: 1px solid var(--line);
@@ -994,6 +998,12 @@
     }
     .side-projects-list .sp-name { display: block; }
     .side-projects-list a:hover { color: var(--accent); }
+    /* stretch the name link across the whole card so the card is clickable */
+    .side-projects-list a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
     .side-projects-list p {
       font-size: 0.85rem;
       color: var(--text-dim);
@@ -1210,7 +1220,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260622.4"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260622.5"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>

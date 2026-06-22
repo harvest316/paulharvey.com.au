@@ -2049,6 +2049,7 @@
     },
     {
       "name": "ERPChat",
+      "url": "https://erpchat.app",
       "logo": "images/logos/erpchat.png",
       "description": "Voice-first ERP client for Android (Kotlin, Jetpack Compose). On-device document auto-crop, streamed TTS, HITL approval gating, and a privacy-preserving on-device LLM proxy that rewrites confidential terms to codewords so external providers never see a real customer or supplier name."
     },
@@ -2090,7 +2091,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260622.4",
+    "version": "20260622.5",
     "lastModified": "2026-06-22",
     "language": "en-AU",
     "paul": {
