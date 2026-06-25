@@ -216,6 +216,8 @@
       "highlights": [
         {
           "text": "MinSpec (minspec.dev): free, open-source (MIT) VS Code extension that scales spec-driven-development ceremony with complexity. Classifies each change from a git diff and syntax-tree analysis, so a typo needs one sentence while an architectural change gets full docs. No AI dependency, no backend, Spec Kit-compatible markdown, no lock-in.",
+          "url": "https://minspec.dev",
+          "linkText": "minspec.dev",
           "tags": [
             "devops",
             "architecture",
@@ -224,6 +226,8 @@
         },
         {
           "text": "ScroogeLLM (scroogellm.com): VS Code extension and local LLM proxy that cuts AI API cost without sacrificing quality, via real-time per-call cost visibility, prompt compression, response caching, model routing and on-device PII scrubbing. Local-first, so prompts and keys never leave the machine.",
+          "url": "https://scroogellm.com",
+          "linkText": "scroogellm.com",
           "tags": [
             "ai-llm",
             "cost-optimisation",
@@ -2163,7 +2167,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260625.4",
+    "version": "20260625.5",
     "lastModified": "2026-06-25",
     "language": "en-AU",
     "paul": {
@@ -2193,6 +2197,8 @@
       "extensionFields": {
         "highlights[].tags": "string[]: taxonomy match keys",
         "highlights[].metric": "string: pull-quote numeric callout",
+        "highlights[].url": "string: makes highlights[].linkText a clickable link in the HTML render",
+        "highlights[].linkText": "string: substring of text to linkify with highlights[].url",
         "work[].positionFlexible": "boolean: true if title can be chosen per JD",
         "work[].positionDefault": "string: fallback when generator has no JD signal",
         "work[].positionAliases": "string[]: alternatives generator may pick from",

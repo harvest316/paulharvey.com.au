@@ -1290,7 +1290,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260625.4"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260625.5"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -1872,7 +1872,14 @@
         if (typeof h === 'string') {
           li.textContent = h;
         } else {
-          li.textContent = h.text;
+          var li0 = (h.url && h.linkText) ? h.text.indexOf(h.linkText) : -1;
+          if (li0 !== -1) {
+            li.appendChild(document.createTextNode(h.text.slice(0, li0)));
+            li.appendChild(el('a', { href: h.url, target: '_blank', rel: 'noopener', text: h.linkText }));
+            li.appendChild(document.createTextNode(h.text.slice(li0 + h.linkText.length)));
+          } else {
+            li.textContent = h.text;
+          }
           if (h.metric) {
             li.appendChild(el('span', { class: 'metric', text: h.metric }));
           }
