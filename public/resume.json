@@ -199,6 +199,48 @@
   ],
   "work": [
     {
+      "name": "Independent",
+      "position": "Founder & Software Architect (pre-revenue R&D)",
+      "employmentType": "Independent",
+      "startDate": "2026-05",
+      "endDate": "",
+      "location": "Sydney",
+      "summary": "Self-directed product development between roles: building and shipping open-source AI developer tooling. Pre-revenue and self-funded. The two flagship tools below grew out of gaps Paul hit while running the Evitara agent fleet.",
+      "tags": [
+        "ai-llm",
+        "architecture",
+        "devops",
+        "cost-optimisation",
+        "knowledge-mgmt"
+      ],
+      "highlights": [
+        {
+          "text": "MinSpec: open-source VS Code extension that scales spec-driven-development ceremony to change complexity, from one sentence for trivial tasks up to full architecture docs for big ones. No AI dependency, no backend, no lock-in.",
+          "tags": [
+            "devops",
+            "architecture",
+            "knowledge-mgmt"
+          ]
+        },
+        {
+          "text": "ScroogeLLM: VS Code extension that cuts LLM cost while improving quality via an LLM proxy, prompt compression, agent escalation and full savings visibility. Priced as a share of measured savings.",
+          "tags": [
+            "ai-llm",
+            "cost-optimisation",
+            "devops"
+          ]
+        }
+      ],
+      "hardSkills": [
+        "TypeScript",
+        "VS Code Extension API",
+        "Node.js",
+        "LLM proxy architecture",
+        "Prompt engineering",
+        "Open-source maintenance"
+      ]
+    },
+    {
       "name": "Evitara",
       "position": "Solutions Architect (AI Integration)",
       "positionFlexible": true,
@@ -2091,7 +2133,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260625.1",
+    "version": "20260625.2",
     "lastModified": "2026-06-25",
     "language": "en-AU",
     "paul": {
