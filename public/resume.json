@@ -231,13 +231,43 @@
           ]
         }
       ],
+      "softSkills": [
+        "Developer experience (DX) design",
+        "Product strategy",
+        "Self-direction and autonomy",
+        "First-principles problem-solving",
+        "Technical writing",
+        "Open-source maintenance and community",
+        "Pricing and packaging",
+        "Developer-tools go-to-market",
+        "User empathy (built to fix his own workflow pain)"
+      ],
       "hardSkills": [
         "TypeScript",
         "VS Code Extension API",
         "Node.js",
-        "LLM proxy architecture",
+        "Local LLM proxy architecture",
+        "Multi-model routing (Claude, GPT, Gemini)",
+        "Prompt compression",
+        "Response caching",
+        "Cost observability and telemetry",
+        "On-device PII scrubbing and redaction",
+        "Privacy-preserving, local-first architecture",
+        "OS keychain secrets management",
         "Prompt engineering",
-        "Open-source maintenance"
+        "Git diff and AST / syntax-tree analysis",
+        "Spec-driven development (SDD) tooling",
+        "Markdown / Spec Kit-compatible specs",
+        "Test scaffold and acceptance-criteria generation",
+        "VS Code UX (tree views, status bar, command palette)",
+        "MIT open-source maintenance"
+      ],
+      "agilePractices": [
+        "Spec-driven development (SDD)",
+        "Contract-driven development (CDD)",
+        "Root-cause-driven debugging (RCDD)",
+        "Complexity-tiered change classification",
+        "Acceptance-criteria authoring"
       ]
     },
     {
@@ -2133,7 +2163,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260625.3",
+    "version": "20260625.4",
     "lastModified": "2026-06-25",
     "language": "en-AU",
     "paul": {

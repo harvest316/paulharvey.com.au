@@ -787,6 +787,11 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       font-style: italic;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .role-skills {
@@ -1285,7 +1290,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260625.3"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260625.4"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -1934,7 +1939,11 @@
         var kwDetails = el('details', { class: 'role-keywords' });
         var kwSum = el('summary');
         kwSum.appendChild(el('span', { class: 'kw-label', text: 'Keywords' }));
-        kwSum.appendChild(el('span', { class: 'kw-meta', text: 'soft skills · hard skills · agile practices' }));
+        var allKw = [].concat(role.hardSkills || [], role.softSkills || [], role.agilePractices || []);
+        var kwPreview = allKw.slice(0, 5);
+        var kwMeta = kwPreview.join(' · ');
+        if (allKw.length > kwPreview.length) kwMeta += ' · +' + (allKw.length - kwPreview.length) + ' more';
+        kwSum.appendChild(el('span', { class: 'kw-meta', text: kwMeta }));
         kwDetails.appendChild(kwSum);
         var skillsWrap = el('div', { class: 'role-skills' });
         if (role.softSkills && role.softSkills.length) {
