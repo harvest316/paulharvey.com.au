@@ -214,7 +214,7 @@
       "endDate": "2026-05",
       "location": "Sydney",
       "url": "",
-      "summary": "Architecting and maintaining a multi-project AI platform spanning marketing automation, ad operations, subscription SaaS, and internal ERP tooling. Leading a 48-agent Claude Code fleet that has shipped ~3,900 commits with 85% coverage and 269 architectural decision records across 9 projects.",
+      "summary": "Architected and maintained a multi-project AI platform spanning marketing automation, ad operations, subscription SaaS, and internal ERP tooling. Led a 48-agent Claude Code fleet that shipped ~3,900 commits with 85% coverage and 269 architectural decision records across 9 projects.",
       "tags": [
         "architecture",
         "ai-llm",
@@ -2091,8 +2091,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260622.5",
-    "lastModified": "2026-06-22",
+    "version": "20260625.1",
+    "lastModified": "2026-06-25",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [
