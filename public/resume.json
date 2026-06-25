@@ -205,7 +205,7 @@
       "startDate": "2026-05",
       "endDate": "",
       "location": "Sydney",
-      "summary": "Self-directed product development between roles: building and shipping open-source AI developer tooling. Pre-revenue and self-funded. The two flagship tools below grew out of gaps Paul hit while running the Evitara agent fleet.",
+      "summary": "Self-directed product development between roles: building and shipping AI developer tooling for VS Code, self-funded and pre-revenue. The two flagship tools below grew out of gaps Paul hit while running the Evitara agent fleet.",
       "tags": [
         "ai-llm",
         "architecture",
@@ -215,7 +215,7 @@
       ],
       "highlights": [
         {
-          "text": "MinSpec: open-source VS Code extension that scales spec-driven-development ceremony to change complexity, from one sentence for trivial tasks up to full architecture docs for big ones. No AI dependency, no backend, no lock-in.",
+          "text": "MinSpec (minspec.dev): free, open-source (MIT) VS Code extension that scales spec-driven-development ceremony with complexity. Classifies each change from a git diff and syntax-tree analysis, so a typo needs one sentence while an architectural change gets full docs. No AI dependency, no backend, Spec Kit-compatible markdown, no lock-in.",
           "tags": [
             "devops",
             "architecture",
@@ -223,7 +223,7 @@
           ]
         },
         {
-          "text": "ScroogeLLM: VS Code extension that cuts LLM cost while improving quality via an LLM proxy, prompt compression, agent escalation and full savings visibility. Priced as a share of measured savings.",
+          "text": "ScroogeLLM (scroogellm.com): VS Code extension and local LLM proxy that cuts AI API cost without sacrificing quality, via real-time per-call cost visibility, prompt compression, response caching, model routing and on-device PII scrubbing. Local-first, so prompts and keys never leave the machine.",
           "tags": [
             "ai-llm",
             "cost-optimisation",
@@ -347,7 +347,7 @@
           ]
         },
         {
-          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Scaling spec ceremony to change complexity surfaced a tooling gap Paul has since pursued on his own time (see Side Projects).",
+          "text": "Authored the fleet's AI coding standards: spec-driven (SDD), contract-driven (CDD), and root-cause-driven debugging (RCDD), enforced through agent task contracts and pre-commit checks. Scaling spec ceremony with complexity surfaced a tooling gap Paul has since pursued on his own time (see Side Projects).",
           "tags": [
             "ai-llm",
             "architecture",
@@ -2048,6 +2048,18 @@
   ],
   "sideProjects": [
     {
+      "name": "MinSpec",
+      "url": "https://minspec.dev",
+      "logo": "images/logos/minspec.svg",
+      "description": "Free, open-source (MIT) VS Code extension that scales spec-driven-development ceremony with complexity: one sentence for a typo, full architecture docs for a big change. Classifies changes from git diffs and syntax trees. No AI dependency, no backend, no lock-in. 'Just enough spec. Never too much.'"
+    },
+    {
+      "name": "ScroogeLLM",
+      "url": "https://scroogellm.com",
+      "logo": "images/logos/scroogellm.svg",
+      "description": "VS Code extension and local LLM proxy that cuts AI API costs without sacrificing quality: real-time cost visibility, prompt compression, response caching, model routing and on-device PII scrubbing. Local-first, so prompts and keys never leave your machine. 'Why pay full price?'"
+    },
+    {
       "name": "ContactReplyAI",
       "url": "https://contactreplyai.com",
       "logo": "images/logos/contactreplyai.svg",
@@ -2076,18 +2088,6 @@
       "url": "https://aiclarity.com.au/tools",
       "logo": "images/logos/aiclarity.svg",
       "description": "Practical AI prompt packs for developers, for sale on Gumroad and Lemon Squeezy."
-    },
-    {
-      "name": "MinSpec",
-      "url": "https://minspec.dev",
-      "logo": "images/logos/minspec.svg",
-      "description": "Open-source VS Code extension that scales spec-driven-development ceremony to change complexity: one sentence for trivial tasks, full architecture docs for big ones. No AI dependency, no backend, no lock-in."
-    },
-    {
-      "name": "ScroogeLLM",
-      "url": "https://scroogellm.com",
-      "logo": "images/logos/scroogellm.svg",
-      "description": "VS Code extension that cuts LLM costs while improving quality via an LLM proxy, prompt compression, agent escalation, and full savings visibility. You only pay a percentage of how much we save you."
     },
     {
       "name": "ERPChat",
@@ -2133,7 +2133,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260625.2",
+    "version": "20260625.3",
     "lastModified": "2026-06-25",
     "language": "en-AU",
     "paul": {
