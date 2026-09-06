@@ -509,15 +509,6 @@
     }
     a.highlight-chip:hover, a.highlight-chip:focus-visible { transform: translateY(-1px); }
 
-    .faq-downloads-link {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--line-strong);
-      padding-bottom: 1px;
-      transition: border-color .25s;
-    }
-    .faq-downloads-link:hover, .faq-downloads-link:focus-visible { border-color: var(--accent); outline: none; }
-
     /* STATS */
     .stats {
       border-top: 1px solid var(--line);
@@ -594,40 +585,6 @@
       color: var(--text-muted);
       margin-left: 0.5rem;
       white-space: nowrap;
-    }
-
-    /* RECRUITER FAQ */
-    .faq dl {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      gap: 0.8rem 2.5rem;
-      margin-top: 1.25rem;
-    }
-    .faq dt {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-      padding-top: 0.15rem;
-    }
-    .faq dd {
-      font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 300;
-    }
-    .faq dd ul { list-style: none; padding: 0; }
-    .faq dd ul li { padding-left: 0; color: var(--text-dim); }
-    .faq dd ul li::before { content: '· '; color: var(--accent); }
-    .faq .perfect {
-      margin-top: 1.5rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--bg-card);
-      border-left: 2px solid var(--accent);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--text);
     }
 
     /* WORK */
@@ -1175,8 +1132,6 @@
       .stat { text-align: center; }
       .footer-links { justify-content: center; }
       .footer-copy { text-align: center; }
-      .faq dl { grid-template-columns: 1fr; gap: 0.3rem 0; }
-      .faq dt { padding-top: 0.6rem; }
       .role-meta { text-align: left; }
       details.role > summary { grid-template-columns: 1fr; }
       .ref-list li { grid-template-columns: 1fr; }
@@ -1249,6 +1204,10 @@
         "image": "https://paulharvey.com.au/images/paul-harvey.webp",
         "description": "Solutions Architect, CTO and IT Manager with 32 years across financial services, government and enterprise, spanning AI / LLM integration, Salesforce B2C Commerce Cloud, ERP transformation and distributed team leadership.",
         "jobTitle": ["Solutions Architect", "CTO", "IT Manager"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Fusion5"
+        },
         "hasOccupation": {
           "@type": "Occupation",
           "name": "Solutions Architect",
@@ -1292,7 +1251,7 @@
   </script>
 
   <!-- Machine-readable resume (JSON Resume schema with Paul-specific extensions) -->
-  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260625.6"></script>
+  <script type="application/json" id="resume-data" data-source="resume.json" data-version="20260906.1"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -1321,7 +1280,6 @@
   <nav class="section-index" id="section-index" aria-label="Section index">
     <a href="#top" data-section="top"><span class="si-label">Top</span></a>
     <a href="#summary" data-section="summary"><span class="si-label">Summary</span></a>
-    <a href="#faq" data-section="faq-section"><span class="si-label">Recruiter FAQ</span></a>
     <a href="#experience" data-section="experience"><span class="si-label">Experience</span></a>
     <a href="#skills" data-section="skills-section"><span class="si-label">Skills</span></a>
     <a href="#certifications" data-section="creds-section"><span class="si-label">Credentials</span></a>
@@ -1393,19 +1351,6 @@
   <section class="stats">
     <div class="container">
       <div class="stats-grid" data-render="stats"></div>
-    </div>
-  </section>
-
-  <!-- RECRUITER FAQ — expandable, near top -->
-  <section class="faq-section" id="faq-section">
-    <div class="container">
-      <details class="disclosure" id="faq" open>
-        <summary>
-          <h2 class="disc-title">Recruiter FAQ</h2>
-          <span class="disc-meta">availability · rates · location</span>
-        </summary>
-        <div class="faq" data-render="recruiterFAQ"></div>
-      </details>
     </div>
   </section>
 
@@ -1509,7 +1454,7 @@
     <div class="container">
       <h2 class="section-label reveal">Downloads</h2>
       <p class="reveal" style="color:var(--text-dim); font-size:0.95rem; max-width:60ch;">
-        Recruiters: Feel free to load this PDF, DOCX or JSON into your ATS to keep me in the mix for future roles&hellip;
+        Full resume in PDF, DOCX and machine-readable JSON.
       </p>
       <div class="downloads reveal">
         <a href="cv/docs/Paul%20Harvey%20-%20Resume.pdf" id="dl-pdf" download aria-label="Download resume as PDF">
@@ -1830,43 +1775,6 @@
       });
     }
 
-    function renderFAQ(target, data) {
-      var f = data.recruiterFAQ;
-      var dl = el('dl');
-      function row(k, v) {
-        dl.appendChild(el('dt', { text: k }));
-        var dd = el('dd');
-        if (Array.isArray(v)) {
-          var ul = el('ul');
-          v.forEach(function (it) { ul.appendChild(el('li', { text: it })); });
-          dd.appendChild(ul);
-        } else if (typeof v === 'object' && v !== null) {
-          Object.keys(v).forEach(function (kk) {
-            var line = el('div', { text: kk + ': ' + (Array.isArray(v[kk]) ? v[kk].join(', ') : v[kk]) });
-            line.style.color = 'var(--text-dim)';
-            dd.appendChild(line);
-          });
-        } else {
-          dd.textContent = v;
-        }
-        dl.appendChild(dd);
-      }
-      row('Availability', f.availability);
-      row('Visa', f.visa);
-      row('Rates', [f.rates.contract, f.rates.permanent]);
-      row('Location', f.location.based + ' · looking: ' + f.location.lookingIn.join(', ') + ' · ' + f.location.relocation + ' · travel: ' + f.location.travel);
-      row('Preferred roles', f.rolesPreferred);
-      row('Short-term', f.rolesShortTerm);
-      row('Holidays', f.holidays);
-      // Explicit Downloads pointer for recruiters scanning the FAQ
-      dl.appendChild(el('dt', { text: 'Downloads' }));
-      var dlDd = el('dd');
-      dlDd.appendChild(el('a', { href: '#downloads', class: 'faq-downloads-link', text: 'PDF + DOCX + JSON (jump to Downloads section)' }));
-      dl.appendChild(dlDd);
-      target.appendChild(dl);
-      target.appendChild(el('div', { class: 'perfect', text: 'Ideal: ' + f.perfectJob }));
-    }
-
     function renderHighlightsList(highlights) {
       var ul = el('ul', { class: 'role-highlights' });
       highlights.forEach(function (h) {
@@ -2094,7 +2002,6 @@
       'highlights': renderHighlights,
       'experienceLines': renderExperienceLines,
       'stats': renderStats,
-      'recruiterFAQ': renderFAQ,
       'work-recent': renderWorkRecent,
       'work-earlier': renderWorkEarlier,
       'skillsMatrix': renderSkillsMatrix,
@@ -2148,6 +2055,7 @@
   <p>An independent thinker with keen observation skills, who reads people and situations well and finds solutions that others miss. Pragmatic &#x27;get-it-done&#x27; approach learned on the London trading floor, balanced by an eye for quality and long-term sustainability. Unflappable, upbeat, draws hidden talents out of teams, and explains complex technical concepts in concrete business terms.</p>
   <p><strong>Skills:</strong> Solutions Architecture, AI / LLM Integration, Salesforce B2C Commerce Cloud, Shopify Plus, Cloud (AWS / Azure / GCP), SQL Server / Data Engineering, Financial Services Tech, Distributed / Offshore Team Leadership, Pre-Sales / Bids / Proposals, ERP (ERPNext / Odoo / SFCC integrations), Cybersecurity / Compliance, Business Analysis</p>
   <h3>Work Experience</h3><ul>
+  <li>Fusion5 — Shopify Solution Strategist &amp; AI Enablement Champion: Shopify solution strategy across pre-sales and delivery for enterprise and mid-market clients, paired with an internal AI enablement remit.</li>
   <li>Evitara — Solutions Architect (AI Integration): Architecting and maintaining a multi-project AI platform spanning marketing automation, ad operations, subscription SaaS, and internal ERP tooling. Leading a 48-agent Claude Code fleet that has shipped ~3,900 commits with 85% coverage and 269 architectural decision records across 9 projects.</li>
   <li>Amblique — Solutions Architect (eCommerce Integration): Architected e-commerce solutions on Salesforce B2C Commerce Cloud and Shopify Plus for high-street brands. One of 5 architects providing technical direction to a team of 30 Australian staff + 30 offshore developers. Primary technical contact for clients, balancing innovation with feasibility and compliance.</li>
   <li>Apptimise — Managing Director: Lean start-up with a team of 4 building web apps, Shopify e-commerce, project management, coaching and consulting.</li>

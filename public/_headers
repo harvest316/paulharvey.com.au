@@ -10,9 +10,10 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Resume downloads are rebuilt on every version bump — immutable per version.
+# Resume downloads keep a constant filename (no ?v=), so they must NOT be immutable:
+# a rebuild has to reach browsers and edge caches that already hold the old file.
 /cv/docs/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 # resume.json is fetched with ?v=<version> by the site JS; the bare URL gets
 # a short revalidation window for older-browser / direct-link fallback.

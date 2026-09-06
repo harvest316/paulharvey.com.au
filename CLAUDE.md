@@ -34,7 +34,8 @@ This project contains personal information (resume, contact details, rates, refe
 
 - All resume content lives in `public/resume.json`. Don't hand-edit role text in `public/index.html`.
 - Bump `meta.version` and `meta.lastModified` on every `public/resume.json` edit. Keep the `data-version` attribute on `#resume-data` in `public/index.html` in sync with `meta.version` (deploy.sh re-stamps it, but match it manually too so committed state is correct).
-- Recruiter FAQ content lives in `resume.json` under `recruiterFAQ`. Site renders from there.
+- **No recruiter FAQ.** Removed Sep 2026: Paul is employed (Fusion5) and not seeking work. Do not reinstate a `recruiterFAQ` block in `resume.json` or an FAQ section on the site. The PDF/DOCX emitter in `scripts/resume_blocks.py` still has a guarded `recruiterFAQ` branch, so restoring it later is a JSON edit plus re-adding the site section (see git history at the removal commit).
+- **Keep the noscript block in sync by hand.** The `<noscript>` fallback in `public/index.html` is a manual mirror of the work list and summary, not rendered from `resume.json`. Update it whenever the current role or summary changes.
 - Side-project descriptions live in `resume.json` under `sideProjects[]`.
 - Tag every new `highlights[]` entry from the closed vocabulary in `meta.paul.tagVocabulary`.
 

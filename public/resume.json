@@ -146,39 +146,6 @@
       }
     }
   ],
-  "recruiterFAQ": {
-    "availability": "1 week notice",
-    "visa": "Australian Citizen",
-    "rates": {
-      "contract": "$800–$1,200 / day preferred; open to lower for the right fit",
-      "permanent": "$160k–$220k base (excluding super); open to lower for less stress, closer to home, or remote"
-    },
-    "location": {
-      "based": "Hurstville",
-      "lookingIn": [
-        "Sydney CBD",
-        "Southern Sydney",
-        "Illawarra",
-        "Remote"
-      ],
-      "relocation": "Unable to relocate at this time",
-      "travel": "Up to 25% travel fine"
-    },
-    "rolesPreferred": [
-      "Solutions Architect (Enterprise / E-Commerce / AI Integration)",
-      "IT Manager / Head of IT",
-      "CTO (digital agency, 20–50 people, Sutherland Shire ideal)",
-      "Pre-Sales Solutions Architect (low-ego company, work from home)",
-      "Principal Architect / Consultant Architect (Financial Services)"
-    ],
-    "rolesShortTerm": [
-      "Microsoft BI / Data Analyst / SQL Developer",
-      "LAMP / WordPress Performance Tuning"
-    ],
-    "perfectJob": "Either CTO in a digital agency with 20–50 people in the Sutherland Shire, or a Pre-Sales Solutions Architect in a low-ego company with flexibility to work from home. Casting wider than this though.",
-    "holidays": "None planned",
-    "latestResume": "http://cv.paulharvey.com.au"
-  },
   "stats": [
     {
       "value": "32+",
@@ -199,13 +166,29 @@
   ],
   "work": [
     {
+      "name": "Fusion5",
+      "position": "Shopify Solution Strategist & AI Enablement Champion",
+      "employmentType": "Permanent",
+      "startDate": "2026-08",
+      "endDate": "",
+      "location": "Sydney",
+      "summary": "Shopify solution strategy across pre-sales and delivery for enterprise and mid-market clients, paired with an internal AI enablement remit: helping consulting and delivery teams apply AI tooling to everyday work.",
+      "tags": [
+        "ecommerce",
+        "ai-llm",
+        "architecture",
+        "presales",
+        "integration"
+      ]
+    },
+    {
       "name": "Independent",
       "position": "Founder & Software Architect (pre-revenue R&D)",
       "employmentType": "Independent",
       "startDate": "2026-05",
-      "endDate": "",
+      "endDate": "2026-08",
       "location": "Sydney",
-      "summary": "Self-directed product development between roles: building and shipping AI developer tooling for VS Code, self-funded and pre-revenue. The two flagship tools below grew out of gaps Paul hit while running the Evitara agent fleet.",
+      "summary": "Self-directed product development: built and shipped AI developer tooling for VS Code, self-funded and pre-revenue. The two flagship tools below grew out of gaps Paul hit while running the Evitara agent fleet.",
       "tags": [
         "ai-llm",
         "architecture",
@@ -2167,8 +2150,8 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260625.6",
-    "lastModified": "2026-06-25",
+    "version": "20260906.1",
+    "lastModified": "2026-09-06",
     "language": "en-AU",
     "paul": {
       "tagVocabulary": [

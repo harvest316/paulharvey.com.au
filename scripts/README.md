@@ -21,7 +21,6 @@ The site renderer + future generator look for these non-standard fields on top o
 
 - `basics.tagline`, `basics.subSummary` — secondary copy for hero + summary.
 - `highlights[]` — top-of-fold callouts shown as chips on the hero.
-- `recruiterFAQ` — structured FAQ content (availability, rates, location, preferred roles).
 - `stats[]` — big-number row on the home page.
 - `work[].tags`, `work[].highlights[].tags` — taxonomy keys for filtering / scoring against a JD.
 - `work[].highlights[].metric` — pull-quote callout (e.g. `"+210% efficiency"`).
