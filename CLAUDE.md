@@ -37,6 +37,7 @@ This project contains personal information (resume, contact details, rates, refe
 - **No recruiter FAQ.** Removed Sep 2026: Paul is employed (Fusion5) and not seeking work. Do not reinstate a `recruiterFAQ` block in `resume.json` or an FAQ section on the site. The PDF/DOCX emitter in `scripts/resume_blocks.py` still has a guarded `recruiterFAQ` branch, so restoring it later is a JSON edit plus re-adding the site section (see git history at the removal commit).
 - **Keep the noscript block in sync by hand.** The `<noscript>` fallback in `public/index.html` is a manual mirror of the work list and summary, not rendered from `resume.json`. Update it whenever the current role or summary changes.
 - Side-project descriptions live in `resume.json` under `sideProjects[]`.
+- **No referee names in `public/`.** Hidden Sep 2026 alongside the recruiter FAQ. The list is kept at `out/private/referees.json` (gitignored, outside the deploy root); restoring it means pasting the `references` array back into `resume.json`. The PDF/DOCX emitter hardcodes the "References / Available on request" heading, so it needs no change either way.
 - Tag every new `highlights[]` entry from the closed vocabulary in `meta.paul.tagVocabulary`.
 
 ## Email + PII
