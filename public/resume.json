@@ -6,7 +6,7 @@
     "tagline": "A techie who actually likes people",
     "image": "https://paulharvey.com.au/images/paul-harvey.webp",
     "url": "https://paulharvey.com.au",
-    "_contactNote": "Email and phone deliberately omitted from this canonical JSON to prevent scraping. Recruiters: see https://paulharvey.com.au (click the email/phone icons) or download the DOCX from /#downloads.",
+    "_contactNote": "Email and phone deliberately omitted from this canonical JSON to prevent scraping. Contact details are on https://paulharvey.com.au (click the email/phone icons) or in the DOCX at /#downloads.",
     "summary": "Technical all-rounder with a broad wingspan, where engineering meets strategy.",
     "experienceLines": [
       {
@@ -2150,7 +2150,7 @@
   ],
   "meta": {
     "canonical": "https://paulharvey.com.au",
-    "version": "20260906.1",
+    "version": "20260906.2",
     "lastModified": "2026-09-06",
     "language": "en-AU",
     "paul": {

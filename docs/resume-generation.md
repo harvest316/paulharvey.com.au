@@ -1,7 +1,11 @@
 # Resume + Cover-Letter Generation — Spec
 
-Status: **draft for sign-off**. This doc is both the best-practice reference and the generator
-contract. The rules here ARE the generator's algorithm and the test oracle.
+Status: **dormant as of Sep 2026** — Paul is employed (Fusion5) and not seeking work, so the
+JD-tailoring generator in §10 is not live backlog. The rules below stay valid as the contract if
+it is ever picked up again; do not treat §10 as queued work.
+
+This doc is both the best-practice reference and the generator contract. The rules here ARE
+the generator's algorithm and the test oracle.
 
 Acronyms: **JD** = job description · **CL** = cover letter · **KSC** = key selection criteria.
 
@@ -155,8 +159,10 @@ Both formats render from `scripts/resume_blocks.py::build_blocks()` (one source 
 - Build env: gitignored `.venv` (python-docx, weasyprint, pypdf — PEP 668 blocks global pip).
 - Contact modes: default = obfuscated email / no phone (public, committed); `--real-contact` =
   real email + phone → `(full).pdf`/`(full).docx`, gitignored.
-- Deploy: `scripts/deploy.sh` builds from `resume.json` → stages git-tracked `cv/docs` only →
-  aborts on `*(full)*`/`.env`/`*.py` → wrangler. Creds from `~/.secrets/paulharvey-deploy.env`.
+- Deploy: `scripts/deploy.sh` builds PDF + DOCX from `resume.json` → stamps `data-version` into
+  `index.html` → commits changed artifacts → `wrangler pages deploy public/`. Creds from the
+  gitignored repo-root `.env`. (No staging dir and no secret-grep any more: `public/` IS the
+  deploy root, so only served files are ever in scope.)
   resume.json is the single source of truth (SyncThing direction dropped). `_worker.js` hard-404s
   any `(full)` path with `no-store`. (Both guards added after a real-contact DOCX leaked 2026-06-01.)
 - Acronym first-use expansion — still a content-level TODO for the JD-targeted generator.

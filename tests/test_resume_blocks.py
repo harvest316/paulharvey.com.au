@@ -273,6 +273,21 @@ def test_build_blocks_achievement_empty_since_falls_back_to_date(full_data, bloc
     assert "Thing - 2021" in joined  # empty since -> uses date, not "since "
 
 
+def test_real_resume_has_no_recruiter_faq(real_data, blocks_mod):
+    """recruiterFAQ was removed Sep 2026 (Paul is employed, not seeking work).
+
+    The emitter in resume_blocks.py is deliberately kept as a dormant restore path,
+    so nothing else stops a reinstated key from republishing availability, both rate
+    bands, lookingIn and perfectJob into the PDF, the DOCX and the public JSON.
+    This is that gate - see CLAUDE.md "No recruiter FAQ".
+    """
+    assert "recruiterFAQ" not in real_data, (
+        "recruiterFAQ was removed Sep 2026 (see CLAUDE.md) - do not reinstate it"
+    )
+    joined = "\n".join(b.get("text", "") for b in blocks_mod.build_blocks(real_data))
+    assert "Recruiter FAQ" not in joined
+
+
 def test_build_blocks_real_resume(real_data, blocks_mod):
     """The actual resume.json must build without error in both contact modes."""
     obf = blocks_mod.build_blocks(real_data, real_contact=False)
